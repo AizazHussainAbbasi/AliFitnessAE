@@ -10156,11 +10156,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Host\\AliFitnessAE.Web.Host.csproj",
+      "projectUniqueName": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Host\\AliFitnessAE.Web.Host.csproj",
       "projectName": "AliFitnessAE.Web.Host",
-      "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Host\\AliFitnessAE.Web.Host.csproj",
+      "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Host\\AliFitnessAE.Web.Host.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Host\\obj\\",
+      "outputPath": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Host\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -10177,8 +10177,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Core\\AliFitnessAE.Web.Core.csproj": {
-              "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Core\\AliFitnessAE.Web.Core.csproj"
+            "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Core\\AliFitnessAE.Web.Core.csproj": {
+              "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Core\\AliFitnessAE.Web.Core.csproj"
             }
           }
         }

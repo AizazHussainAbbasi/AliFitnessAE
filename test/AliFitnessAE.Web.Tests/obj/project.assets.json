@@ -13681,11 +13681,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Web.Tests\\AliFitnessAE.Web.Tests.csproj",
+      "projectUniqueName": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Web.Tests\\AliFitnessAE.Web.Tests.csproj",
       "projectName": "AliFitnessAE.Web.Tests",
-      "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Web.Tests\\AliFitnessAE.Web.Tests.csproj",
+      "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Web.Tests\\AliFitnessAE.Web.Tests.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
-      "outputPath": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Web.Tests\\obj\\",
+      "outputPath": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Web.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\user\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -13702,11 +13702,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Mvc\\AliFitnessAE.Web.Mvc.csproj": {
-              "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Mvc\\AliFitnessAE.Web.Mvc.csproj"
+            "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Mvc\\AliFitnessAE.Web.Mvc.csproj": {
+              "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\src\\AliFitnessAE.Web.Mvc\\AliFitnessAE.Web.Mvc.csproj"
             },
-            "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Tests\\AliFitnessAE.Tests.csproj": {
-              "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Tests\\AliFitnessAE.Tests.csproj"
+            "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Tests\\AliFitnessAE.Tests.csproj": {
+              "projectPath": "C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5.8.1\\aspnet-core\\test\\AliFitnessAE.Tests\\AliFitnessAE.Tests.csproj"
             }
           }
         }
