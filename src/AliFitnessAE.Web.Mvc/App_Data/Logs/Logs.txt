@@ -15873,3 +15873,490 @@ DEBUG 2021-03-21 14:23:59,017 [29   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub -
 INFO  2021-03-21 14:23:59,073 [27   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/img/favicon.ico  
 INFO  2021-03-21 14:23:59,078 [27   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/img/favicon.ico'. Physical path: 'C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\wwwroot\img\favicon.ico'
 INFO  2021-03-21 14:23:59,082 [27   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 6.675ms 200 image/x-icon
+DEBUG 2021-03-21 14:33:12,520 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+DEBUG 2021-03-21 14:33:12,601 [1    ] Abp.Modules.AbpModuleManager             - Found 15 ABP modules in total.
+DEBUG 2021-03-21 14:33:12,619 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AliFitnessAE.Web.Startup.AliFitnessAEWebMvcModule, AliFitnessAE.Web.Mvc, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,622 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AliFitnessAE.AliFitnessAEWebCoreModule, AliFitnessAE.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,622 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AliFitnessAE.AliFitnessAEApplicationModule, AliFitnessAE.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,623 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AliFitnessAE.AliFitnessAECoreModule, AliFitnessAE.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,623 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCoreModule, Abp.ZeroCore, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,623 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.AbpZeroCommonModule, Abp.Zero.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,624 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AbpKernelModule, Abp, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,624 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AutoMapper.AbpAutoMapperModule, Abp.AutoMapper, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,624 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: AliFitnessAE.EntityFrameworkCore.AliFitnessAEEntityFrameworkModule, AliFitnessAE.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,624 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Zero.EntityFrameworkCore.AbpZeroCoreEntityFrameworkCoreModule, Abp.ZeroCore.EntityFrameworkCore, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,625 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFrameworkCore.AbpEntityFrameworkCoreModule, Abp.EntityFrameworkCore, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,625 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.EntityFramework.AbpEntityFrameworkCommonModule, Abp.EntityFramework.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,625 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.AbpAspNetCoreModule, Abp.AspNetCore, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,625 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.Web.AbpWebCommonModule, Abp.Web.Common, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,625 [1    ] Abp.Modules.AbpModuleManager             - Loaded module: Abp.AspNetCore.SignalR.AbpAspNetCoreSignalRModule, Abp.AspNetCore.SignalR, Version=5.13.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:12,628 [1    ] Abp.Modules.AbpModuleManager             - 15 modules loaded.
+DEBUG 2021-03-21 14:33:12,721 [1    ] o.Configuration.LanguageManagementConfig - Converted Abp (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2021-03-21 14:33:12,721 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpZero (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2021-03-21 14:33:12,721 [1    ] o.Configuration.LanguageManagementConfig - Converted AliFitnessAE (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2021-03-21 14:33:12,721 [1    ] o.Configuration.LanguageManagementConfig - Converted AbpWeb (Abp.Localization.Dictionaries.DictionaryBasedLocalizationSource) to MultiTenantLocalizationSource
+DEBUG 2021-03-21 14:33:13,141 [1    ] ameworkCore.AbpEntityFrameworkCoreModule - Registering DbContext: AliFitnessAE.EntityFrameworkCore.AliFitnessAEDbContext, AliFitnessAE.EntityFrameworkCore, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+DEBUG 2021-03-21 14:33:14,238 [1    ] Abp.Localization.LocalizationManager     - Initializing 4 localization sources.
+DEBUG 2021-03-21 14:33:14,273 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: Abp
+DEBUG 2021-03-21 14:33:14,285 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpZero
+DEBUG 2021-03-21 14:33:14,291 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AliFitnessAE
+DEBUG 2021-03-21 14:33:14,297 [1    ] Abp.Localization.LocalizationManager     - Initialized localization source: AbpWeb
+DEBUG 2021-03-21 14:33:14,514 [1    ] Abp.BackgroundJobs.BackgroundJobManager  - Start background worker: Castle.Proxies.BackgroundJobManagerProxy
+DEBUG 2021-03-21 14:33:14,650 [1    ] , Culture=neutral, PublicKeyToken=null]] - Start background worker: Abp.Authorization.Users.UserTokenExpirationWorker`2[[AliFitnessAE.MultiTenancy.Tenant, AliFitnessAE.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[AliFitnessAE.Authorization.Users.User, AliFitnessAE.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+DEBUG 2021-03-21 14:33:14,702 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - Found 29 classes define auto mapping attributes
+DEBUG 2021-03-21 14:33:14,702 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Models.TokenAuth.ExternalLoginProviderInfoModel
+DEBUG 2021-03-21 14:33:14,707 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.AppUserTypeDto.CreateUserTypeDto
+DEBUG 2021-03-21 14:33:14,708 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.AppUserTypeDto.UserTypeDto
+DEBUG 2021-03-21 14:33:14,708 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.AppUserTypeDto.UserTypeEditDto
+DEBUG 2021-03-21 14:33:14,708 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Users.Dto.CreateUserDto
+DEBUG 2021-03-21 14:33:14,709 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Users.Dto.UserDto
+DEBUG 2021-03-21 14:33:14,709 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.TopicContent.Dto.CreateTopicDto
+DEBUG 2021-03-21 14:33:14,709 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.TopicContent.Dto.TopicDto
+DEBUG 2021-03-21 14:33:14,709 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.TopicContent.Dto.TopicEditDto
+DEBUG 2021-03-21 14:33:14,709 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Sessions.Dto.TenantLoginInfoDto
+DEBUG 2021-03-21 14:33:14,709 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Sessions.Dto.UserLoginInfoDto
+DEBUG 2021-03-21 14:33:14,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Roles.Dto.PermissionDto
+DEBUG 2021-03-21 14:33:14,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Dto.CreatePhotoTrackingDto
+DEBUG 2021-03-21 14:33:14,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Dto.PhotoTrackingDto
+DEBUG 2021-03-21 14:33:14,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Dto.PhotoTrackingEditDto
+DEBUG 2021-03-21 14:33:14,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Dto.PhotoTrackingListDto
+DEBUG 2021-03-21 14:33:14,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Dto.CreateUserTrackingDto
+DEBUG 2021-03-21 14:33:14,710 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Dto.UserTrackingDto
+DEBUG 2021-03-21 14:33:14,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Dto.UserTrackingEditDto
+DEBUG 2021-03-21 14:33:14,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.MultiTenancy.Dto.CreateTenantDto
+DEBUG 2021-03-21 14:33:14,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.MultiTenancy.Dto.TenantDto
+DEBUG 2021-03-21 14:33:14,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Document.Dto.BusinessDocumentAttachmentDto
+DEBUG 2021-03-21 14:33:14,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Document.Dto.BusinessDocumentDto
+DEBUG 2021-03-21 14:33:14,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Document.Dto.DocumentTypeDto
+DEBUG 2021-03-21 14:33:14,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Common.Dto.LookUpDetailDto
+DEBUG 2021-03-21 14:33:14,711 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Common.Dto.LookUpMasterDto
+DEBUG 2021-03-21 14:33:14,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Common.Dto.StatusDto
+DEBUG 2021-03-21 14:33:14,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Web.Models.Admin.Roles.EditRoleModalViewModel
+DEBUG 2021-03-21 14:33:14,712 [1    ] Abp.AutoMapper.AbpAutoMapperModule       - AliFitnessAE.Web.Admin.Views.Shared.Components.TenantChange.TenantChangeViewModel
+INFO  2021-03-21 14:33:17,464 [1    ] tCore.Builder.RequestLocalizationOptions - Supported Request Localization Cultures: en,es-MX,fr,de,it,nl,pt-BR,tr,ru,ar,ja,zh-Hans
+INFO  2021-03-21 14:33:17,908 [1    ] taProtection.KeyManagement.XmlKeyManager - User profile is available. Using 'C:\Users\user\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFO  2021-03-21 14:33:18,254 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 DEBUG http://localhost:62114/  0
+INFO  2021-03-21 14:33:18,256 [14   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/  
+INFO  2021-03-21 14:33:18,272 [10   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 15.8299ms 200 
+INFO  2021-03-21 14:33:22,313 [14   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Controllers.HomeController.Index (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:33:22,584 [14   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "Index", controller = "Home", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult Index() on controller AliFitnessAE.Web.Controllers.HomeController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:33:22,956 [5    ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+INFO  2021-03-21 14:33:24,334 [12   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 1406.1123ms.
+INFO  2021-03-21 14:33:24,345 [12   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Controllers.HomeController.Index (AliFitnessAE.Web.Mvc) in 1756.5725ms
+INFO  2021-03-21 14:33:24,351 [12   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Controllers.HomeController.Index (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:33:24,370 [12   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 6117.5789ms 200 text/html; charset=utf-8
+INFO  2021-03-21 14:38:59,625 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/UserTracking  
+INFO  2021-03-21 14:38:59,651 [38   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2021-03-21 14:38:59,654 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:38:59,661 [38   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "Index", controller = "UserTracking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Index() on controller AliFitnessAE.Web.Admin.Controllers.UserTrackingController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:04,028 [47   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2021-03-21 14:39:04,044 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,048 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,058 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'User' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,059 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Action' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,059 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Date' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,059 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Status' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,059 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Height' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,059 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Weight' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,059 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Hip' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,060 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'BellyButtonWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,060 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,060 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Chest' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,060 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,060 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,060 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,060 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,060 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,061 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,061 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,061 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,069 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'CreateNewUserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,075 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTrackingDetail' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,083 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Height' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,086 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Weight' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,087 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Hip' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,088 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'BellyButtonWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,088 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,089 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,089 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,090 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,091 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,091 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,092 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,093 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,093 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,094 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,286 [42   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,289 [42   ] naries.DictionaryBasedLocalizationSource - Can not find 'Measurement' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,289 [42   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:04,505 [42   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 484.5503ms.
+INFO  2021-03-21 14:39:04,507 [42   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc) in 4844.9951ms
+INFO  2021-03-21 14:39:04,511 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:04,516 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 4889.7627ms 200 text/html; charset=utf-8
+INFO  2021-03-21 14:39:04,590 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637519339946520476  
+INFO  2021-03-21 14:39:04,608 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user8-128x128.jpg  
+INFO  2021-03-21 14:39:04,610 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user1-128x128.jpg  
+INFO  2021-03-21 14:39:04,614 [47   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user3-128x128.jpg  
+INFO  2021-03-21 14:39:04,616 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637519339946520476  
+INFO  2021-03-21 14:39:04,623 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:04,628 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:04,632 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 23.949ms 404 
+INFO  2021-03-21 14:39:04,633 [47   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 14.1564ms 404 
+INFO  2021-03-21 14:39:04,635 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 30.26ms 404 
+INFO  2021-03-21 14:39:04,649 [40   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2021-03-21 14:39:04,651 [42   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+WARN  2021-03-21 14:39:04,749 [40   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,753 [40   ] naries.DictionaryBasedLocalizationSource - Can not find 'Measurement' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:04,753 [40   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:04,781 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2021-03-21 14:39:04,787 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2021-03-21 14:39:04,798 [42   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2021-03-21 14:39:04,805 [42   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 149.458ms
+INFO  2021-03-21 14:39:04,808 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:04,811 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 195.1402ms 200 application/x-javascript
+INFO  2021-03-21 14:39:04,818 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2021-03-21 14:39:04,820 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 39.3089ms 200 application/json
+INFO  2021-03-21 14:39:04,850 [46   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2021-03-21 14:39:04,852 [46   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 201.6212ms
+INFO  2021-03-21 14:39:04,855 [46   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:04,858 [46   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 269.0527ms 200 application/x-javascript; charset=utf-8
+INFO  2021-03-21 14:39:04,878 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=NC8LS-jNTKh3XWvQusHzeQ  
+INFO  2021-03-21 14:39:04,884 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+INFO  2021-03-21 14:39:04,963 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Lookup/GetMeasurementScaleComboboxItems application/json 
+INFO  2021-03-21 14:39:04,969 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:04,971 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/UserTracking/GetAllUserTrackingPagedResult?fromDate=&toDate= application/json 
+INFO  2021-03-21 14:39:04,978 [38   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetMeasurementScaleComboboxItems", controller = "Lookup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Abp.Application.Services.Dto.ListResultDto`1[Abp.Application.Services.Dto.ComboboxItemDto]] GetMeasurementScaleComboboxItems(System.Nullable`1[System.Int32]) on controller Acme.SimpleTaskApp.Common.LookupAppService (AliFitnessAE.Application).
+INFO  2021-03-21 14:39:04,981 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:04,988 [42   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllUserTrackingPagedResult", controller = "UserTracking"}. Executing controller action with signature Abp.Application.Services.Dto.PagedResultDto`1[AliFitnessAE.Dto.UserTrackingDto] GetAllUserTrackingPagedResult(AliFitnessAE.Dto.PagedResultRequestExtDto) on controller AliFitnessAE.AppService.UserTrackingAppService (AliFitnessAE.Application).
+INFO  2021-03-21 14:39:05,015 [46   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:05,053 [46   ] c.Infrastructure.ControllerActionInvoker - Executed action Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application) in 72.7417ms
+INFO  2021-03-21 14:39:05,055 [46   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:05,057 [46   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 94.0988ms 200 application/json; charset=utf-8
+DEBUG 2021-03-21 14:39:05,073 [40   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"NC8LS-jNTKh3XWvQusHzeQ","IpAddress":"::1","TenantId":1,"UserId":41,"ConnectTime":"1442-08-08T14:39:05.0680254+05:00","Properties":{}}
+DEBUG 2021-03-21 14:39:05,083 [40   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: NC8LS-jNTKh3XWvQusHzeQ
+INFO  2021-03-21 14:39:05,164 [38   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:05,214 [38   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application) in 223.7306ms
+INFO  2021-03-21 14:39:05,217 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:05,219 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 248.7904ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:07,403 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpLocalization/ChangeCulture?cultureName=en&returnUrl=%2FAdmin%2FUserTracking  
+INFO  2021-03-21 14:39:07,413 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpLocalizationController.ChangeCulture (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:07,419 [42   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "ChangeCulture", controller = "AbpLocalization", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult ChangeCulture(System.String, System.String) on controller Abp.AspNetCore.Mvc.Controllers.AbpLocalizationController (Abp.AspNetCore).
+INFO  2021-03-21 14:39:07,482 [42   ] frastructure.LocalRedirectResultExecutor - Executing LocalRedirectResult, redirecting to /Admin/UserTracking.
+INFO  2021-03-21 14:39:07,485 [42   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpLocalizationController.ChangeCulture (Abp.AspNetCore) in 63.3418ms
+INFO  2021-03-21 14:39:07,487 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpLocalizationController.ChangeCulture (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:07,489 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 86.7134ms 302 
+INFO  2021-03-21 14:39:07,494 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/UserTracking  
+INFO  2021-03-21 14:39:07,500 [42   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2021-03-21 14:39:07,502 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:07,505 [42   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "Index", controller = "UserTracking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Index() on controller AliFitnessAE.Web.Admin.Controllers.UserTrackingController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:07,558 [46   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2021-03-21 14:39:07,559 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,559 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,560 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'User' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,560 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Action' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,560 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Date' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,560 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Status' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,560 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Height' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,561 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Weight' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,561 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Hip' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,561 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'BellyButtonWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,561 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,561 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Chest' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,561 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,561 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,561 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,562 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,562 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,562 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,562 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,562 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,562 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'CreateNewUserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,563 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTrackingDetail' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,563 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Height' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,563 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Weight' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,563 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'Hip' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,564 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'BellyButtonWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,564 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,564 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,564 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,564 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,564 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,565 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,565 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,565 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,565 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,565 [46   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,590 [40   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,594 [40   ] naries.DictionaryBasedLocalizationSource - Can not find 'Measurement' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,594 [40   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:07,610 [40   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 51.7712ms.
+INFO  2021-03-21 14:39:07,613 [40   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc) in 105.0562ms
+INFO  2021-03-21 14:39:07,616 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:07,620 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 125.887ms 200 text/html; charset=utf-8
+DEBUG 2021-03-21 14:39:07,632 [45   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: NC8LS-jNTKh3XWvQusHzeQ
+INFO  2021-03-21 14:39:07,638 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user1-128x128.jpg  
+INFO  2021-03-21 14:39:07,641 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user8-128x128.jpg  
+INFO  2021-03-21 14:39:07,648 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 10.432ms 404 
+INFO  2021-03-21 14:39:07,650 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 9.7419ms 404 
+INFO  2021-03-21 14:39:07,653 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr'
+INFO  2021-03-21 14:39:07,655 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 2778.6676ms 101 
+INFO  2021-03-21 14:39:07,668 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637519339946520476  
+INFO  2021-03-21 14:39:07,670 [46   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user3-128x128.jpg  
+INFO  2021-03-21 14:39:07,673 [47   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637519339946520476  
+INFO  2021-03-21 14:39:07,679 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:07,681 [46   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 11.9381ms 404 
+INFO  2021-03-21 14:39:07,683 [47   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:07,686 [45   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2021-03-21 14:39:07,688 [47   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2021-03-21 14:39:07,692 [45   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2021-03-21 14:39:07,694 [45   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 6.0872ms
+INFO  2021-03-21 14:39:07,697 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:07,699 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 31.5492ms 200 application/x-javascript
+WARN  2021-03-21 14:39:07,704 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,707 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Measurement' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:07,707 [47   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:07,729 [40   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2021-03-21 14:39:07,732 [40   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 41.0016ms
+INFO  2021-03-21 14:39:07,735 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:07,738 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 69.7771ms 200 application/x-javascript; charset=utf-8
+INFO  2021-03-21 14:39:07,768 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2021-03-21 14:39:07,773 [49   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2021-03-21 14:39:07,776 [49   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2021-03-21 14:39:07,778 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 10.3303ms 200 application/json
+INFO  2021-03-21 14:39:07,854 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Lookup/GetMeasurementScaleComboboxItems application/json 
+INFO  2021-03-21 14:39:07,861 [47   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/UserTracking/GetAllUserTrackingPagedResult?fromDate=&toDate= application/json 
+INFO  2021-03-21 14:39:07,869 [43   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:07,872 [43   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetMeasurementScaleComboboxItems", controller = "Lookup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Abp.Application.Services.Dto.ListResultDto`1[Abp.Application.Services.Dto.ComboboxItemDto]] GetMeasurementScaleComboboxItems(System.Nullable`1[System.Int32]) on controller Acme.SimpleTaskApp.Common.LookupAppService (AliFitnessAE.Application).
+INFO  2021-03-21 14:39:07,875 [47   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:07,878 [47   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllUserTrackingPagedResult", controller = "UserTracking"}. Executing controller action with signature Abp.Application.Services.Dto.PagedResultDto`1[AliFitnessAE.Dto.UserTrackingDto] GetAllUserTrackingPagedResult(AliFitnessAE.Dto.PagedResultRequestExtDto) on controller AliFitnessAE.AppService.UserTrackingAppService (AliFitnessAE.Application).
+INFO  2021-03-21 14:39:07,897 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=0UBwH8WEqkScrDXxTDMeqw  
+INFO  2021-03-21 14:39:07,906 [43   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:07,913 [43   ] c.Infrastructure.ControllerActionInvoker - Executed action Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application) in 35.6865ms
+INFO  2021-03-21 14:39:07,914 [42   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:07,917 [43   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:07,921 [42   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application) in 39.2908ms
+INFO  2021-03-21 14:39:07,926 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 65.6077ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:07,930 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:07,933 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 71.4517ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:07,939 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+DEBUG 2021-03-21 14:39:08,040 [40   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"0UBwH8WEqkScrDXxTDMeqw","IpAddress":"::1","TenantId":1,"UserId":41,"ConnectTime":"2021-03-21T14:39:08.0400603+05:00","Properties":{}}
+DEBUG 2021-03-21 14:39:08,041 [40   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 0UBwH8WEqkScrDXxTDMeqw
+INFO  2021-03-21 14:39:09,486 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/UserTracking  
+INFO  2021-03-21 14:39:09,497 [40   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2021-03-21 14:39:09,500 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:09,504 [40   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "Index", controller = "UserTracking"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] Index() on controller AliFitnessAE.Web.Admin.Controllers.UserTrackingController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:09,596 [43   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view Index.
+WARN  2021-03-21 14:39:09,597 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,597 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,598 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'User' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,598 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Action' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,598 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Date' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,598 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Status' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,598 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Height' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,598 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Weight' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,598 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Hip' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,599 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'BellyButtonWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,599 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,599 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Chest' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,599 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,599 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,599 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,599 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,600 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,600 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,600 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,600 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,601 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'CreateNewUserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,601 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTrackingDetail' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,602 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Height' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,602 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Weight' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,602 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Hip' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,603 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'BellyButtonWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,603 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,603 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'HipBoneWaist' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,603 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,603 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,604 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,604 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftThigh' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,604 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,604 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftCalve' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,604 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'RightForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,605 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'LeftForeArm' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,629 [49   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,632 [49   ] naries.DictionaryBasedLocalizationSource - Can not find 'Measurement' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,632 [49   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:09,647 [49   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view Index executed in 51.6467ms.
+INFO  2021-03-21 14:39:09,650 [49   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc) in 143.6569ms
+INFO  2021-03-21 14:39:09,652 [49   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.Index (AliFitnessAE.Web.Mvc)'
+DEBUG 2021-03-21 14:39:09,655 [46   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 0UBwH8WEqkScrDXxTDMeqw
+INFO  2021-03-21 14:39:09,657 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 170.7675ms 200 text/html; charset=utf-8
+INFO  2021-03-21 14:39:09,659 [46   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr'
+INFO  2021-03-21 14:39:09,662 [46   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 1765.1269ms 101 
+INFO  2021-03-21 14:39:09,672 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user8-128x128.jpg  
+INFO  2021-03-21 14:39:09,675 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user1-128x128.jpg  
+INFO  2021-03-21 14:39:09,685 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 12.306ms 404 
+INFO  2021-03-21 14:39:09,688 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 12.9458ms 404 
+INFO  2021-03-21 14:39:09,691 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637519339946520476  
+INFO  2021-03-21 14:39:09,693 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/dist/img/user3-128x128.jpg  
+INFO  2021-03-21 14:39:09,695 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637519339946520476  
+INFO  2021-03-21 14:39:09,703 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:09,706 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:09,709 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 16.7033ms 404 
+INFO  2021-03-21 14:39:09,712 [45   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2021-03-21 14:39:09,714 [42   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2021-03-21 14:39:09,718 [42   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2021-03-21 14:39:09,721 [42   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 4.7146ms
+INFO  2021-03-21 14:39:09,725 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:09,728 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 39.4551ms 200 application/x-javascript
+WARN  2021-03-21 14:39:09,735 [45   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,739 [45   ] naries.DictionaryBasedLocalizationSource - Can not find 'Measurement' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:09,739 [45   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:09,793 [45   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2021-03-21 14:39:09,795 [45   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 80.4729ms
+INFO  2021-03-21 14:39:09,798 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:09,799 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 110.5118ms 200 application/x-javascript; charset=utf-8
+INFO  2021-03-21 14:39:09,811 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2021-03-21 14:39:09,816 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2021-03-21 14:39:09,818 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2021-03-21 14:39:09,820 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 9.4241ms 200 application/json
+INFO  2021-03-21 14:39:09,837 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=3IFEfJ5qjaug6c4AiCb5RA  
+INFO  2021-03-21 14:39:09,843 [43   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+INFO  2021-03-21 14:39:09,892 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/Lookup/GetMeasurementScaleComboboxItems application/json 
+INFO  2021-03-21 14:39:09,898 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:09,901 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/api/services/app/UserTracking/GetAllUserTrackingPagedResult?fromDate=&toDate= application/json 
+INFO  2021-03-21 14:39:09,905 [42   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetMeasurementScaleComboboxItems", controller = "Lookup"}. Executing controller action with signature System.Threading.Tasks.Task`1[Abp.Application.Services.Dto.ListResultDto`1[Abp.Application.Services.Dto.ComboboxItemDto]] GetMeasurementScaleComboboxItems(System.Nullable`1[System.Int32]) on controller Acme.SimpleTaskApp.Common.LookupAppService (AliFitnessAE.Application).
+INFO  2021-03-21 14:39:09,912 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:09,916 [45   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "GetAllUserTrackingPagedResult", controller = "UserTracking"}. Executing controller action with signature Abp.Application.Services.Dto.PagedResultDto`1[AliFitnessAE.Dto.UserTrackingDto] GetAllUserTrackingPagedResult(AliFitnessAE.Dto.PagedResultRequestExtDto) on controller AliFitnessAE.AppService.UserTrackingAppService (AliFitnessAE.Application).
+INFO  2021-03-21 14:39:09,932 [38   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:09,936 [38   ] c.Infrastructure.ControllerActionInvoker - Executed action Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application) in 27.5657ms
+INFO  2021-03-21 14:39:09,939 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Acme.SimpleTaskApp.Common.LookupAppService.GetMeasurementScaleComboboxItems (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:09,943 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 49.3476ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:09,950 [40   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+DEBUG 2021-03-21 14:39:09,950 [45   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"3IFEfJ5qjaug6c4AiCb5RA","IpAddress":"::1","TenantId":1,"UserId":41,"ConnectTime":"2021-03-21T14:39:09.9507173+05:00","Properties":{}}
+DEBUG 2021-03-21 14:39:09,952 [45   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: 3IFEfJ5qjaug6c4AiCb5RA
+INFO  2021-03-21 14:39:09,953 [40   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application) in 34.1861ms
+INFO  2021-03-21 14:39:09,957 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.AppService.UserTrackingAppService.GetAllUserTrackingPagedResult (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:09,960 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 59.7387ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:10,277 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/UserTracking/PhotoTracking  
+INFO  2021-03-21 14:39:10,284 [45   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2021-03-21 14:39:10,286 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.PhotoTracking (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:10,293 [45   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "PhotoTracking", controller = "UserTracking"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult PhotoTracking() on controller AliFitnessAE.Web.Admin.Controllers.UserTrackingController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:10,350 [44   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executing ViewResult, running view PhotoTracking.
+WARN  2021-03-21 14:39:10,356 [44   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:10,360 [44   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:10,611 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:10,613 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Measurement' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:10,613 [43   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:10,631 [43   ] Core.Mvc.ViewFeatures.ViewResultExecutor - Executed ViewResult - view PhotoTracking executed in 282.2399ms.
+INFO  2021-03-21 14:39:10,633 [43   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.UserTrackingController.PhotoTracking (AliFitnessAE.Web.Mvc) in 338.0033ms
+INFO  2021-03-21 14:39:10,635 [43   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.PhotoTracking (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:10,639 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 361.7944ms 200 text/html; charset=utf-8
+DEBUG 2021-03-21 14:39:10,641 [49   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is disconnected: 3IFEfJ5qjaug6c4AiCb5RA
+INFO  2021-03-21 14:39:10,643 [49   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr'
+INFO  2021-03-21 14:39:10,645 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 808.7297ms 101 
+INFO  2021-03-21 14:39:10,658 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/UserTracking/dist/img/user1-128x128.jpg  
+INFO  2021-03-21 14:39:10,661 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/UserTracking/dist/img/user8-128x128.jpg  
+INFO  2021-03-21 14:39:10,672 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 8.9052ms 404 
+INFO  2021-03-21 14:39:10,674 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13.874ms 404 
+INFO  2021-03-21 14:39:10,677 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/UserTracking/dist/img/user3-128x128.jpg  
+INFO  2021-03-21 14:39:10,679 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/images/778992aa-7817-4211-80ce-3842eab2269f_AlifitnessAE.jpg?text=504  
+INFO  2021-03-21 14:39:10,686 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpServiceProxies/GetAll?v=637519339946520476  
+INFO  2021-03-21 14:39:10,694 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/AbpScripts/GetScripts?v=637519339946520476  
+INFO  2021-03-21 14:39:10,699 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/images/566729e9-e7a1-4cfb-bd46-c7aff7bc5ebd_best.jpg?text=503  
+INFO  2021-03-21 14:39:10,702 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/images/07dac17d-48a1-47ec-a3c6-e70752648dc0_cell swelling.jpeg?text=508  
+INFO  2021-03-21 14:39:10,707 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 33.2162ms 404 
+INFO  2021-03-21 14:39:10,711 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:10,714 [47   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/images/29bf4708-5641-421a-a2b5-2a3a84d7ce93_cell swelling.jpeg?text=507  
+INFO  2021-03-21 14:39:10,716 [38   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetScripts", controller = "AbpScripts", area = ""}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult] GetScripts(System.String, Boolean) on controller Abp.AspNetCore.Mvc.Controllers.AbpScriptsController (Abp.AspNetCore).
+INFO  2021-03-21 14:39:10,719 [43   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/566729e9-e7a1-4cfb-bd46-c7aff7bc5ebd_best.jpg was not modified
+INFO  2021-03-21 14:39:10,721 [45   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/07dac17d-48a1-47ec-a3c6-e70752648dc0_cell swelling.jpeg was not modified
+INFO  2021-03-21 14:39:10,723 [47   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/29bf4708-5641-421a-a2b5-2a3a84d7ce93_cell swelling.jpeg was not modified
+INFO  2021-03-21 14:39:10,725 [49   ] NetCore.StaticFiles.StaticFileMiddleware - The file /images/778992aa-7817-4211-80ce-3842eab2269f_AlifitnessAE.jpg was not modified
+INFO  2021-03-21 14:39:10,730 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:10,734 [43   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 31.4841ms 304 image/jpeg
+INFO  2021-03-21 14:39:10,739 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 29.0567ms 304 image/jpeg
+INFO  2021-03-21 14:39:10,742 [40   ] c.Infrastructure.ControllerActionInvoker - Route matched with {action = "GetAll", controller = "AbpServiceProxies", area = ""}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ContentResult GetAll(Abp.AspNetCore.Mvc.Proxying.ApiProxyGenerationModel) on controller Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController (Abp.AspNetCore).
+INFO  2021-03-21 14:39:10,744 [47   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 15.7752ms 304 image/jpeg
+INFO  2021-03-21 14:39:10,747 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 51.4605ms 304 image/jpeg
+INFO  2021-03-21 14:39:10,752 [40   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript
+INFO  2021-03-21 14:39:10,756 [40   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore) in 10.1164ms
+INFO  2021-03-21 14:39:10,758 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Proxying.AbpServiceProxiesController.GetAll (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:10,761 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 78.9505ms 200 application/x-javascript
+WARN  2021-03-21 14:39:10,765 [38   ] naries.DictionaryBasedLocalizationSource - Can not find 'UserTracking' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:10,768 [38   ] naries.DictionaryBasedLocalizationSource - Can not find 'Measurement' in localization source 'AliFitnessAE'!
+WARN  2021-03-21 14:39:10,769 [38   ] naries.DictionaryBasedLocalizationSource - Can not find 'Photo' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:10,780 [38   ] Mvc.Infrastructure.ContentResultExecutor - Executing ContentResult with HTTP Response ContentType of application/x-javascript; charset=utf-8
+INFO  2021-03-21 14:39:10,783 [38   ] c.Infrastructure.ControllerActionInvoker - Executed action Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore) in 64.4152ms
+INFO  2021-03-21 14:39:10,786 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'Abp.AspNetCore.Mvc.Controllers.AbpScriptsController.GetScripts (Abp.AspNetCore)'
+INFO  2021-03-21 14:39:10,789 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 100.2639ms 200 application/x-javascript; charset=utf-8
+INFO  2021-03-21 14:39:10,791 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/signalr/negotiate text/plain;charset=UTF-8 0
+INFO  2021-03-21 14:39:10,799 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr/negotiate'
+INFO  2021-03-21 14:39:10,802 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint '/signalr/negotiate'
+INFO  2021-03-21 14:39:10,805 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 13.7087ms 200 application/json
+INFO  2021-03-21 14:39:10,835 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/signalr?id=AWh1ueqJGL1qgPGv_-68Xg  
+INFO  2021-03-21 14:39:10,846 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint '/signalr'
+DEBUG 2021-03-21 14:39:10,869 [40   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is connected: {"ConnectionId":"AWh1ueqJGL1qgPGv_-68Xg","IpAddress":"::1","TenantId":1,"UserId":41,"ConnectTime":"2021-03-21T14:39:10.8693482+05:00","Properties":{}}
+DEBUG 2021-03-21 14:39:10,870 [40   ] Abp.AspNetCore.SignalR.Hubs.AbpCommonHub - A client is registered: AWh1ueqJGL1qgPGv_-68Xg
+INFO  2021-03-21 14:39:12,368 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/Admin/userTracking/CreatePhotoTrackingModal application/json 
+INFO  2021-03-21 14:39:12,377 [42   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2021-03-21 14:39:12,379 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.CreatePhotoTrackingModal (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:12,384 [42   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "CreatePhotoTrackingModal", controller = "UserTracking"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.ActionResult CreatePhotoTrackingModal() on controller AliFitnessAE.Web.Admin.Controllers.UserTrackingController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:12,416 [38   ] c.ViewFeatures.PartialViewResultExecutor - Executing PartialViewResult, running view _CreatePhotoTrackingModal.
+INFO  2021-03-21 14:39:12,422 [38   ] c.ViewFeatures.PartialViewResultExecutor - Executed PartialViewResult - view _CreatePhotoTrackingModal executed in 8.6772ms.
+INFO  2021-03-21 14:39:12,425 [38   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.UserTrackingController.CreatePhotoTrackingModal (AliFitnessAE.Web.Mvc) in 38.2575ms
+INFO  2021-03-21 14:39:12,427 [38   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.CreatePhotoTrackingModal (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:12,430 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 61.6144ms 200 text/html; charset=utf-8
+INFO  2021-03-21 14:39:12,894 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/api/services/app/PhotoTracking/CreatePhotoTracking application/json 13
+INFO  2021-03-21 14:39:12,905 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.AppService.PhotoTrackingAppService.CreatePhotoTrackingAsync (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:12,914 [45   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "app", action = "CreatePhotoTracking", controller = "PhotoTracking"}. Executing controller action with signature System.Threading.Tasks.Task`1[AliFitnessAE.Dto.PhotoTrackingDto] CreatePhotoTrackingAsync(AliFitnessAE.Dto.CreatePhotoTrackingDto) on controller AliFitnessAE.AppService.PhotoTrackingAppService (AliFitnessAE.Application).
+INFO  2021-03-21 14:39:13,035 [46   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:13,040 [46   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.AppService.PhotoTrackingAppService.CreatePhotoTrackingAsync (AliFitnessAE.Application) in 124.5078ms
+INFO  2021-03-21 14:39:13,043 [46   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.AppService.PhotoTrackingAppService.CreatePhotoTrackingAsync (AliFitnessAE.Application)'
+INFO  2021-03-21 14:39:13,046 [46   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 152.7005ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:13,049 [30   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/Admin/Home/LoadViewComponent application/x-www-form-urlencoded; charset=UTF-8 76
+INFO  2021-03-21 14:39:13,055 [30   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2021-03-21 14:39:13,058 [30   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.HomeController.LoadViewComponent (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:13,064 [30   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "LoadViewComponent", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoadViewComponent(AliFitnessAE.Web.Areas.Admin.Models.Common.Modals.ViewComponentVModel) on controller AliFitnessAE.Web.Admin.Controllers.HomeController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:13,086 [40   ] osoft.AspNetCore.Mvc.ViewComponentResult - Executing ViewComponentResult, running DocumentUploader.
+WARN  2021-03-21 14:39:13,130 [44   ] naries.DictionaryBasedLocalizationSource - Can not find 'Ok' in localization source 'AliFitnessAE'!
+INFO  2021-03-21 14:39:13,133 [44   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.HomeController.LoadViewComponent (AliFitnessAE.Web.Mvc) in 66.8051ms
+INFO  2021-03-21 14:39:13,136 [44   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.HomeController.LoadViewComponent (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:13,138 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 89.8478ms 200 text/html; charset=utf-8
+INFO  2021-03-21 14:39:16,654 [30   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/admin/document/upload multipart/form-data; boundary=----WebKitFormBoundaryobFOM5NoJ1Xb21A7 1460078
+INFO  2021-03-21 14:39:16,669 [30   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.DocumentController.Upload (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:16,690 [30   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "Upload", controller = "Document"}. Executing controller action with signature System.Threading.Tasks.Task`1[Abp.Web.Models.AjaxResponse] Upload(AliFitnessAE.Web.Areas.Admin.Views.Shared.Components.DocumentUploader.UploadVModel) on controller AliFitnessAE.Web.Admin.Controllers.DocumentController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:16,691 [30   ] idateAntiforgeryTokenAuthorizationFilter - Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+INFO  2021-03-21 14:39:17,188 [30   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:17,256 [30   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.DocumentController.Upload (AliFitnessAE.Web.Mvc) in 503.2904ms
+INFO  2021-03-21 14:39:17,268 [30   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.DocumentController.Upload (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:17,274 [30   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 632.0883ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:20,657 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/admin/document/upload multipart/form-data; boundary=----WebKitFormBoundaryuskT0R0BUOiTLep7 5775
+INFO  2021-03-21 14:39:20,682 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.DocumentController.Upload (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:20,689 [40   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "Upload", controller = "Document"}. Executing controller action with signature System.Threading.Tasks.Task`1[Abp.Web.Models.AjaxResponse] Upload(AliFitnessAE.Web.Areas.Admin.Views.Shared.Components.DocumentUploader.UploadVModel) on controller AliFitnessAE.Web.Admin.Controllers.DocumentController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:20,690 [40   ] idateAntiforgeryTokenAuthorizationFilter - Skipping the execution of current filter as its not the most effective filter implementing the policy Microsoft.AspNetCore.Mvc.ViewFeatures.IAntiforgeryPolicy
+INFO  2021-03-21 14:39:20,800 [45   ] .Mvc.Infrastructure.ObjectResultExecutor - Executing ObjectResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:20,813 [45   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.DocumentController.Upload (AliFitnessAE.Web.Mvc) in 111.8351ms
+INFO  2021-03-21 14:39:20,819 [45   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.DocumentController.Upload (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:20,825 [45   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 172.1126ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:22,652 [49   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/Admin/userTracking/DeletePhotoTracking?id=173 application/json 0
+INFO  2021-03-21 14:39:22,665 [49   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2021-03-21 14:39:22,667 [49   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.DeletePhotoTracking (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:22,673 [49   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "DeletePhotoTracking", controller = "UserTracking"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.JsonResult DeletePhotoTracking(Int32) on controller AliFitnessAE.Web.Admin.Controllers.UserTrackingController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:23,153 [42   ] tonsoftJson.NewtonsoftJsonResultExecutor - Executing JsonResult, writing value of type 'Abp.Web.Models.AjaxResponse'.
+INFO  2021-03-21 14:39:23,162 [42   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.UserTrackingController.DeletePhotoTracking (AliFitnessAE.Web.Mvc) in 481.4645ms
+INFO  2021-03-21 14:39:23,166 [42   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.UserTrackingController.DeletePhotoTracking (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:23,171 [42   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 516.7841ms 200 application/json; charset=utf-8
+INFO  2021-03-21 14:39:23,179 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 POST http://localhost:62114/Admin/Home/LoadViewComponent application/x-www-form-urlencoded; charset=UTF-8 140
+INFO  2021-03-21 14:39:23,195 [44   ] uthorization.DefaultAuthorizationService - Authorization was successful.
+INFO  2021-03-21 14:39:23,199 [44   ] ft.AspNetCore.Routing.EndpointMiddleware - Executing endpoint 'AliFitnessAE.Web.Admin.Controllers.HomeController.LoadViewComponent (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:23,205 [44   ] c.Infrastructure.ControllerActionInvoker - Route matched with {area = "Admin", action = "LoadViewComponent", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult LoadViewComponent(AliFitnessAE.Web.Areas.Admin.Models.Common.Modals.ViewComponentVModel) on controller AliFitnessAE.Web.Admin.Controllers.HomeController (AliFitnessAE.Web.Mvc).
+INFO  2021-03-21 14:39:23,229 [40   ] osoft.AspNetCore.Mvc.ViewComponentResult - Executing ViewComponentResult, running PhotoTracking.
+INFO  2021-03-21 14:39:23,320 [40   ] c.Infrastructure.ControllerActionInvoker - Executed action AliFitnessAE.Web.Admin.Controllers.HomeController.LoadViewComponent (AliFitnessAE.Web.Mvc) in 111.465ms
+INFO  2021-03-21 14:39:23,322 [40   ] ft.AspNetCore.Routing.EndpointMiddleware - Executed endpoint 'AliFitnessAE.Web.Admin.Controllers.HomeController.LoadViewComponent (AliFitnessAE.Web.Mvc)'
+INFO  2021-03-21 14:39:23,326 [40   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 149.9532ms 200 text/html; charset=utf-8
+INFO  2021-03-21 14:39:23,332 [38   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/images/b51897ce-da99-4a77-aaae-be73da7420ae_chap1 thumbnail.png?text=509  
+INFO  2021-03-21 14:39:23,334 [47   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request starting HTTP/1.1 GET http://localhost:62114/images/be7ebbbd-71de-4066-a902-ba6cf75a7071_abs.jpg?text=510  
+INFO  2021-03-21 14:39:23,348 [47   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/be7ebbbd-71de-4066-a902-ba6cf75a7071_abs.jpg'. Physical path: 'C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\wwwroot\images\be7ebbbd-71de-4066-a902-ba6cf75a7071_abs.jpg'
+INFO  2021-03-21 14:39:23,354 [47   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 18.0847ms 200 image/jpeg
+INFO  2021-03-21 14:39:23,384 [44   ] NetCore.StaticFiles.StaticFileMiddleware - Sending file. Request path: '/images/b51897ce-da99-4a77-aaae-be73da7420ae_chap1 thumbnail.png'. Physical path: 'C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\wwwroot\images\b51897ce-da99-4a77-aaae-be73da7420ae_chap1 thumbnail.png'
+INFO  2021-03-21 14:39:23,388 [44   ] Microsoft.AspNetCore.Hosting.Diagnostics - Request finished in 53.9844ms 200 image/png
