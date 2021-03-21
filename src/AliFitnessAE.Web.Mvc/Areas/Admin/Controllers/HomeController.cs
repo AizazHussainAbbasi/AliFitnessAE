@@ -1,0 +1,86 @@
+﻿using Microsoft.AspNetCore.Mvc;
+using Abp.AspNetCore.Mvc.Authorization;
+using AliFitnessAE.Controllers;
+using AliFitnessAE.Web.Areas.Admin.Views.Shared.Components.DocumentUploader;
+using AliFitnessAE.Web.Areas.Admin.Models.Common.Modals;
+using Acme.SimpleTaskApp.Common;
+using AliFitnessAE.Web.Areas.Admin.Models.Home;
+using AliFitnessAE.Web.Admin.Views.Shared.Components.UserTrackingChart;
+using AliFitnessAE.Authorization.Users;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Linq;
+using Abp.Application.Services.Dto;
+using AliFitnessAE.Dto;
+using AliFitnessAE.Web.Areas.Admin.Models.Common;
+using AliFitnessAE.Common.Enum;
+using AliFitnessAE.Common.Constants;
+
+namespace AliFitnessAE.Web.Admin.Controllers
+{
+    [AbpMvcAuthorize]
+    [Area("Admin")]
+    public class HomeController : AliFitnessAEControllerBase
+    {
+        private readonly ILookupAppService _lookupAppService;
+        private readonly UserManager _userManager;
+
+        public HomeController(
+             ILookupAppService lookupAppService,
+              UserManager userManager)
+        {
+            _lookupAppService = lookupAppService;
+            _userManager = userManager;
+        }
+        public ActionResult Index()
+        {
+            var scale = new Scale(_lookupAppService);
+            var model = new HomeIndexCommonVModel
+            {
+                UserTrackingFilter = new UserTrackingFilter() { MeasurementScale = scale }, 
+            };
+            if (_userManager.IsAdminUser(AbpSession.UserId.Value))
+            {
+                model.UserTrackingFilter.UserList = _lookupAppService.GetUserComboboxItems().Result.Items.Select(p => p.ToSelectListItem()).ToList();
+                model.UserTrackingFilter.UserList.Insert(0, new SelectListItem { Value = string.Empty, Text = L("All"), Selected = true });
+            }
+            return View(model);
+        }
+        [HttpPost]
+        public PartialViewResult LoadUserTrackingChartPartialView(UserTrackingFilter searchModel)
+        {
+            searchModel.MeasurementScale = new Scale(_lookupAppService); 
+            return PartialView("_UserTrackingDashboardSection", searchModel);
+        }
+        [HttpPost]
+        public IActionResult LoadViewComponent(ViewComponentVModel model)
+        {
+            //if (!model.SearchModel.UserId.HasValue)
+            //    model.SearchModel.UserId = (int?)AbpSession.UserId.Value;
+            return ViewComponent(model.ViewComponentName, model);
+        }
+        [HttpPost]
+        public IActionResult LoadViewComponentUserTracking(UserTrackingFilter model)
+        {
+            if(model.MeasurementScale==null)
+                model.MeasurementScale = new Scale(_lookupAppService);
+            string measurementScaleConst = string.Empty;
+            if (model.MeasurementScaleLKDId == 0)
+            {
+                if (model.BodyPart == EnumUserTrackingBodyPart.Height)
+                    measurementScaleConst = LookUpDetailConst.Cm;
+                else if (model.BodyPart == EnumUserTrackingBodyPart.Weight)
+                    measurementScaleConst = LookUpDetailConst.Kg;
+                else
+                    measurementScaleConst = LookUpDetailConst.Cm;
+                model.MeasurementScaleLKDId = _lookupAppService.GetAllLookDetail(null, measurementScaleConst).Result.Items.First().Id;
+            }
+            return ViewComponent("UserTrackingDetailTab", model);
+        }
+
+        [HttpPost]
+        public IActionResult LoadChartViewComponent(UserTrackingChartViewModel model)
+        {
+            return ViewComponent("UserTrackingChart", model);
+        }
+    }
+}

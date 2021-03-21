@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAW2rwLvwkvkKJfmpiYZ2/OwAAAAACAAAAAAAQZgAAAAEAACAAAADFSTsQh9H32hm3VL5MIxDpzd/FfpWp+SzijY9hmTc17gAAAAAOgAAAAAIAACAAAADUZBWjnnCHG1nznKejWN2m3ZjSM6jhKMPAiLuuDozpT4AAAABN+JhCJUv4XpO0BhuMuC+PsWAxrao+BfSurHdUHnPvfdsc5BHfgvNRvVi5qAwe5YQeEZROZz/SOSD8Pn2ztl9EkQpqxFge6M1AdQ0v9eBwPJe+7fjlqd3DBHuMlU7X2RQ/3+iLbQX0zEfWIpnlfJsWiI/yja1brskY+AnkOFTL5kAAAAAFZVKTFTAVoGqBzP6t+6VJYuHERlP8SlQ1vXZC/DUAdgRsqluSEa2HSpJdXt0RpDNv5fqjf6JnEoPZmNnzBVqg</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="Default">
+      <Value>Server=DESKTOP-AJ3OKQG\SQL2019%3b Database=AliFitnessAE%3b Trusted_Connection=True%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

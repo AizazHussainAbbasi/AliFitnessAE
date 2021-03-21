@@ -1,0 +1,89 @@
+﻿@using AliFitnessAE.Web.Startup
+@{
+    ViewBag.Title = L("UserTracking");
+    ViewBag.CurrentPageName = PageNames.UserTracking;
+}
+@section scripts
+{
+    <script>
+    var isAdminLoggedIn =  @Html.Raw(Json.Serialize(@ViewBag.IsAdminLoggedIn));
+    </script>
+    <environment names="Development">
+        <script src="~/view-resources/Admin/Views/UserTracking/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Admin/Views/UserTracking/Index.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@L("UserTracking")</h1>
+            </div>
+            <div class="col-sm-6">
+                @*@if (IsGranted("Pages.UserTracking.CreateUserTracking"))
+                    {*@
+                <a href="javascript:;" data-toggle="modal" data-target="#UserTrackingCreateModal" class="btn bg-blue float-sm-right">
+                    <i class="fa fa-plus-square"></i>
+                    @L("Create")
+                </a>
+                @*}*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @await Html.PartialAsync("Index.AdvancedSearch.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table id="UserTrackingTable" class="table table-striped table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>@L("User")</th>
+                                        <th>@L("Action")</th>
+                                        <th>@L("Date")</th>
+                                        <th>@L("Status")</th>
+                                        <th>@L("Height")</th>
+                                        <th>@L("Weight")</th>
+                                        <th>@L("Hip")</th>
+                                        <th>@L("BellyButtonWaist")</th>
+                                        <th>@L("HipBoneWaist")</th>
+                                        <th>@L("Chest")</th>
+                                        <th>@L("RightArm")</th>
+                                        <th>@L("LeftArm")</th>
+                                        <th>@L("RightThigh")</th>
+                                        <th>@L("LeftThigh")</th>
+                                        <th>@L("RightCalve")</th>
+                                        <th>@L("LeftCalve")</th>
+                                        <th>@L("RightForeArm")</th>
+                                        <th>@L("LeftForeArm")</th>
+                                        <th style="width: 150px">@L("Actions")</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@await Html.PartialAsync("_CreateModal.cshtml")
+<div id="devEditModal"></div>

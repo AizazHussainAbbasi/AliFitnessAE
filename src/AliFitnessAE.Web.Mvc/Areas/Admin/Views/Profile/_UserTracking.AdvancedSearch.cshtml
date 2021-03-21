@@ -1,0 +1,29 @@
+﻿@model UserTrackingFilter
+
+<div class="abp-advanced-search">
+    <form id="userTrackingProfileSearchForm" class="form-horizontal">
+        <div class="input-group"> 
+            <input type="hidden" name="userIdEnyc" value="@Model.UserIdEnyc" />
+            <div class="col-sm-2 mt-2">
+                <label for="fromDate" class="col-form-label mt-2">Select From</label>
+                <input type="text" class="form-control" id="userTrackingProfileSearchFromDate" name="fromDate" required>
+            </div>
+            <div class="col-sm-2 mt-2">
+                <label for="toDate" class="col-form-label mt-2">Select To</label>
+                <input type="text" class="form-control" id="userTrackingProfileSearchToDate" name="toDate" required>
+            </div>
+            <div class="col-sm-2 mt-2">
+                <label for="userTrackingProfileChartType" class="col-form-label mt-2">Type</label>
+                <select class="form-control" id="userTrackingProfileChartType" name="userTrackingProfileChartType">
+                    <option value="line" selected>Line</option>
+                    <option value="bar">Bar</option>
+                </select>
+            </div>
+            <div class="col-sm-2 mt-5">
+                <button type="button" class="btn bg-blue btn-search-userTracking-profile m-0">
+                    <span class="fas fa-search" aria-hidden="true"></span>
+                </button>
+            </div> 
+        </div>
+    </form>
+</div>

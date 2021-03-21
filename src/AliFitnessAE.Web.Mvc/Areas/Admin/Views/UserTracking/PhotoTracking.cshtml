@@ -1,0 +1,68 @@
+﻿@using AliFitnessAE.Web.Startup
+@model PhotoTrackingIndexViewModel
+@{
+    ViewBag.Title = L("Photo");
+    ViewBag.CurrentPageName = PageNames.PhotoTracking;
+}
+@section scripts
+{
+    <environment names="Development">
+        <script src="~/view-resources/Admin/Views/UserTracking/PhotoTracking.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Admin/Views/UserTracking/PhotoTracking.min.js" asp-append-version="true"></script>
+    </environment>
+}
+<section class="content-header">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>@L("Photo")</h1>
+            </div>
+            <div class="col-sm-6">
+                @*@if (IsGranted("Pages.UserTracking.CreateUserTracking"))
+                    {*@
+                <a href="javascript:;" id="hrefPhotoTrackingCreate" @*data-toggle="modal" data-target="#PhotoTrackingCreateModal"*@ class="btn bg-blue float-sm-right">
+                    <i class="fa fa-plus-square"></i>
+                    @L("Create")
+                </a>
+                @*}*@
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-md-12">
+                                @await Html.PartialAsync("Index.AdvancedSearch.cshtml")
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div id="divPhotoTrackingList" class="table-responsive">
+                            @await Component.InvokeAsync("PhotoTracking", new ViewComponentVModel { Module = LookUpDetailConst.PhotoTracking, SearchModel = new AliFitnessAE.Dto.PagedResultRequestExtDto() { UserId = null } });
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@*@await Html.PartialAsync("_CreatePhotoTrackingModal.cshtml", Model)*@
+
+@*<div class="modal fade right" id="PhotoTrackingCreateModal" tabindex="-1" role="dialog" aria-labelledby="PhotoTrackingCreateModalLabel" data-backdrop="static">
+        <div id="devCreatePhotoTrackingModalContent" class="modal-dialog modal-full-height modal-right modal-lg" role="document">
+        </div>
+    </div>*@
+
+
+
+<div id="divCreatePhotoTrackingModal"></div>

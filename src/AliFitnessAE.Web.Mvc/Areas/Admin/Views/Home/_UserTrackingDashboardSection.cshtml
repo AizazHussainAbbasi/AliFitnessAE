@@ -1,0 +1,132 @@
+﻿@model UserTrackingFilter
+
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>Height Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_Height" data-target-canvas="canvas_UserTrackingDashboardChartId_Height" data-body-part="@EnumUserTrackingBodyPart.Height" asp-items="@Model.MeasurementScale.ScaleHeight"> </select>
+
+    <div class="chart" id="div_UserTrackingDashboardChartId_Height">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvas_UserTrackingDashboardChartId_Height", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.Height, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>Weight Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_Weight" data-target-canvas="canvasUserTrackingDashboardChartId_Weight" data-body-part="@EnumUserTrackingBodyPart.Weight" asp-items="@Model.MeasurementScale.ScaleWeight"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_Weight">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_Weight", MeasurementScaleLKDId = (int)EnumLookUpDetail.Kg, UserTrackingBodyPart = EnumUserTrackingBodyPart.Weight, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>Hip Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_Hip" data-target-canvas="canvasUserTrackingDashboardChartId_Hip" data-body-part="@EnumUserTrackingBodyPart.Hip" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_Hip">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_Hip", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.Hip, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>BellyButtonWaist Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_BellyButtonWaist" data-target-canvas="canvasUserTrackingDashboardChartId_BellyButtonWaist" data-body-part="@EnumUserTrackingBodyPart.BellyButtonWaist" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_BellyButtonWaist">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_BellyButtonWaist", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.BellyButtonWaist, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>HipBoneWaist Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_HipBoneWaist" data-target-canvas="canvasUserTrackingDashboardChartId_HipBoneWaist" data-body-part="@EnumUserTrackingBodyPart.HipBoneWaist" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_HipBoneWaist">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_HipBoneWaist", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.HipBoneWaist, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>Chest Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_Chest" data-target-canvas="canvasUserTrackingDashboardChartId_Chest" data-body-part="@EnumUserTrackingBodyPart.Chest" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_Chest">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_Chest", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.Chest, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>RightArm Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_RightArm" data-target-canvas="canvasUserTrackingDashboardChartId_RightArm" data-body-part="@EnumUserTrackingBodyPart.RightArm" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_RightArm">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_RightArm", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.RightArm, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>LeftArm Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_LeftArm" data-target-canvas="canvasUserTrackingDashboardChartId_LeftArm" data-body-part="@EnumUserTrackingBodyPart.LeftArm" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_LeftArm">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_LeftArm", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.LeftArm, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>RightThigh Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_RightThigh" data-target-canvas="canvasUserTrackingDashboardChartId_RightThigh" data-body-part="@EnumUserTrackingBodyPart.RightThigh" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_RightThigh">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_RightThigh", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.RightThigh, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>LeftThigh Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_LeftThigh" data-target-canvas="canvasUserTrackingDashboardChartId_LeftThigh" data-body-part="@EnumUserTrackingBodyPart.LeftThigh" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_LeftThigh">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_LeftThigh", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.LeftThigh, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>RightCalve Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_RightCalve" data-target-canvas="canvasUserTrackingDashboardChartId_RightCalve" data-body-part="@EnumUserTrackingBodyPart.RightCalve" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_RightCalve">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_RightCalve", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.RightCalve, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>LeftCalve Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_LeftCalve" data-target-canvas="canvasUserTrackingDashboardChartId_LeftCalve" data-body-part="@EnumUserTrackingBodyPart.LeftCalve" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_LeftCalve">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_LeftCalve", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.LeftCalve, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>RightForeArm Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_RightForeArm" data-target-canvas="canvasUserTrackingDashboardChartId_RightForeArm" data-body-part="@EnumUserTrackingBodyPart.RightForeArm" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_RightForeArm">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_RightForeArm", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.RightForeArm, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+<div class="col-md-6">
+    <p class="text-center">
+        <strong>LeftForeArm Tracking</strong>
+    </p>
+    <select class="form-control mdb-select ddl_UserTrackingDashboardChartScale" data-target-div="div_UserTrackingDashboardChartId_LeftForeArm" data-target-canvas="canvasUserTrackingDashboardChartId_LeftForeArm" data-body-part="@EnumUserTrackingBodyPart.LeftForeArm" asp-items="@Model.MeasurementScale.ScaleOther"> </select>
+    <div class="chart" id="div_UserTrackingDashboardChartId_LeftForeArm">
+        @await Component.InvokeAsync("UserTrackingChart", new UserTrackingChartViewModel { HtmlControlId = "canvasUserTrackingDashboardChartId_LeftForeArm", MeasurementScaleLKDId = (int)EnumLookUpDetail.Cm, UserTrackingBodyPart = EnumUserTrackingBodyPart.LeftForeArm, UserId = Model.UserId, ChartType = Model.ChartType, FromDate = Model.FromDate, ToDate = Model.ToDate });
+    </div>
+</div>
+
+
+ 

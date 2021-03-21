@@ -1,0 +1,29 @@
+﻿@using AliFitnessAE.Web.Models.Common.Admin.Modals
+@using AliFitnessAE.Web.Models.Admin.Users
+<div class="abp-advanced-search">
+    <form id="UserTrackingSearchForm" class="form-horizontal">
+        <div class="input-group">
+            @if (@Model.UserList != null)
+            {
+                <label for="SearchFormUserList" class="col-form-label mt-2">Select User</label>
+                <div class="col-sm-2 mt-2">
+                    <select class="form-control" id="SearchFormUserList" name="searchFormUserList" asp-items="@Model.UserList"> </select>
+                </div>
+            }
+            <label for="SearchFromDate" class="col-form-label mt-2">Select From</label>
+            <div class="col-sm-2 mt-2">
+                <input type="text" class="form-control" id="SearchFromDate" name="fromDate" required>
+            </div>
+            <label for="SearchToDate" class="col-form-label mt-2">Select To</label>
+            <div class="col-sm-2 mt-2">
+                <input type="text" class="form-control" id="SearchToDate" name="toDate" required>
+            </div>
+            <div class="input-group-prepend">
+                <button type="button" class="btn bg-blue btn-search">
+                    <span class="fas fa-search" aria-hidden="true"></span>
+                </button>
+            </div>
+            @*<input type="text" name="Keyword" class="form-control txt-search" />*@
+        </div>
+    </form>
+</div>

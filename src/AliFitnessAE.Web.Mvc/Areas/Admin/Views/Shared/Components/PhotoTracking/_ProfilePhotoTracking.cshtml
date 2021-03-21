@@ -1,0 +1,42 @@
+﻿@using AliFitnessAE.Web.Resources
+@model PhotoTrackingViewModel
+     <!-- TABLE: LATEST ORDERS -->
+<!-- Main content -->
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="card card-primary">
+                    <div class="card-header">
+                        <div class="card-title">
+                            @Model.DocumentType
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            @foreach (var item in Model.DocumentList.Items.OrderBy(x => x.CreationTime))
+                            {
+
+                                @foreach (var document in item.DocumentList)
+                                {
+                                    @if (document.BusinessDocumentAttachmentDto.Count > 0)
+                                    {
+                                        @foreach (var attachment in document.BusinessDocumentAttachmentDto)
+                                        {
+                                            <div class="col-md-4">
+                                                <label class="title">@item.CreationTime.ToString("dd MMM yyyy")</label>
+                                                <a href="~/images/@attachment.FilePath" data-toggle="lightbox" data-title="@document.DocumentType.DocumentTypeConst" data-gallery="gallery">
+                                                    <img src="~/images/@attachment.FilePath?text=@attachment.Id" width="150" height="300" class="mr-5" alt="@document.DocumentType.DocumentTypeConst" />
+                                                </a>
+                                            </div> 
+                                        }
+                                    }
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- /.container-fluid -->
+</section> 

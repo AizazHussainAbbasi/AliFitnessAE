@@ -1,0 +1,15 @@
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll.config
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.deps.json
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.runtimeconfig.json
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.runtimeconfig.dev.json
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.pdb
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AliFitnessAE.Core.dll
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\bin\Debug\netcoreapp3.1\AliFitnessAE.Core.pdb
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.csprojAssemblyReference.cache
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll.config
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.AssemblyInfoInputs.cache
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.AssemblyInfo.cs
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.csproj.CopyComplete
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.EntityFrameworkCore\obj\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.pdb

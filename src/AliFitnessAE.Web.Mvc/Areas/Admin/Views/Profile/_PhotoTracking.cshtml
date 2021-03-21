@@ -1,0 +1,68 @@
+﻿@model ProfileVModel
+
+@section scripts
+{
+    @*<environment names="Development">
+        <script src="~/view-resources/Admin/Views/Profile/Index.js" asp-append-version="true"></script>
+    </environment>
+
+    <environment names="Staging,Production">
+        <script src="~/view-resources/Admin/Views/_Bundles/profile-index.min.js" asp-append-version="true"></script>
+    </environment>*@
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Photo Tracking</h5>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                        <i class="fas fa-minus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <!-- /.card-header -->
+            <div class="card-body">
+                @*<div class="row mb-5">
+                    @await Html.PartialAsync("_UserTracking.AdvancedSearch", @Model.UserTrackingFilter)
+                </div>*@
+                <div class="row">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                        <div class="nav flex-column nav-tabs h-100" id="profile-picture-tracking-tabs" role="tablist" aria-orientation="vertical">
+                            @{
+                                dynamic _businessDocumentDto = null;
+                            }
+                            @for (int i = 0; i < Model.PhotoTrackingBusinessDocumentList.Count; i++)
+                            {
+                                var item = Model.PhotoTrackingBusinessDocumentList[i];
+                                if (i == 0)
+                                {
+                                    _businessDocumentDto = @item;
+                                    <a class="nav-link active" id="vert-tabs-@item.DocumentType.DocumentTypeConst-tabs" data-toggle="pill" href="#vert-tabs-@item.DocumentType.DocumentTypeConst" data-BusinessEntityId="@item.DocumentTypeId" data-doc-type="@item.DocumentType.DocumentTypeConst"  role="tab" aria-controls="vert-tabs-Height" aria-selected="true">@L(@item.DocumentType.DocumentTypeConst)</a>
+                                }
+                                else
+                                {
+                                    <a class="nav-link" id="vert-tabs-@item.DocumentType.DocumentTypeConst-tab" data-toggle="pill" href="#vert-tabs-@item.DocumentType.DocumentTypeConst" data-BusinessEntityId="@item.DocumentTypeId" role="tab" aria-controls="vert-tabs-@item.DocumentType.DocumentTypeConst" data-doc-type="@item.DocumentType.DocumentTypeConst" aria-selected="false">@L(@item.DocumentType.DocumentTypeConst)</a>
+                                }
+                            }
+                        </div>
+                    </div>
+                    <div class="col-sm-9 col-md-9 col-lg-9">
+                        <div class="tab-content" id="profile-picture-trackingContent">
+                            <div class="tab-pane text-left fade show active" id="tab-profile-picture-trackingContent" role="tabpanel" aria-labelledby="vert-tabs-@_businessDocumentDto.DocumentType.DocumentTypeConst-tab">
+                                @await Component.InvokeAsync("PhotoTracking", new ViewComponentVModel { BusinessEntityId = _businessDocumentDto.DocumentTypeId, Module = LookUpDetailConst.PhotoTracking, ViewName = "_ProfilePhotoTracking", SearchModel = Model.UserTrackingFilter });
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.row -->
+            </div>
+            <!-- ./card-body -->
+        </div>
+        <!-- /.card -->
+    </div>
+    <!-- /.col -->
+</div>

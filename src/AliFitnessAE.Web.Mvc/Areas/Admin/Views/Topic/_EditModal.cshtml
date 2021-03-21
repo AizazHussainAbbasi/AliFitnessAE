@@ -1,0 +1,66 @@
+﻿@using AliFitnessAE.Web.Models.Common.Admin.Modals
+@using AliFitnessAE.TopicContent.Dto
+@model GetTopicForEditOutput
+@{
+    Layout = null;
+}
+@await Html.PartialAsync("../Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditTopic")))
+<form name="TopicEditForm" Topic="form" class="form-horizontal">
+    <input type="hidden" name="Id" value="@Model.Topic.Id" />
+    <div class="modal-body">
+        <div class="form-group row required">
+            <label class="col-md-3 col-form-label" for="topicConst">@L("TopicConst")</label>
+            <div class="col-md-9">
+                <input id="topicConst" class="form-control" type="text" name="TopicConst" value="@Model.Topic.TopicConst" required maxlength="32" minlength="2">
+            </div>
+        </div> 
+        <div class="form-group row required">
+            <label class="col-md-3 col-form-label" for="title">@L("Title")</label>
+            <div class="col-md-9">
+                <input id="title" type="text" name="Title" value="@Model.Topic.Title" class="form-control" required maxlength="32" minlength="2">
+            </div>
+        </div>
+        <div class="form-group row required">
+            <label class="col-md-3 col-form-label" for="body">@L("TopicBody")</label>
+            <div class="col-md-9">
+                <textarea class="editRichTextControl form-control" id="body" name="Body">@Model.Topic.Body</textarea> 
+            </div>
+        </div>
+        <div class="form-group row required">
+            @*<input type="checkbox" id="published" name="Published" value="@Model.Topic.Published"  class="filled-in"  @(Model.Topic.Published ? "checked" : "") />
+            <label for="published">@L("Published")</label>*@
+
+            <label class="col-md-3 col-form-label" for="published">@L("Published")</label>
+            <div class="col-md-9">
+                <input type="checkbox" id="published" name="Published" value="@Model.Topic.Published" class="form-control"  @(Model.Topic.Published ? "checked" : "")/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="incluedintopmenu">@L("IncluedInTopMenu")</label>
+            <div class="col-md-9">
+                <input type="checkbox" id="incluedintopmenu" name="IncluedInTopMenu" value="@Model.Topic.IncluedInTopMenu" class="form-control"  @(Model.Topic.IncluedInTopMenu ? "checked" : "") />
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="incluedinfootercolumn1">@L("IncluedInFooterColumn1")</label>
+            <div class="col-md-9">
+                <input type="checkbox"  id="incluedinfootercolumn1" name="IncluedInFooterColumn1"  value="@Model.Topic.IncluedInFooterColumn1" class="form-control"  @(Model.Topic.IncluedInFooterColumn1 ? "checked" : "")/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="incluedinfootercolumn2">@L("IncluedInFooterColumn2")</label>
+            <div class="col-md-9">
+                <input type="checkbox"  id="incluedinfootercolumn2" name="IncluedInFooterColumn2" value="@Model.Topic.IncluedInFooterColumn2" class="form-control"  @(Model.Topic.IncluedInFooterColumn2 ? "checked" : "")/>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="incluedinfootercolumn3">@L("IncluedInFooterColumn3")</label>
+            <div class="col-md-9">
+                <input type="checkbox"  id="incluedinfootercolumn3" name="IncluedInFooterColumn3" value="@Model.Topic.IncluedInFooterColumn3" class="form-control" @(Model.Topic.IncluedInFooterColumn3 ? "checked" : "")/>
+            </div>
+        </div>
+    </div>
+    @await Html.PartialAsync("../Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+</form>
+
+<script src="~/view-resources/Admin/Views/Topic/_EditModal.js" asp-append-version="true"></script>

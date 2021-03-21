@@ -1,0 +1,27 @@
+﻿@using AliFitnessAE.Web.Models.Common.Admin.Modals
+@using AliFitnessAE.AppUserTypeDto
+@model GetUserTypeForEditOutput
+@{
+    Layout = null;
+}
+@await Html.PartialAsync("../Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditUserType")))
+<form name="UserTypeEditForm" UserType="form" class="form-horizontal">
+    <input type="hidden" name="Id" value="@Model.UserType.Id" />
+    <div class="modal-body">
+        <div class="form-group row required">
+            <label class="col-md-3 col-form-label" for="UserTypeConst">@L("UserTypeConst")</label>
+            <div class="col-md-9">
+                <input id="UserTypeConst" class="form-control" type="text" name="UserTypeConst" value="@Model.UserType.UserTypeConst" required maxlength="32" minlength="2">
+            </div>
+        </div> 
+        <div class="form-group row required">
+            <label class="col-md-3 col-form-label" for="userTypeName">@L("UserTypeName")</label>
+            <div class="col-md-9">
+                <input id="userTypeName" type="text" name="UserTypeName" value="@Model.UserType.UserTypeName" class="form-control" required maxlength="32" minlength="2">
+            </div>
+        </div> 
+    </div>
+    @await Html.PartialAsync("../Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+</form>
+
+<script src="~/view-resources/Admin/Views/UserType/_EditModal.js" asp-append-version="true"></script>

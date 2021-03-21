@@ -1,0 +1,45 @@
+﻿@model UserTrackingFilter
+
+<div class="abp-advanced-search">
+    <form id="UserTrackingDashboardChartSearchForm" class="form-horizontal">
+        <div class="input-group">
+            @if (@Model.UserList != null)
+            {
+                <div class="col-sm-3 mt-2">
+                    <label for="userTrackingDashboardSearchFormUserList" class="col-form-label mt-2">Select User</label>
+                    <select class="form-control" id="userTrackingDashboardSearchFormUserList" name="userTrackingDashboardSearchFormUserList" asp-items="@Model.UserList"> </select>
+                </div>
+            }
+            else
+            {
+                <input type="hidden" name="userTrackingDashboardSearchFormUserList" value="@AbpSession.UserId" />
+
+                @*<select class="form-control" id="userTrackingDashboardSearchFormUserList" name="userTrackingDashboardSearchFormUserList">
+                    <option value="@AbpSession.UserId">@AbpSession.UserId</option>
+                </select>*@
+
+            }
+            <div class="col-sm-2 mt-2">
+                <label for="fromDate" class="col-form-label mt-2">Select From</label>
+                <input type="text" class="form-control" id="userTrackingDashboardSearchFromDate" name="fromDate" required>
+            </div>
+            <div class="col-sm-2 mt-2">
+                <label for="toDate" class="col-form-label mt-2">Select To</label>
+                <input type="text" class="form-control" id="userTrackingDashboardSearchToDate" name="toDate" required>
+            </div>
+            <div class="col-sm-2 mt-2">
+                <label for="userTrackingDashboardChartType" class="col-form-label mt-2">Type</label>
+                <select class="form-control" id="userTrackingDashboardChartType" name="userTrackingDashboardChartType">
+                    <option value="line" selected>Line</option>
+                    <option value="bar">Bar</option>
+                </select>
+            </div>
+            <div class="col-sm-2 mt-5">
+                <button type="button" class="btn bg-blue btn-search-userTracking-dashboard-charts m-0">
+                    <span class="fas fa-search" aria-hidden="true"></span>
+                </button>
+            </div>
+            @*<input type="text" name="Keyword" class="form-control txt-search" />*@
+        </div>
+    </form>
+</div>

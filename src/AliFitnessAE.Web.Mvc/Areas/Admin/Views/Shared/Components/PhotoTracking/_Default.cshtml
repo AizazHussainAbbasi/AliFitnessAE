@@ -1,0 +1,51 @@
+﻿@using AliFitnessAE.Web.Resources
+@model PhotoTrackingViewModel
+     <!-- TABLE: LATEST ORDERS -->
+
+@foreach (var item in Model.DocumentList.Items)
+{
+    <div id="divPhotoTrackingList" class="card card-primary">
+        <div class="card-header">
+            <h3 class="card-title">@item.CreationTime.ToString("dddd, dd MMMM yyyy") - @item.User.FullName</h3>
+            <div class="card-tools">
+                <button type="button" class="btn btn-tool waves-effect waves-light" data-card-widget="collapse">
+                    <i class="fas fa-minus"></i>
+                </button>
+                @if (!(item.Status.StatusConst == "Approved") || ViewBag.IsAdminLoggedIn)
+                {
+                    <button type="button" data-id="@item.Id" class="btn btn-tool waves-effect waves-light hrefPhotoTrackingEdit">
+                        <i class="fas fa-edit"></i>
+                    </button>
+                }
+                @if (ViewBag.IsAdminLoggedIn)
+                {
+                    var cssClass = item.Status.StatusConst == "Approved" ? "fas fa-thumbs-down" : "fas fa-thumbs-up";
+                    var approveStatusToolTip = item.Status.StatusConst == "Approved" ? L("UnApproveStatusToolTip"): L("ApproveStatusToolTip");
+                    <text> <button type="button" data-id="@item.Id" data-userTracking-status="@item.Status.StatusConst" class="btn btn-tool waves-effect waves-light updatePhotoTrackingStatus" data-toggle="tooltip" data-placement="right"  title="@approveStatusToolTip">
+                            <i class="@cssClass"></i>
+                        </button></text>
+                }
+            </div>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body p-0" style="display: block;">
+            @foreach (var document in item.DocumentList)
+            {
+                @if (document.BusinessDocumentAttachmentDto.Count > 0)
+                {<label>@document.DocumentType.DocumentTypeConst</label>}
+                <div class="row">
+                    @foreach (var attachment in document.BusinessDocumentAttachmentDto)
+                    {
+                        <div class="col-sm-2">
+                            <a href="~/images/@attachment.FilePath" data-toggle="lightbox" data-title="@document.DocumentType.DocumentTypeConst" data-gallery="gallery">
+                                <img src="~/images/@attachment.FilePath?text=@attachment.Id" class="img-fluid mb-2" alt="@document.DocumentType.DocumentTypeConst" rel="lightbox[gallery]"/>
+                            </a>
+                        </div>
+                    }
+                </div>
+            }
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+}

@@ -1,0 +1,216 @@
+﻿@using AliFitnessAE.Web.Areas.Admin.Views.Shared.Components.DocumentUploader
+@model DocumentUploaderViewModel
+
+@foreach (var businessDocument in Model.DocumentList)
+{
+    <div class="row">
+        <form class="md-form" action="#">
+            <div class="file-field">
+                <div class="btn btn-primary btn-sm float-left">
+                    <span>@businessDocument.DocumentType.DocumentTypeName</span>
+                    @if (!Model.IsReadOnly)
+                    {
+                        <input type="file" id="businessDocumentInputControl-@businessDocument.Id-@Model.BusinessEntityId" data-outerDivId="outerDivDocumentInputControl-@Model.BusinessEntityId-@businessDocument.DocumentType.DocumentTypeConst" name="files[]" multiple="multiple" accept="image/*" title="Select Images To Be Uploaded" onChange="LoadImage(this, @Model.BusinessEntityId,@businessDocument.Id, @businessDocument.DocumentTypeId )">
+                    }
+                </div>
+            </div>
+        </form>
+        <br>
+        <div class="row container" id="outerDivDocumentInputControl-@Model.BusinessEntityId-@businessDocument.DocumentType.DocumentTypeConst">
+            @for (int i = 0; i < businessDocument.BusinessDocumentAttachmentDto.Count(); i++)
+            {
+                var attachment = businessDocument.BusinessDocumentAttachmentDto[i];
+                <div class="col-md-4 mb-2 previewImgControl" id='previewImgouterDivDocumentInputControl-@Model.BusinessEntityId-@businessDocument.DocumentType.DocumentTypeConst+@i'>
+                    @if (!Model.IsReadOnly)
+                    {
+                        <span class='previewImgDeleteControl' onClick='deletePreview(this,  @i, @attachment.Id ,@Model.BusinessEntityId,@businessDocument.Id)'>
+                            <i class="fa fa-trash" aria-hidden="true"></i>
+                        </span>
+                    }
+                    <a href="#" class="previewImageView">
+                        <img src="~/images/@attachment.FilePath" alt="@attachment.FileName">
+                    </a>
+                    @*<a href="~/images/@attachment.FilePath" download>
+                            <img src="~/images/@attachment.FilePath" alt="@attachment.FileName">
+                        </a>*@
+                </div>
+            }
+        </div>
+    </div>
+}
+<div class="modal-footer justify-content-between">
+    <button type="button" class="btn btn-default close-button" data-dismiss="modal">@L("Ok")</button>
+</div>
+
+@*<a href="~/images/@attachment.FilePath" download>
+        <img src="~/images/@attachment.FilePath" alt="@attachment.FileName">
+    </a>*@
+@*<a href="~/images/@attachment.FilePath" download>
+        <i class="fa fa-download" aria-hidden="true"></i>
+    </a>*@
+@*<a href="#" class="imageView">
+        <img src="~/images/@attachment.FilePath" alt="@attachment.FileName">
+    </a>*@
+<div class="modal fade" id="imagePreviewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body overflow-auto">
+                <div class="row">
+                    <a href="#" id="imageModelPreviewDonwload" download>
+                        <i class="fa fa-download" aria-hidden="true"></i>
+                    </a>
+                    &nbsp; | &nbsp;
+                    <button type="button" class="close" id="closeImagrePreviewButton" aria-label="Close"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                </div>
+                <div class="col-md-12">
+                    <img src="" id="imageModelPreviewSrc">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@*<span class='zoom' id='zoomImagePreview'>
+        <img src="" class="imagepreviewSrc" style="width: 100%;">
+    </span>*@
+
+<script>
+    $(function () {
+        var _$ImagePreviewModal = $('#imagePreviewModal');
+
+        //_$ImagePreviewModal.on('shown.bs.modal', () => {
+        //    $(this).find('.modal-body').css({
+        //        width: 'auto', //probably not needed
+        //        height: 'auto', //probably not needed
+        //        'max-height': '100%'
+        //    });
+        //    // $('#zoomImagePreview').zoom({ on: 'click' });
+        //}).on('hidden.bs.modal', () => {
+        //    //alert('previwemodal hide');
+        //    // $('#zoomImagePreview').trigger('zoom.destroy');
+        //});
+
+        //$(document).on("click", ".previewImageView", function () {
+        //    $('#imageModelPreviewSrc').attr('src', $(this).find('img').attr('src'));
+        //    $('#imageModelPreviewDonwload').attr('href', $(this).find('img').attr('src'));
+        //    _$ImagePreviewModal.modal('show');
+        //    $('.modal').css('overflow-y', 'auto');
+        //    //$('#zoomImagePreview').zoom();
+        //    //$('#ex3').zoom({ on:'click' });
+        //    //$('#ex4').zoom({ on:'toggle' });
+        //});
+        $(document).on("click", "#closeImagrePreviewButton", function () {
+            _$ImagePreviewModal.modal('hide');
+        });
+    });
+
+    l = abp.localization.getSource('AliFitnessAE');
+    function deletePreview(ele, i, attahcmentId, businessEntityId, businessDocumentId) {
+        abp.message.confirm(
+            abp.utils.formatString(
+                l('AreYouSureWantToDelete'),
+                l('Image')
+            ),
+            null,
+            (isConfirmed) => {
+                if (isConfirmed) {
+                    var deleteAttachment = {
+                        attachmentId: attahcmentId,
+                        businessEntityId: businessEntityId,
+                        businessDocumentId: businessDocumentId
+                    };
+                    abp.ajax({
+                        url: '/Admin/Document/Delete',
+                        data: JSON.stringify(deleteAttachment)
+                    }).done(function (data) {
+                        $(ele).parent().remove();
+                        abp.notify.info(l('SuccessfullyDeleted'));
+                    }).fail(function (jqXHR) {
+                        errorHandler(jqXHR);
+                    });
+                }
+            }
+        );
+    }
+    function LoadImage(obj, businessEntityId, businessDocumentId, documentTypeId) {
+        var outerDivId = $(obj).attr("data-outerDivId");
+
+        if (obj.files.length >= 1) {
+            $.each(obj.files, function (i, img) {
+                try {
+                    debugger;
+                    var formData = new FormData();
+                    formData.append("image", img);
+                    formData.append("businessEntityId", businessEntityId);
+                    formData.append("businessDocumentId", businessDocumentId);
+                    formData.append("documentTypeId", documentTypeId);
+
+                    $.ajax(
+                        {
+                            url: "/admin/document/upload",
+                            data: formData,
+                            processData: false,
+                            contentType: false,
+                            type: "POST",
+                            success: function (data) {
+                                if (data.success) {
+                                    debugger;
+                                    var previewImgControlId = "previewImg" + outerDivId + i;
+                                    var reader = new FileReader(),
+                                        newElement = $("<div id='" + previewImgControlId + "' class='col-md-4 previewImgControl'><img /></div>"),
+                                        deleteBtn = $("<span class='previewImgDeleteControl' onClick='deletePreview(this, " + i + "," + data.result.id + "," + businessEntityId + "," + businessDocumentId + ")'><i class='fa fa-trash' aria-hidden='true'></i></span>").prependTo(newElement),
+                                        preview = newElement.find("img");
+
+                                    reader.onloadend = function () {
+                                        preview.attr("src", reader.result);
+                                        preview.attr("alt", img.name);
+                                    };
+
+                                    if (img) {
+                                        reader.readAsDataURL(img);
+                                    } else {
+                                        preview.src = "";
+                                    }
+                                    newElement.appendTo("#" + outerDivId + "");
+                                    abp.notify.info(l('SavedSuccessfully'));
+                                }
+                                else
+                                    abp.notify.info(l('Error'));
+                            },
+                            error: function (e) {
+                                abp.notify.info(l('Error'));
+                            }
+                        }
+                    );
+
+                } catch (e) {
+                    console.log(e.message);
+                }
+            });
+        }
+    }
+    function uploadFiles() {
+        debugger;
+        var objects = $("[id^=businessDocumentInputControl]");
+        objects.files;
+        var input = document.getElementById(inputId);
+        var files = input.files;
+        var formData = new FormData();
+
+        for (var i = 0; i != files.length; i++) {
+            formData.append("files", files[i]);
+        }
+
+        $.ajax(
+            {
+                url: "/uploader",
+                data: formData,
+                processData: false,
+                contentType: false,
+                type: "POST",
+                success: function (data) {
+                    alert("Files Uploaded!");
+                }
+            }
+        );
+    }
+</script>

@@ -1,0 +1,32 @@
+﻿@using AliFitnessAE.Web.Resources
+@using AliFitnessAE.Web.Areas.Admin.Views.Shared.Components.UserTrackingChart
+@model ChartJsVModel
+
+<div class="chart-container">
+    <canvas id="@Model.HtmlControlId"></canvas>
+</div>
+
+<script>
+
+    if (document.readyState !== 'loading') {
+        console.log('document is already ready, just execute code here');
+        var controlId =  @Html.Raw(Json.Serialize(@Model.HtmlControlId));
+        var ctx = document.getElementById(controlId);
+        var myChart = new Chart(ctx, @Html.Raw(Model.ChartJson) );
+    }
+    else {
+         document.addEventListener('DOMContentLoaded', (event) => {
+             console.log('document was not ready, place code here');
+             var controlId =  @Html.Raw(Json.Serialize(@Model.HtmlControlId));
+             var ctx = document.getElementById(controlId);
+             var myChart = new Chart(ctx, @Html.Raw(Model.ChartJson));
+       });
+    }
+    @*else {
+        document.addEventListener('DOMContentLoaded', (event) => {
+            console.log('document was not ready, place code here');
+            myInitCode(@Html.Raw(Json.Serialize(@Model.HtmlControlId)));
+        });
+    }*@
+
+</script>

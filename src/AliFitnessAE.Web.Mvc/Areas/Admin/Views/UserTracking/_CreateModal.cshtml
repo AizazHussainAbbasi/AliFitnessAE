@@ -1,0 +1,277 @@
+﻿@using AliFitnessAE.Web.Models.Admin.Users 
+@model UserTrackingListViewModel
+@{
+    Layout = null;
+}
+
+<div class="modal fade right" id="UserTrackingCreateModal" tabindex="-1" role="dialog" aria-labelledby="UserTrackingCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-full-height modal-right modal-lg" role="document">
+        <div class="modal-content  form-elegant">
+            @await Html.PartialAsync("../Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("CreateNewUserTracking")))
+            <div class="modal-body mx-6">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" role="tab" href="#create-tracking-detail">@L("UserTrackingDetail")</a>
+                    </li>
+                    @*<li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab" href="#create-tracking-photo">@L("UserTrackingPhoto")</a>
+                    </li>*@
+                </ul>
+                <div class="tab-content mt-4">
+
+                    <div role="tabpanel" class="tab-pane container active" id="create-tracking-detail">
+                        <form class="form-horizontal md-form" name="UserTrackingCreateForm" role="form" enctype="multipart/form-data">
+
+                            <input type="hidden" id="addedUserTrackingId" name="addedUserTrackingId" />
+
+                            @if (@Model.UserList != null)
+                            {
+                            <div class="row  mt-2">
+                                <div class="col-md-2 col-sm-2 col-xs-2 mt-2">
+                                    <span>Select User</span>
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <select class="form-control" id="AddUserTrackingUserId" name="addUserTrackingUserId" asp-items="@Model.UserList"> </select>
+                                </div>
+                            </div>
+                            }
+                            <div class="row mt-2">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddHeight" type="number" name="height" class="form-control" required>
+                                            <label for="AddHeight" class="pl-2">@L("Height")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <select class="form-control mdb-select mt-1" id="AddHeightLkdId" name="heightLkdId" asp-items="@Model.MeasurementScale.ScaleHeight" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddWeight" type="number" name="weight" class="form-control" required>
+                                            <label for="AddWeight" class="pl-2">@L("Weight")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Weight: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <select class="form-control mdb-select mt-1" id="AddWeightLkdId" name="weightLkdId" asp-items="@Model.MeasurementScale.ScaleWeight" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddHip" type="number" name="hip" class="form-control" required>
+                                            <label for="AddHip" class="pl-2">@L("Hip")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Hip : My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddHipLkdId" name="hipLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddBellyButtonWaist" type="number" name="bellyButtonWaist" class="form-control" required>
+                                            <label for="AddBellyButtonWaist" class="pl-2">@L("BellyButtonWaist")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddBellyButtonWaistLkdId" name="bellyButtonWaistLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddHipBoneWaist" type="number" name="hipBoneWaist" class="form-control" required>
+                                            <label for="AddHipBoneWaist" class="pl-2">@L("HipBoneWaist")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddHipBoneWaistLkdId" name="hipBoneWaistLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddChest" type="number" name="chest" class="form-control" required>
+                                            <label for="AddChest" class="pl-2">@L("HipBoneWaist")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddChestLkdId" name="chestLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddRightArm" type="number" name="rightArm" class="form-control" required>
+                                            <label for="AddRightArm" class="pl-2">@L("RightArm")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddRightArmLkdId" name="rightArmLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddLeftArm" type="number" name="leftArm" class="form-control" required>
+                                            <label for="AddLeftArm" class="pl-2">@L("LeftArm")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddLeftArmLkdId" name="leftArmLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddRightThigh" type="number" name="rightThigh" class="form-control" required>
+                                            <label for="AddRightThigh" class="pl-2">@L("RightThigh")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddRightThighLkdId" name="rightThighLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddLeftThigh" type="number" name="leftThigh" class="form-control" required>
+                                            <label for="AddLeftThigh" class="pl-2">@L("LeftThigh")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddLeftThighLkdId" name="leftThighLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddRightCalve" type="number" name="rightCalve" class="form-control" required>
+                                            <label for="AddRightCalve" class="pl-2">@L("RightCalve")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddRightCalveLkdId" name="rightCalveLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddLeftCalve" type="number" name="leftCalve" class="form-control" required>
+                                            <label for="AddLeftCalve" class="pl-2">@L("LeftCalve")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddLeftCalveLkdId" name="leftCalveLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddRightForeArm" type="number" name="rightForeArm" class="form-control" required>
+                                            <label for="AddRightForeArm" class="pl-2">@L("RightForeArm")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddRightForeArmLkdId" name="rightForeArmLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="AddLeftForeArm" type="number" name="leftForeArm" class="form-control" required>
+                                            <label for="AddLeftForeArm" class="pl-2">@L("LeftForeArm")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="AddLeftForeArmLkdId" name="leftForeArmLkdId" asp-items="@Model.MeasurementScale.ScaleOther" required> </select>
+                                </div>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default close-button" data-dismiss="modal">@L("Cancel")</button>
+                                <button type="submit" class="btn btn-primary save-button">@L("Save")</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div role="tabpanel" class="tab-pane container" id="create-tracking-photo">
+                        @*@await Component.InvokeAsync(typeof(DocumentUploaderViewComponent), new DocumentFilterParam { Module = LookUpDetailConst.UserTracking, BusinessEntityId = 1 })*@
+                    </div>
+                </div>
+            </div>
+            @*@await Html.PartialAsync("../Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")*@ 
+        </div>
+    </div>
+</div>
+ 

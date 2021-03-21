@@ -1,0 +1,11 @@
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\bin\Release\netcoreapp3.1\AliFitnessAE.Application.deps.json
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\bin\Release\netcoreapp3.1\AliFitnessAE.Application.dll
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\bin\Release\netcoreapp3.1\AliFitnessAE.Application.pdb
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\bin\Release\netcoreapp3.1\AliFitnessAE.Core.dll
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\bin\Release\netcoreapp3.1\AliFitnessAE.Core.pdb
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\obj\Release\netcoreapp3.1\AliFitnessAE.Application.csprojAssemblyReference.cache
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\obj\Release\netcoreapp3.1\AliFitnessAE.Application.AssemblyInfoInputs.cache
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\obj\Release\netcoreapp3.1\AliFitnessAE.Application.AssemblyInfo.cs
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\obj\Release\netcoreapp3.1\AliFitnessAE.Application.csproj.CopyComplete
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\obj\Release\netcoreapp3.1\AliFitnessAE.Application.dll
+C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Application\obj\Release\netcoreapp3.1\AliFitnessAE.Application.pdb

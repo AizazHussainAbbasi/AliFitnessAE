@@ -1,0 +1,28 @@
+﻿@using AliFitnessAE.Web.Models.Common.Admin.Modals
+@{
+    Layout = null;
+}
+<div class="modal fade" id="UserTypeCreateModal" tabindex="-1" UserType="dialog" aria-labelledby="UserTypeCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-lg" UserType="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("../Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("CreateNewUserType")))
+            <form name="UserTypeCreateForm" UserType="form" class="form-horizontal">
+                <div class="modal-body">
+                    <div class="form-group row required">
+                        <label class="col-md-3 col-form-label" for="UserTypeConst">@L("UserTypeConst")</label>
+                        <div class="col-md-9">
+                            <input id="UserTypeConst" type="text" name="UserTypeConst" class="form-control" required maxlength="32" minlength="2">
+                        </div>
+                    </div>
+                    <div class="form-group row required">
+                        <label class="col-md-3 col-form-label" for="userTypeName">@L("UserTypeName")</label>
+                        <div class="col-md-9">
+                            <input id="userTypeName" type="text" name="UserTypeName" class="form-control" required maxlength="32" minlength="2">
+                        </div>
+                    </div> 
+                </div>
+                @await Html.PartialAsync("../Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+            </form>
+        </div>
+    </div>
+</div>

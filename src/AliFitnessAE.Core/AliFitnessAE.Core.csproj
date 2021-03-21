@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <VersionPrefix>1.0.0.0</VersionPrefix>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AssetTargetFallback>$(AssetTargetFallback);portable-net45+win8+wp8+wpa81;</AssetTargetFallback>
+    <AssemblyName>AliFitnessAE.Core</AssemblyName>
+    <PackageId>AliFitnessAE.Core</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <UserSecretsId>AbpCompanyName-AliFitnessAE-56C2EF2F-ABD6-4EFC-AAF2-2E81C34E8FB1</UserSecretsId>
+    <RootNamespace>AliFitnessAE</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-ar.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-es.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-fr.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-it.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-ja.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-lt.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-nl.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-pt-BR.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-tr.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE-zh-Hans.xml" />
+    <EmbeddedResource Include="Localization\SourceFiles\AliFitnessAE.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Abp.AutoMapper" Version="5.13.0" />
+    <PackageReference Include="Abp.ZeroCore.EntityFrameworkCore" Version="5.13.0" />
+    <PackageReference Include="Castle.Windsor.MsDependencyInjection" Version="3.3.1" />
+  </ItemGroup>
+</Project>

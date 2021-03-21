@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="ar">
+  <texts> 
+   <text name="HomePage" value="الصفحة الرئيسية" />
+   <text name="About" value="معلومات عنا" />
+    <text name="WelcomeMessage" value="مرحبا بكم في AliFitnessAE!" /> 
+    <text name="FormIsNotValidMessage" value="النموذج غير صالح. الرجاء تصحيح الخطأ." />
+    <text name="TenantNameCanNotBeEmpty" value="لا يمكن ترك اسم المستأجر فارغًا" /> 
+    <text name="InvalidUserNameOrPassword" value="خطأ في اسم المستخدم أو كلمة مرور" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="لا يوجد تعريف لاسم المستأجر {0}." />
+    <text name="TenantIsNotActive" value="المستأجر {0} غير نشط." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="المستخدم {0} غير نشط ولا يمكنه تسجيل الدخول." />
+    <text name="PleaseEnterLoginInformation" value="يرجى إدخال معلومات تسجيل الدخول الخاصة بك" />
+    <text name="TenancyName" value="اسم المستأجر" />
+    <text name="UserNameOrEmail" value="اسم المستخدم أو البريد الالكتروني" />
+    <text name="Password" value="كلمه السر" />
+    <text name="RememberMe" value="تذكر معلومات تسجيل الدخول" />
+    <text name="LogIn" value="تسجيل الدخول" /> 
+    <text name="LoginFailed" value="فشل عملية الدخول!" /> 
+    <text name="NameSurname" value="الاسم الاول الاسم الاخير" />
+    <text name="UserName" value="اسم المستخدم" />
+    <text name="Name" value="اسم" />
+    <text name="Surname" value="لقب" />
+    <text name="EmailAddress" value="عنوان البريد الإلكتروني" /> 
+    <text name="Tenants" value="المستأجر" />
+    <text name="SavedSuccessfully" value="حفظ ناجح" />
+    <text name="CreateNewTenant" value="إنشاء مستأجر جديد" />
+    <text name="AdminEmailAddress" value="عنوان البريد الإلكتروني للمسؤول" />
+    <text name="Save" value="حفظ" />
+    <text name="Cancel" value="إلغاء" />
+    <text name="TenantName_Regex_Description" value="يجب أن تبدأ أسماء المستأجرين بحرفين أو حرفين أو أحرف أو أرقام أو شرطات أو شرطات سفلية على الأقل." />
+    <text name="DefaultPasswordIs" value="كلمة المرور الافتراضية هي {0}" />
+    <text name="CanBeEmptyToLoginAsHost" value="يمكن أن يكون تسجيل الدخول على المضيف فارغًا." />
+    <text name="Register" value="التسجيل" />
+    <text name="OrLoginWith" value="أو تسجيل الدخول بعد ذلك" />
+    <text name="WaitingForActivationMessage" value="في انتظار تفعيل حسابك من قبل مسؤول النظام." />
+    <text name="TenantSelection" value="اختيار المستأجر" />
+    <text name="TenantSelection_Detail" value="اختر أحد المستأجرين التاليين:" />
+    <text name="Logout" value="تسجيل خروج" />
+
+    <text name="RegisterFormUserNameInvalidMessage">
+      لا تدخل عنوان البريد الإلكتروني للمستخدم.
+   </text>
+
+    <text name="DatabaseConnectionString" value="سلسلة اتصال قاعدة البيانات" />
+    <text name="Roles" value="الأدوار" />
+    <text name="Users" value="المستخدمون" />
+    <text name="IsActive" value="نشيط" />
+    <text name="FullName" value="الاسم الكامل" />
+    <text name="CreateNewUser" value="إنشاء مستخدم جديد" />
+    <text name="Yes" value="نعم" />
+    <text name="No" value="لا" />
+    <text name="Optional" value="اختيار" />
+
+    <text name="Create" value="خلق" />
+    <text name="Edit" value="تعديل" />
+    <text name="Delete" value="حذف" />
+
+    <text name="Topic" value="موضوع" />
+    <text name="TopicConst" value="موضوع ثابت" />
+    <text name="Title" value="عنوان" />
+    <text name="TopicBody" value="موضوع الجسم" />
+    <text name="Published" value="نشرت" />
+    <text name="IncluedInTopMenu" value="المدرجة في أعلى القائمة" />
+    <text name="IncluedInFooterColumn1" value="متضمن في العمود التذييل 1" />
+    <text name="IncluedInFooterColumn2" value="مدرج في العمود التذييل 2" />
+    <text name="IncluedInFooterColumn3" value="مدرج في عمود التذييل 3" />
+    <text name="EditTopic" value="تحرير الموضوع" />
+    <text name="CreateNewTopic" value="إنشاء موضوع جديد" />
+
+  </texts>
+</localizationDictionary>

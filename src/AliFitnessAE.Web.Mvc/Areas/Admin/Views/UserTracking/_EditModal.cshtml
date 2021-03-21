@@ -1,0 +1,411 @@
+﻿@using AliFitnessAE.Web.Models.Common.Admin.Modals
+@using AliFitnessAE.Web.Models.Admin.Users
+
+@model EditUserTrackingModalViewModel
+@{
+    Layout = null;
+}
+
+<div class="modal fade right" id="UserTrackingEditModal" tabindex="-1" role="dialog" aria-labelledby="UserTrackingEditModalLabel" data-backdrop="static">
+    <div class="modal-dialog modal-full-height modal-right modal-lg" role="document">
+        <div class="modal-content">
+            @await Html.PartialAsync("../Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel(L("EditUserTracking")))
+            <div class="modal-body mx-6">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" role="tab" href="#edit-tracking-detail">@L("UserTrackingDetail")</a>
+                    </li>
+                    @*<li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" role="tab" href="#edit-tracking-photo">@L("UserTrackingPhoto")</a>
+                    </li>*@
+                </ul>
+                <div class="tab-content mt-4">
+                    <div role="tabpanel" class="tab-pane container active" id="edit-tracking-detail">
+                        <form class="form-horizontal md-form" id="UserTrackingEditForm" name="UserTrackingEditForm" role="form">
+                            <input type="hidden" name="Id" value="@Model.UserTracking.Id" />
+
+                            @if (@Model.UserList != null)
+                            {
+                            <div class="row  mt-2">
+                                <div class="col-md-2 col-sm-2 col-xs-2 mt-2">
+                                    <span>Select User</span>
+                                </div>
+                                <div class="col-md-10 col-sm-10 col-xs-10">
+                                    <select class="form-control" id="EditUserTrackingUserId" name="editUserTrackingUserId" asp-items="@Model.UserList" disabled="@Model.IsReadOnly"> </select>
+                                </div>
+                            </div>
+                            }
+                            else
+                            {
+                            <input type="hidden" name="editUserTrackingUserId" value="@Model.UserTracking.UserId" />
+                            }
+                            <div class="row mt-2">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditHeight" type="number" name="height" value="@Model.UserTracking.Height" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditHeight" class="pl-2">@L("Height")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <select class="form-control mdb-select mt-1" id="EditHeightLkdId" name="heightLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleHeight)
+                                        {
+                                            var isSelected = (Model.UserTracking.HeightLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditHeightLkdId" name="heightLkdId" asp-items="@Model.MeasurementScale.ScaleHeight" selected="@Model.UserTracking.HeightLkdId" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditWeight" type="number" name="weight" value="@Model.UserTracking.Weight" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditWeight" class="pl-2">@L("Weight")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6">
+                                    <select class="form-control mdb-select mt-1" id="EditWeightLkdId" name="weightLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleWeight)
+                                        {
+                                            var isSelected = (Model.UserTracking.WeightLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditWeightLkdId" name="weightLkdId" asp-items="@Model.MeasurementScale.ScaleWeight" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditHip" type="number" name="hip" value="@Model.UserTracking.Hip" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditHip" class="pl-2">@L("Hip")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditHipLkdId" name="hipLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.HipLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditHipLkdId" name="hipLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditBellyButtonWaist" type="number" name="bellyButtonWaist" value="@Model.UserTracking.BellyButtonWaist" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditBellyButtonWaist" class="pl-2">@L("BellyButtonWaist")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditBellyButtonWaistLkdId" name="bellyButtonWaistLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.BellyButtonWaistLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditBellyButtonWaistLkdId" name="bellyButtonWaistLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditHipBoneWaist" type="number" name="hipBoneWaist" value="@Model.UserTracking.HipBoneWaist" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditHipBoneWaist" class="pl-2">@L("HipBoneWaist")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditHipBoneWaistLkdId" name="hipBoneWaistLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.HipBoneWaistLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditHipBoneWaistLkdId" name="hipBoneWaistLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditChest" type="number" name="chest" value="@Model.UserTracking.Chest" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditChest" class="pl-2">@L("HipBoneWaist")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditChestLkdId" name="chestLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.ChestLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditChestLkdId" name="chestLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditRightArm" type="number" name="rightArm" value="@Model.UserTracking.RightArm" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditRightArm" class="pl-2">@L("RightArm")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditRightArmLkdId" name="rightArmLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.RightArmLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditRightArmLkdId" name="rightArmLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditLeftArm" type="number" name="leftArm" value="@Model.UserTracking.LeftArm" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditLeftArm" class="pl-2">@L("LeftArm")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditLeftArmLkdId" name="leftArmLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.LeftArmLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditLeftArmLkdId" name="leftArmLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditRightThigh" type="number" name="rightThigh" value="@Model.UserTracking.RightThigh" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditRightThigh" class="pl-2">@L("RightThigh")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditRightThighLkdId" name="rightThighLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.RightArmLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditRightThighLkdId" name="rightThighLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditLeftThigh" type="number" name="leftThigh" value="@Model.UserTracking.LeftThigh" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditLeftThigh" class="pl-2">@L("LeftThigh")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditLeftThighLkdId" name="leftThighLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.LeftThighLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditLeftThighLkdId" name="leftThighLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditRightCalve" type="number" name="rightCalve" value="@Model.UserTracking.RightCalve" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditRightCalve" class="pl-2">@L("RightCalve")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditRightCalveLkdId" name="rightCalveLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.RightCalveLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditRightCalveLkdId" name="rightCalveLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditLeftCalve" type="number" name="leftCalve" value="@Model.UserTracking.LeftCalve" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditLeftCalve" class="pl-2">@L("LeftCalve")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditLeftCalveLkdId" name="leftCalveLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.LeftCalveLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditLeftCalveLkdId" name="leftCalveLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditRightForeArm" type="number" name="rightForeArm" value="@Model.UserTracking.RightForeArm" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditRightForeArm" class="pl-2">@L("RightForeArm")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditRightForeArmLkdId" name="rightForeArmLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.RightForeArmLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditRightForeArmLkdId" name="rightForeArmLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <div class="row">
+                                        <div class="col-md-11 col-sm-11 col-xs-11">
+                                            <input id="EditLeftForeArm" type="number" name="leftForeArm" value="@Model.UserTracking.LeftForeArm" class="form-control" disabled="@Model.IsReadOnly" required>
+                                            <label for="EditLeftForeArm" class="pl-2">@L("LeftForeArm")</label>
+                                        </div>
+                                        <div class="col-md-1 col-sm-1 col-xs-1 mt-3">
+                                            <span type='button' data-toggle="tooltip" data-placement="right" title="Height: My tooltips are working on the mainpage perfectly. In a modal which is generated later by an ajax call the modals won't work"><i class="fas fa-info"></i></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-6 form-group">
+                                    <select class="form-control mdb-select mt-1" id="EditLeftForeArmLkdId" name="leftForeArmLkdId" disabled="@Model.IsReadOnly" required>
+                                        @foreach (var item in Model.MeasurementScale.ScaleOther)
+                                        {
+                                            var isSelected = (Model.UserTracking.LeftForeArmLkdId == Convert.ToInt32(item.Value)) ? "selected" : null;
+                                        <text>
+                                            <option value="@item.Value" selected="@isSelected">@item.Text</option>
+                                        </text>
+                                        }
+                                    </select>
+                                    @*<select class="form-control mdb-select mt-1" id="EditLeftForeArmLkdId" name="leftForeArmLkdId" asp-items="@Model.MeasurementScale.ScaleOther" disabled="@Model.IsReadOnly" required> </select>*@
+                                </div>
+                            </div>
+                            <div class="modal-footer justify-content-between">
+                                <button type="button" class="btn btn-default close-button" data-dismiss="modal">@L("Cancel")</button>
+                                @if (!Model.IsReadOnly)
+                                {
+                                <button type="submit" class="btn btn-primary save-button">@L("Save")</button>
+                                }
+                            </div>
+                        </form>
+                    </div>
+                    @*<div role="tabpanel" class="tab-pane container" id="edit-tracking-photo">
+                        @await Component.InvokeAsync(typeof(DocumentUploaderViewComponent), new ViewComponentVModel { Module = LookUpDetailConst.UserTracking, BusinessEntityId = Model.UserTracking.Id, IsReadOnly = Model.IsReadOnly })
+                    </div>*@
+                </div>
+            </div>
+            @*@await Html.PartialAsync("../Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")*@
+        </div>
+    </div>
+</div>
+
+<script src="~/view-resources/Admin/Views/UserTracking/_EditModal.js" asp-append-version="true"></script>
