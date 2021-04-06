@@ -43,6 +43,16 @@ namespace AliFitnessAE.Web.Admin.Controllers
                 string uniqueFileName = UploadedFile(model);
                 if (!string.IsNullOrEmpty(uniqueFileName))
                 {
+                    //Delete Old
+                    if (model.IsDeleteOld)
+                    {
+                        var oldAttachmentList = (await _documentAppService.GetAllBusinessDocumentAttachments(null, model.BusinessDocumentId, model.BusinessEntityId)).Items;
+                        foreach (var oldAttachment in oldAttachmentList)
+                        {
+                            await _documentAppService.DeleteBusinessDocumentAttachment(new BusinessDocumentAttachmentDto() { Id = oldAttachment.Id });
+                        }
+                    }
+
                     var businessDocumentAttachmentDto = new BusinessDocumentAttachmentDto()
                     {
                         BusinessDocumentId = model.BusinessDocumentId,
@@ -61,7 +71,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
             }
             return new AjaxResponse(new ErrorInfo() { Message = "Errors" });
         }
-        [HttpPost] 
+        [HttpPost]
         public async Task<AjaxResponse> Delete([FromBody]DeleteVModel model)
         {
             var businessDocumentAttachmentDto = new BusinessDocumentAttachmentDto()

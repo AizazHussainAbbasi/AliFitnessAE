@@ -6,8 +6,14 @@
         _$table = $('#TopicTable');
       
     var _$TopicTable = _$table.DataTable({
+        scrollY: "300px",
+        scrollX: true,
+        scrollCollapse: true,
+        processing: true,
+        responsive: false,
         paging: true,
         serverSide: true,
+        ordering: false, 
         ajax: function (data, callback, settings) {
             var filter = $('#TopicSearchForm').serializeFormToObject(true);
             filter.maxResultCount = data.length;
@@ -40,8 +46,24 @@
         columnDefs: [
             {
                 targets: 0,
-                className: 'control',
+                data: null,
+                sortable: false,
+                autoWidth: false,
                 defaultContent: '',
+                render: (data, type, row, meta) => {
+                    var result = '';
+                    result += `<div class="btn-group">`
+                    result += `<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">`
+                    result += l("Actions")
+                    result += `<span class="caret"></span>`
+                    result += `</button>`
+                    result += `<div class="dropdown-menu">`
+                    result += `<a class="dropdown-item edit-Topic" data-Topic-id="${row.id}" data-toggle="modal" data-target="#TopicEditModal"> ${l('Edit')}</a>`
+                    result += `<a class="dropdown-item delete-Topic" data-Topic-id="${row.id}" data-Topic-name="${row.topicConst}"> ${l('Delete')}</a>`
+                    result += `</div>`
+                    result += `</div>`
+                    return result;
+                }
             },
             {
                 targets: 1,
@@ -62,33 +84,6 @@
                 targets: 4,
                 data: 'incluedInTopMenu',
                 sortable: false
-            },
-            {
-                targets: 5,
-                data: null,
-                sortable: false,
-                autoWidth: false,
-                defaultContent: '', 
-                render: (data, type, row, meta) => {
-                    var result = [];
-                    if (abp.auth.isGranted('Pages.Topic.UpdateTopic') == true) {
-                        result[0] = `<button type="button" class="btn btn-sm bg-secondary edit-Topic" data-Topic-id="${row.id}" data-toggle="modal" data-target="#TopicEditModal">  <i class="fas fa-pencil-alt"></i> ${l('Edit')} </button>`
-                    }
-                    if (abp.auth.isGranted('Pages.Topic.DeleteTopic') == true) {
-                        result[1] = ` <button type="button" class="btn btn-sm bg-danger delete-Topic" data-Topic-id="${row.id}" data-Topic-name="${row.topicConst}">  <i class="fas fa-trash"></i> ${l('Delete')}</button>`
-                    }
-                    return result.join('');
-                }
-                //render: (data, type, row, meta) => {
-                //    return [ 
-                //        `   <button type="button" class="btn btn-sm bg-secondary edit-Topic" data-Topic-id="${row.id}" data-toggle="modal" data-target="#TopicEditModal">`,
-                //        `       <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
-                //        '   </button>',
-                //        `   <button type="button" class="btn btn-sm bg-danger delete-Topic" data-Topic-id="${row.id}" data-Topic-name="${row.topicConst}">`,
-                //        `       <i class="fas fa-trash"></i> ${l('Delete')}`,
-                //        '   </button>',
-                //    ].join('');
-                //},
             }
         ]
     });
@@ -185,3 +180,33 @@
     debugger;
     $('.addRichTextControl').richText();
 })(jQuery);
+
+
+
+//{
+//    targets: 5,
+//        data: null,
+//            sortable: false,
+//                autoWidth: false,
+//                    defaultContent: '',
+//                        render: (data, type, row, meta) => {
+//                            var result = [];
+//                            if (abp.auth.isGranted('Pages.Topic.UpdateTopic') == true) {
+//                                result[0] = `<button type="button" class="btn btn-sm bg-secondary edit-Topic" data-Topic-id="${row.id}" data-toggle="modal" data-target="#TopicEditModal">  <i class="fas fa-pencil-alt"></i> ${l('Edit')} </button>`
+//                            }
+//                            if (abp.auth.isGranted('Pages.Topic.DeleteTopic') == true) {
+//                                result[1] = ` <button type="button" class="btn btn-sm bg-danger delete-Topic" data-Topic-id="${row.id}" data-Topic-name="${row.topicConst}">  <i class="fas fa-trash"></i> ${l('Delete')}</button>`
+//                            }
+//                            return result.join('');
+//                        }
+//    //render: (data, type, row, meta) => {
+//    //    return [ 
+//    //        `   <button type="button" class="btn btn-sm bg-secondary edit-Topic" data-Topic-id="${row.id}" data-toggle="modal" data-target="#TopicEditModal">`,
+//    //        `       <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
+//    //        '   </button>',
+//    //        `   <button type="button" class="btn btn-sm bg-danger delete-Topic" data-Topic-id="${row.id}" data-Topic-name="${row.topicConst}">`,
+//    //        `       <i class="fas fa-trash"></i> ${l('Delete')}`,
+//    //        '   </button>',
+//    //    ].join('');
+//    //},
+//}

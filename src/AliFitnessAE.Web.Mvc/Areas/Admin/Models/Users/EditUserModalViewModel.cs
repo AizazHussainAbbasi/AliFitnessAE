@@ -1,6 +1,7 @@
 using AliFitnessAE.AppUserTypeDto;
 using AliFitnessAE.Roles.Dto;
 using AliFitnessAE.Users.Dto;
+using AliFitnessAE.Web.Areas.Admin.Views.Shared.Components.DocumentUploader;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,5 +19,6 @@ namespace AliFitnessAE.Web.Models.Admin.Users
         {
             return User.RoleNames != null && User.RoleNames.Any(r => r == role.NormalizedName);
         }
+        public DocumentUploaderViewModel ProfilePhoto { get; set; } 
     }
 }

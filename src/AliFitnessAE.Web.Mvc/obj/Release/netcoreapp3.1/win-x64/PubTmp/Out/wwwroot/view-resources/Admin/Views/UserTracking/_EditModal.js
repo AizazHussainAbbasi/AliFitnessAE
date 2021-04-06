@@ -13,10 +13,10 @@
 
         abp.ui.setBusy(_$form);
         _userTrackingService.update(userTracking).done(function () {
-            // _$modal.modal('hide'); 
-            activeTab('edit-tracking-photo');
-            abp.notify.info(l('SavedSuccessfully'));
-            abp.event.trigger('userTracking.edited', userTracking);
+           _$modal.modal('hide');  
+            abp.notify.info(l('SavedSuccessfully'))
+            abp.event.trigger('userTracking.edited', userTracking);;
+            //activeTab('edit-tracking-photo');
         }).always(function () {
             abp.ui.clearBusy(_$form);
         });

@@ -46,8 +46,9 @@ namespace AliFitnessAE.Web.Startup
                 {
                     options.SerializerSettings.ContractResolver = new AbpMvcContractResolver(IocManager.Instance)
                     {
-                        NamingStrategy = new CamelCaseNamingStrategy()
+                        NamingStrategy = new CamelCaseNamingStrategy(),
                     };
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore;
                 });
 
             IdentityRegistrar.Register(services);

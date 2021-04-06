@@ -24,8 +24,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace AliFitnessAE.Users
-{
-    [AbpAuthorize(PermissionNames.Pages_Users)]
+{ 
     public class UserAppService : AsyncCrudAppService<User, UserDto, long, PagedUserResultRequestDto, CreateUserDto, UserDto>, IUserAppService
     {
         private readonly UserManager _userManager;
@@ -52,7 +51,7 @@ namespace AliFitnessAE.Users
             _abpSession = abpSession;
             _logInManager = logInManager;
         }
-
+        [AbpAuthorize(PermissionNames.Pages_User_CreateUsers)]
         public override async Task<UserDto> CreateAsync(CreateUserDto input)
         {
             CheckCreatePermission();
@@ -61,7 +60,7 @@ namespace AliFitnessAE.Users
             user.TenantId = AbpSession.TenantId;
             user.IsEmailConfirmed = true;
             user.Surname = string.Empty;
-            
+
             await _userManager.InitializeOptionsAsync(AbpSession.TenantId);
 
             CheckErrors(await _userManager.CreateAsync(user, input.Password));
@@ -75,30 +74,36 @@ namespace AliFitnessAE.Users
 
             return MapToEntityDto(user);
         }
-
+        [AbpAuthorize(PermissionNames.Pages_User_UpdateUsers)]
         public override async Task<UserDto> UpdateAsync(UserDto input)
         {
             CheckUpdatePermission();
 
-            var user = await _userManager.GetUserByIdAsync(input.Id); 
+            var user = await _userManager.GetUserByIdAsync(input.Id);
 
             MapToEntity(input, user);
 
             CheckErrors(await _userManager.UpdateAsync(user));
 
-            try
+            if (input.RoleNames != null)
             {
-                if (input.RoleNames != null)
-                {  
-                    CheckErrors(await _userManager.SetRolesAsync(user, input.RoleNames));
-                }
+                CheckErrors(await _userManager.SetRolesAsync(user, input.RoleNames));
             }
-            catch(Exception ex)
-            { }
-
             return await GetAsync(input);
         }
-
+        public async Task<bool> UpdatePersonalDetailAsync(ChangePersonalDetailDto input)
+        {
+            var user = await _userManager.GetUserByIdAsync(input.Id);
+            user.UserName = input.UserName;
+            user.Name = input.Name;
+            user.MobileNumber = input.MobileNumber;
+            user.ZoomId = input.ZoomId;
+            user.DOB = input.DOB;
+            user.Gender = input.Gender;
+            CheckErrors(await _userManager.UpdateAsync(user));
+            return true;
+        }
+        [AbpAuthorize(PermissionNames.Pages_User_DeleteUsers)]
         public override async Task DeleteAsync(EntityDto<long> input)
         {
             var user = await _userManager.GetUserByIdAsync(input.Id);

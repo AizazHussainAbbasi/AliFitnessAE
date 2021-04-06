@@ -8,35 +8,35 @@
         _$searchForm = $('#UserTrackingSearchForm'),
         measurementScale = {};
 
-    function getMeasurementScaleComboboxItems() {
-        _lookUpService.getMeasurementScaleComboboxItems().done(function (result) {
-            measurementScale = result.items;
-        });
-    }
-
-    var _$userTrackingTable = _$table.DataTable({
+    var _$userTrackingTable = _$table.removeAttr('width').DataTable({
+        scrollY: "300px",
+        scrollX: true,
+        scrollCollapse: true,
         paging: true,
         serverSide: false,
-        "scrollX": true,
         processing: true,
         responsive: false,
+        order: [[2, 'desc']],//Default sort icon and sorted
         ajax: function (data, callback, settings) {
             var filter = _$searchForm.serializeFormToObject(true);
-            getMeasurementScaleComboboxItems();
+            _lookUpService.getMeasurementScaleComboboxItems().done(function (result) {
+                measurementScale = result.items;
 
-            filter.maxResultCount = data.length;
-            filter.skipCount = data.start;
-            filter.userId = filter.searchFormUserList;
+                //Load Table Data
+                filter.maxResultCount = data.length;
+                filter.skipCount = data.start;
+                filter.userId = filter.searchFormUserList;
 
-            abp.ui.setBusy(_$table);
-            _userTrackingService.getAllUserTrackingPagedResult(filter).done(function (result) {
-                callback({
-                    recordsTotal: result.totalCount,
-                    recordsFiltered: result.totalCount,
-                    data: result.items
+                abp.ui.setBusy(_$table);
+                _userTrackingService.getAllUserTrackingPagedResult(filter).done(function (result) {
+                    callback({
+                        recordsTotal: result.totalCount,
+                        recordsFiltered: result.totalCount,
+                        data: result.items
+                    });
+                }).always(function () {
+                    abp.ui.clearBusy(_$table);
                 });
-            }).always(function () {
-                abp.ui.clearBusy(_$table);
             });
         },
         buttons: [
@@ -46,16 +46,46 @@
                 action: () => _$userTrackingTable.draw(false)
             }
         ],
-        responsive: {
-            details: {
-                type: 'column'
-            }
-        },
-        columnDefs: [
+        //responsive: {
+        //    details: {
+        //        type: 'column'
+        //    }
+        //},
+        columnDefs: [ 
             {
                 targets: 0,
-                className: 'control',
-                defaultContent: ''
+                data: null,
+                sortable: false,
+                autoWidth: false,
+                defaultContent: '',
+                render: (data, type, row, meta) => {
+                    var result = '';
+                    result += `<div class="btn-group">`
+                    result += `<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">`
+                    result += l("Actions")
+                    result += `<span class="caret"></span>`
+                    result += `</button>`
+                    result += `<div class="dropdown-menu">` 
+                    if (row.status.statusConst == "Approved") {
+                        if (isAdminLoggedIn) {
+                            result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">${l('Edit')}</a>`
+                            result += `<a class="dropdown-item delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">${l('Delete')}</a>`
+                            result += `<a class="dropdown-item update-userTracking-status" data-userTracking-id="${row.id}" data-userTracking-status="false" data-toggle="tooltip" data-placement="right"  title="${l("UnApproveStatusToolTip")}">${l('UnApprove')}</a>`
+                        }
+                        else
+                            result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">${l('Detail')}</a>`
+                    } else {
+                        result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">${l('Edit')}</a>`
+                        result += `<a class="dropdown-item delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">${l('Delete')}</a>`
+                        if (isAdminLoggedIn) {
+                            result += `<a class="dropdown-item update-userTracking-status" data-userTracking-id="${row.id}" data-userTracking-status="true" data-toggle="tooltip" data-placement="right"  title="${l("ApproveStatusToolTip")}">${l('Approve')}</a>`
+                        }
+                    }
+                    result += `</div>`
+                    result += `</div>`
+                    return result;
+                },
+                sortable: false
             },
             {
                 targets: 1,
@@ -66,46 +96,13 @@
             },
             {
                 targets: 2,
-                data: null,
-                sortable: false,
-                autoWidth: false,
-                defaultContent: '',
-                render: (data, type, row, meta) => {
-                    var result = '';
-                    result += `<div class="btn-group">`
-                    result += `<button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`
-                    result += `<span class="caret"></span>`
-                    result += `</button>`
-                    result += `<div class="dropdown-menu">`
-                    if (row.status.statusConst == "Approved") {
-                        if (isAdminLoggedIn) {
-                            result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">Edit</a>`
-                            result += `<a class="dropdown-item delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">Delete</a>`
-                            result += `<a class="dropdown-item update-userTracking-status" data-userTracking-id="${row.id}" data-userTracking-status="false" data-toggle="tooltip" data-placement="right"  title="${l("UnApproveStatusToolTip")}">UnApprove</a>`
-                        }
-                        else
-                            result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">Detail</a>`
-                    } else {
-                        result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">Edit</a>`
-                        result += `<a class="dropdown-item delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">Delete</a>`
-                        if (isAdminLoggedIn) {
-                            result += `<a class="dropdown-item update-userTracking-status" data-userTracking-id="${row.id}" data-userTracking-status="true" data-toggle="tooltip" data-placement="right"  title="${l("ApproveStatusToolTip")}">Approve</a>`
-                        }
-                    }
-                    result += `</div>`
-                    result += `</div>`
-                    return result;
-                }
-            },
-            {
-                targets: 3,
                 data: 'date',
                 render: (data, type, row, meta) => {
                     return moment(row.creationTime).format("MMMM Do YYYY");
                 }
             },
             {
-                targets: 4,
+                targets: 3,
                 data: 'date',
                 render: (data, type, row, meta) => {
                     var spanClass = 'p-1 ';
@@ -122,7 +119,7 @@
                 }
             },
             {
-                targets: 5,
+                targets: 4,
                 data: 'height',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.heightLkdId)
@@ -130,7 +127,7 @@
                 }
             },
             {
-                targets: 6,
+                targets: 5,
                 data: 'weight',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.weightLkdId)
@@ -138,7 +135,7 @@
                 }
             },
             {
-                targets: 7,
+                targets: 6,
                 data: 'hip',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.hipLkdId)
@@ -146,7 +143,7 @@
                 }
             },
             {
-                targets: 8,
+                targets: 7,
                 data: 'bellyButtonWaist',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.bellyButtonWaistLkdId)
@@ -154,7 +151,7 @@
                 }
             },
             {
-                targets: 9,
+                targets: 8,
                 data: 'hipBoneWaist',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.hipBoneWaistLkdId)
@@ -162,7 +159,7 @@
                 }
             },
             {
-                targets: 10,
+                targets: 9,
                 data: 'chest',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.chestLkdId)
@@ -170,7 +167,7 @@
                 }
             },
             {
-                targets: 11,
+                targets: 10,
                 data: 'rightArm',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.rightArmLkdId)
@@ -178,7 +175,7 @@
                 }
             },
             {
-                targets: 12,
+                targets: 11,
                 data: 'leftArm',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.leftArmLkdId)
@@ -186,7 +183,7 @@
                 }
             },
             {
-                targets: 13,
+                targets: 12,
                 data: 'rightThigh',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.rightThighLkdId)
@@ -194,7 +191,7 @@
                 }
             },
             {
-                targets: 14,
+                targets: 13,
                 data: 'leftThigh',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.leftThighLkdId)
@@ -202,7 +199,7 @@
                 }
             },
             {
-                targets: 15,
+                targets: 14,
                 data: 'rightCalve',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.rightCalveLkdId)
@@ -210,7 +207,7 @@
                 }
             },
             {
-                targets: 16,
+                targets: 15,
                 data: 'leftCalve',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.leftCalveLkdId)
@@ -218,7 +215,7 @@
                 }
             },
             {
-                targets: 17,
+                targets: 16,
                 data: 'rightForeArm',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.rightForeArmLkdId)
@@ -226,7 +223,7 @@
                 }
             },
             {
-                targets: 18,
+                targets: 17,
                 data: 'leftForeArm',
                 render: (data, type, row, meta) => {
                     var measurement = measurementScale.find(x => x.value == row.leftForeArmLkdId)
@@ -234,7 +231,7 @@
                 }
             },
             {
-                targets: 19,
+                targets: 18,
                 data: null,
                 sortable: false,
                 autoWidth: false,
@@ -267,21 +264,10 @@
                     }
 
                     return result.join('');
-                }
-                //render: (data, type, row, meta) => {
-                //    return [
-                //        `   <span type='button' class="edit-userTracking" data-userTracking-id="${row.id}">`,
-                //        `       <i class="fas fa-pencil-alt"></i>`,
-                //        '   </span>',
-                //        `&nbsp | &nbsp  <span type='button' class="delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">`,
-                //        `       <i class="fas fa-trash"></i>`,
-                //        '   </span>',
-                //    ].join('');
-                //},
-            }
+                } 
+            }  
         ]
     });
-
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         $($.fn.dataTable.tables(true)).DataTable()
             .columns.adjust();
@@ -303,6 +289,7 @@
             _userTrackingService
                 .createUserTracking(userTracking)
                 .done(function (data) {
+                    debugger;
                     $('#addedUserTrackingId').val(data.id);
                     _$modal.modal('hide');
                     abp.notify.info(l('SavedSuccessfully'));
@@ -312,6 +299,7 @@
                     //loadComponentView("create-tracking-photo", "DocumentUploader", "UserTracking", data.id);
                 })
                 .always(function () {
+                    debugger;
                     abp.ui.clearBusy(_$modal);
                 });
         }
@@ -327,7 +315,7 @@
 
         abp.ui.setBusy(_$form);
         _userTrackingService.update(userTracking).done(function () {
-            abp.notify.info(l('SavedSuccessfully')); 
+            abp.notify.info(l('SavedSuccessfully'));
             abp.event.trigger('userTracking.added', userTracking);
             //_$userTrackingTable.ajax.reload();
             //activeTab('create-tracking-photo');
@@ -405,7 +393,7 @@
     }
     _$modal.on('shown.bs.modal', () => {
         _$modal.find('input:not([type=hidden]):first').focus();
-    }).on('hidden.bs.modal', () => { 
+    }).on('hidden.bs.modal', () => {
         _$form.clearForm();
         _$form.find('label').removeClass('active');
         $('#addedUserTrackingId').val('');
@@ -433,3 +421,34 @@
 
 
 })(jQuery);
+
+
+
+
+    //function getMeasurementScaleComboboxItems() {
+    //    _lookUpService.getMeasurementScaleComboboxItems().done(function (result) {
+    //        measurementScale = result.items;
+    //    });
+    //}
+
+ //{
+            //    targets: 0,
+            //    className: 'control',
+            //    defaultContent: ''
+            //}, 
+
+//result += `<div class="btn-group">`
+//result += `<button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`
+//result += `<span class="caret"></span>`
+//result += `</button>`
+//result += `<div class="dropdown-menu">`
+//render: (data, type, row, meta) => {
+                //    return [
+                //        `   <span type='button' class="edit-userTracking" data-userTracking-id="${row.id}">`,
+                //        `       <i class="fas fa-pencil-alt"></i>`,
+                //        '   </span>',
+                //        `&nbsp | &nbsp  <span type='button' class="delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">`,
+                //        `       <i class="fas fa-trash"></i>`,
+                //        '   </span>',
+                //    ].join('');
+                //},

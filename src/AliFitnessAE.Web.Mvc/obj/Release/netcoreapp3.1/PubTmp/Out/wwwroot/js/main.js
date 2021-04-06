@@ -131,4 +131,7 @@
         $this[0].reset();
     }; 
      
+    //Enable ToolTip
+     $("body").tooltip({ selector: '[data-toggle=tooltip]' });  
+
 })(jQuery);

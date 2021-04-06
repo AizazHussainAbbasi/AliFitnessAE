@@ -10,7 +10,7 @@
                     <span>@businessDocument.DocumentType.DocumentTypeName</span>
                     @if (!Model.IsReadOnly)
                     {
-                        <input type="file" id="businessDocumentInputControl-@businessDocument.Id-@Model.BusinessEntityId" data-outerDivId="outerDivDocumentInputControl-@Model.BusinessEntityId-@businessDocument.DocumentType.DocumentTypeConst" name="files[]" multiple="multiple" accept="image/*" title="Select Images To Be Uploaded" onChange="LoadImage(this, @Model.BusinessEntityId,@businessDocument.Id, @businessDocument.DocumentTypeId )">
+                        <input type="file" id="businessDocumentInputControl-@businessDocument.Id-@Model.BusinessEntityId" data-outerDivId="outerDivDocumentInputControl-@Model.BusinessEntityId-@businessDocument.DocumentType.DocumentTypeConst" name="files[]" multiple="multiple" accept="image/*" title="Select Images To Be Uploaded" onChange="UploadFiles(this, @Model.BusinessEntityId,@businessDocument.Id, @businessDocument.DocumentTypeId )">
                     }
                 </div>
             </div>
@@ -131,7 +131,7 @@
             }
         );
     }
-    function LoadImage(obj, businessEntityId, businessDocumentId, documentTypeId) {
+    function UploadFiles(obj, businessEntityId, businessDocumentId, documentTypeId) {
         var outerDivId = $(obj).attr("data-outerDivId");
 
         if (obj.files.length >= 1) {
@@ -188,29 +188,29 @@
             });
         }
     }
-    function uploadFiles() {
-        debugger;
-        var objects = $("[id^=businessDocumentInputControl]");
-        objects.files;
-        var input = document.getElementById(inputId);
-        var files = input.files;
-        var formData = new FormData();
+    //function uploadFiles() {
+    //    debugger;
+    //    var objects = $("[id^=businessDocumentInputControl]");
+    //    objects.files;
+    //    var input = document.getElementById(inputId);
+    //    var files = input.files;
+    //    var formData = new FormData();
 
-        for (var i = 0; i != files.length; i++) {
-            formData.append("files", files[i]);
-        }
+    //    for (var i = 0; i != files.length; i++) {
+    //        formData.append("files", files[i]);
+    //    }
 
-        $.ajax(
-            {
-                url: "/uploader",
-                data: formData,
-                processData: false,
-                contentType: false,
-                type: "POST",
-                success: function (data) {
-                    alert("Files Uploaded!");
-                }
-            }
-        );
-    }
+    //    $.ajax(
+    //        {
+    //            url: "/uploader",
+    //            data: formData,
+    //            processData: false,
+    //            contentType: false,
+    //            type: "POST",
+    //            success: function (data) {
+    //                alert("Files Uploaded!");
+    //            }
+    //        }
+    //    );
+    //}
 </script>

@@ -7,8 +7,14 @@
         _$table = $('#UserTypeTable');
       
     var _$UserTypeTable = _$table.DataTable({
+        scrollY: "300px",
+        scrollX: true,
+        scrollCollapse: true,
+        processing: true,
+        responsive: false,
         paging: true,
         serverSide: true,
+        ordering: false, 
         ajax: function (data, callback, settings) {
             var filter = $('#UserTypeSearchForm').serializeFormToObject(true);
             filter.maxResultCount = data.length;
@@ -41,35 +47,32 @@
         columnDefs: [
             {
                 targets: 0,
-                className: 'control',
-                defaultContent: '',
-            },
-            {
-                targets: 1,
-                data: 'userTypeConst',
-                sortable: false
-            },
-            {
-                targets: 2,
-                data: 'userTypeName',
-                sortable: false
-            }, 
-            {
-                targets: 3,
                 data: null,
                 sortable: false,
                 autoWidth: false,
-                defaultContent: '', 
+                defaultContent: '',
                 render: (data, type, row, meta) => {
-                    return [ 
-                        `   <button type="button" class="btn btn-sm bg-secondary edit-UserType" data-UserType-id="${row.id}" data-toggle="modal" data-target="#UserTypeEditModal">`,
-                        `       <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
-                        '   </button>',
-                        `   <button type="button" class="btn btn-sm bg-danger delete-UserType" data-UserType-id="${row.id}" data-UserType-name="${row.UserTypeConst}">`,
-                        `       <i class="fas fa-trash"></i> ${l('Delete')}`,
-                        '   </button>',
-                    ].join('');
-                },
+                    var result = '';
+                    result += `<div class="btn-group">`
+                    result += `<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">`
+                    result += l("Actions")
+                    result += `<span class="caret"></span>`
+                    result += `</button>`
+                    result += `<div class="dropdown-menu">`
+                    result += `<a class="dropdown-item edit-UserType" data-UserType-id="${row.id}" data-toggle="modal" data-target="#UserTypeEditModal"> ${l('Edit')}</a>`
+                    result += `<a class="dropdown-item delete-UserType" data-UserType-id="${row.id}" data-UserType-name="${row.UserTypeConst}"> ${l('Delete')}</a>`
+                    result += `</div>`
+                    result += `</div>`
+                    return result;
+                }
+            },
+            {
+                targets: 1,
+                data: 'userTypeConst'  
+            },
+            {
+                targets: 2,
+                data: 'userTypeName' 
             }
         ]
     });

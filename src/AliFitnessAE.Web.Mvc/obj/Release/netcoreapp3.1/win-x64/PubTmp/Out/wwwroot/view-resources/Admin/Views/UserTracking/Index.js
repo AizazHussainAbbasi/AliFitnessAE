@@ -1,41 +1,42 @@
-﻿(function ($) {  
+﻿(function ($) {
     var _userTrackingService = abp.services.app.userTracking,
         _lookUpService = abp.services.app.lookup,
         l = abp.localization.getSource('AliFitnessAE'),
         _$modal = $('#UserTrackingCreateModal'),
         _$form = _$modal.find('form').attr('autocomplete', 'off'),
         _$table = $('#UserTrackingTable'),
+        _$searchForm = $('#UserTrackingSearchForm'),
         measurementScale = {};
 
-    function getMeasurementScaleComboboxItems() {
-        _lookUpService.getMeasurementScaleComboboxItems().done(function (result) {
-            measurementScale = result.items;
-        });
-    }
-
-    var _$userTrackingTable = _$table.DataTable({
+    var _$userTrackingTable = _$table.removeAttr('width').DataTable({
+        scrollY: "300px",
+        scrollX: true,
+        scrollCollapse: true,
         paging: true,
         serverSide: false,
-        "scrollX": true,
         processing: true,
         responsive: false,
+        order: [[2, 'desc']],//Default sort icon and sorted
         ajax: function (data, callback, settings) {
-            var filter = $('#UserTrackingSearchForm').serializeFormToObject(true);
-            getMeasurementScaleComboboxItems();
+            var filter = _$searchForm.serializeFormToObject(true);
+            _lookUpService.getMeasurementScaleComboboxItems().done(function (result) {
+                measurementScale = result.items;
 
-            filter.maxResultCount = data.length;
-            filter.skipCount = data.start;
-            filter.userId = filter.searchFormUserList;
+                //Load Table Data
+                filter.maxResultCount = data.length;
+                filter.skipCount = data.start;
+                filter.userId = filter.searchFormUserList;
 
-            abp.ui.setBusy(_$table);
-            _userTrackingService.getAllUserTrackingPagedResult(filter).done(function (result) {
-                callback({
-                    recordsTotal: result.totalCount,
-                    recordsFiltered: result.totalCount,
-                    data: result.items
+                abp.ui.setBusy(_$table);
+                _userTrackingService.getAllUserTrackingPagedResult(filter).done(function (result) {
+                    callback({
+                        recordsTotal: result.totalCount,
+                        recordsFiltered: result.totalCount,
+                        data: result.items
+                    });
+                }).always(function () {
+                    abp.ui.clearBusy(_$table);
                 });
-            }).always(function () {
-                abp.ui.clearBusy(_$table);
             });
         },
         buttons: [
@@ -45,16 +46,46 @@
                 action: () => _$userTrackingTable.draw(false)
             }
         ],
-        responsive: {
-            details: {
-                type: 'column'
-            }
-        },
-        columnDefs: [
+        //responsive: {
+        //    details: {
+        //        type: 'column'
+        //    }
+        //},
+        columnDefs: [ 
             {
                 targets: 0,
-                className: 'control',
-                defaultContent: ''
+                data: null,
+                sortable: false,
+                autoWidth: false,
+                defaultContent: '',
+                render: (data, type, row, meta) => {
+                    var result = '';
+                    result += `<div class="btn-group">`
+                    result += `<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">`
+                    result += l("Actions")
+                    result += `<span class="caret"></span>`
+                    result += `</button>`
+                    result += `<div class="dropdown-menu">` 
+                    if (row.status.statusConst == "Approved") {
+                        if (isAdminLoggedIn) {
+                            result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">${l('Edit')}</a>`
+                            result += `<a class="dropdown-item delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">${l('Delete')}</a>`
+                            result += `<a class="dropdown-item update-userTracking-status" data-userTracking-id="${row.id}" data-userTracking-status="false" data-toggle="tooltip" data-placement="right"  title="${l("UnApproveStatusToolTip")}">${l('UnApprove')}</a>`
+                        }
+                        else
+                            result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">${l('Detail')}</a>`
+                    } else {
+                        result += `<a class="dropdown-item edit-userTracking" data-userTracking-id="${row.id}" class="dropdown-item">${l('Edit')}</a>`
+                        result += `<a class="dropdown-item delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">${l('Delete')}</a>`
+                        if (isAdminLoggedIn) {
+                            result += `<a class="dropdown-item update-userTracking-status" data-userTracking-id="${row.id}" data-userTracking-status="true" data-toggle="tooltip" data-placement="right"  title="${l("ApproveStatusToolTip")}">${l('Approve')}</a>`
+                        }
+                    }
+                    result += `</div>`
+                    result += `</div>`
+                    return result;
+                },
+                sortable: false
             },
             {
                 targets: 1,
@@ -231,23 +262,12 @@
                             result[4] = ` <span type='button' class="update-userTracking-status" data-userTracking-id="${row.id}" data-userTracking-status="true" data-toggle="tooltip" data-placement="right"  title="${l("ApproveStatusToolTip")}"><i class="fas fa-thumbs-up"></i></i></span>`
                         }
                     }
-                     
+
                     return result.join('');
-                }
-                //render: (data, type, row, meta) => {
-                //    return [
-                //        `   <span type='button' class="edit-userTracking" data-userTracking-id="${row.id}">`,
-                //        `       <i class="fas fa-pencil-alt"></i>`,
-                //        '   </span>',
-                //        `&nbsp | &nbsp  <span type='button' class="delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">`,
-                //        `       <i class="fas fa-trash"></i>`,
-                //        '   </span>',
-                //    ].join('');
-                //},
-            }
+                } 
+            }  
         ]
     });
-
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         $($.fn.dataTable.tables(true)).DataTable()
             .columns.adjust();
@@ -269,15 +289,17 @@
             _userTrackingService
                 .createUserTracking(userTracking)
                 .done(function (data) {
-                    //_$modal.modal('hide');
-                    //_$form[0].reset(); 
+                    debugger;
                     $('#addedUserTrackingId').val(data.id);
+                    _$modal.modal('hide');
                     abp.notify.info(l('SavedSuccessfully'));
                     _$userTrackingTable.ajax.reload();
-                    activeTab('create-tracking-photo');
-                    loadComponentView("create-tracking-photo", "DocumentUploader", "UserTracking", data.id, "/Document/LoadDocumentComponent");
+                    //_$form[0].reset(); 
+                    //activeTab('create-tracking-photo');
+                    //loadComponentView("create-tracking-photo", "DocumentUploader", "UserTracking", data.id);
                 })
                 .always(function () {
+                    debugger;
                     abp.ui.clearBusy(_$modal);
                 });
         }
@@ -294,26 +316,28 @@
         abp.ui.setBusy(_$form);
         _userTrackingService.update(userTracking).done(function () {
             abp.notify.info(l('SavedSuccessfully'));
-            _$userTrackingTable.ajax.reload();
-            activeTab('create-tracking-photo');
-            loadComponentView("create-tracking-photo", "DocumentUploader", "UserTracking", userTracking.id, "/Document/LoadDocumentComponent");
+            abp.event.trigger('userTracking.added', userTracking);
+            //_$userTrackingTable.ajax.reload();
+            //activeTab('create-tracking-photo');
+            //loadComponentView("create-tracking-photo", "DocumentUploader", "UserTracking", userTracking.id);
         }).always(function () {
             abp.ui.clearBusy(_$form);
         });
     }
     $(document).on('click', '.delete-userTracking', function () {
         var userTrackingId = $(this).attr("data-userTracking-id");
-        var userTrackingName = $(this).attr('data-userTracking-name'); 
+        var userTrackingName = $(this).attr('data-userTracking-name');
         deleteUserTracking(userTrackingId, userTrackingName);
     });
-    $(document).on('click', '.update-userTracking-status', function () { 
+    $(document).on('click', '.update-userTracking-status', function () {
         var userTrackingId = $(this).attr("data-userTracking-id");
-        var userTrackingApproveStatus = $(this).attr('data-userTracking-status'); 
+        var userTrackingApproveStatus = $(this).attr('data-userTracking-status');
         updateUserTrackingStatus(userTrackingId, userTrackingApproveStatus);
     });
     $(document).on('click', '.edit-userTracking', function (e) {
         var userTrackingId = $(this).attr("data-userTracking-id");
         e.preventDefault();
+        abp.ui.setBusy(_$table);
         abp.ajax({
             url: abp.appPath + 'Admin/userTracking/EditModal?userTrackingId=' + userTrackingId,
             type: 'POST',
@@ -323,13 +347,17 @@
             $('#UserTrackingEditModal').modal('show').find('label').addClass('active');
         }).fail(function (jqXHR) {
             errorHandler(jqXHR);
+        }).always(function () {
+            abp.ui.clearBusy(_$table);
         });
     });
 
     abp.event.on('userTracking.edited', (data) => {
         _$userTrackingTable.ajax.reload();
     });
-
+    abp.event.on('userTracking.added', (data) => {
+        _$userTrackingTable.ajax.reload();
+    });
     function deleteUserTracking(userTrackingId, userTrackingName) {
         abp.message.confirm(
             abp.utils.formatString(
@@ -348,7 +376,7 @@
             }
         );
     }
-    function updateUserTrackingStatus(userTrackingId, userTrackingApproveStatus) { 
+    function updateUserTrackingStatus(userTrackingId, userTrackingApproveStatus) {
         var displayMessage = '';
         var userTrackingStatus = {};
         userTrackingStatus.id = userTrackingId;
@@ -367,6 +395,9 @@
         _$modal.find('input:not([type=hidden]):first').focus();
     }).on('hidden.bs.modal', () => {
         _$form.clearForm();
+        _$form.find('label').removeClass('active');
+        $('#addedUserTrackingId').val('');
+        $('#create-tracking-photo').html('');
     });
 
     $('.btn-search').on('click', (e) => {
@@ -388,4 +419,36 @@
         endDate: '+0d'
     });
 
+
 })(jQuery);
+
+
+
+
+    //function getMeasurementScaleComboboxItems() {
+    //    _lookUpService.getMeasurementScaleComboboxItems().done(function (result) {
+    //        measurementScale = result.items;
+    //    });
+    //}
+
+ //{
+            //    targets: 0,
+            //    className: 'control',
+            //    defaultContent: ''
+            //}, 
+
+//result += `<div class="btn-group">`
+//result += `<button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`
+//result += `<span class="caret"></span>`
+//result += `</button>`
+//result += `<div class="dropdown-menu">`
+//render: (data, type, row, meta) => {
+                //    return [
+                //        `   <span type='button' class="edit-userTracking" data-userTracking-id="${row.id}">`,
+                //        `       <i class="fas fa-pencil-alt"></i>`,
+                //        '   </span>',
+                //        `&nbsp | &nbsp  <span type='button' class="delete-userTracking" data-userTracking-id="${row.id}" data-userTracking-name="${moment(row.creationTime).format("MMMM Do YYYY")}">`,
+                //        `       <i class="fas fa-trash"></i>`,
+                //        '   </span>',
+                //    ].join('');
+                //},

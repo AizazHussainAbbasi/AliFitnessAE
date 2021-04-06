@@ -6,8 +6,14 @@
         _$table = $('#RolesTable');
 
     var _$rolesTable = _$table.DataTable({
+        scrollY: "300px",
+        scrollX: true,
+        scrollCollapse: true,
+        processing: true,
+        responsive: false,
         paging: true,
         serverSide: true,
+        ordering: false,
         ajax: function (data, callback, settings) {
             var filter = $('#RolesSearchForm').serializeFormToObject(true);
             filter.maxResultCount = data.length;
@@ -31,44 +37,58 @@
                 action: () => _$rolesTable.draw(false)
             }
         ],
-        responsive: {
-            details: {
-                type: 'column'
-            }
-        },
+        //responsive: {
+        //    details: {
+        //        type: 'column'
+        //    }
+        //},
         columnDefs: [
             {
                 targets: 0,
-                className: 'control',
-                defaultContent: '',
-            },
-            {
-                targets: 1,
-                data: 'name',
-                sortable: false
-            },
-            {
-                targets: 2,
-                data: 'displayName',
-                sortable: false
-            },
-            {
-                targets: 3,
                 data: null,
                 sortable: false,
                 autoWidth: false,
                 defaultContent: '',
                 render: (data, type, row, meta) => {
-                    return [
-                        `   <button type="button" class="btn btn-sm bg-secondary edit-role" data-role-id="${row.id}" data-toggle="modal" data-target="#RoleEditModal">`,
-                        `       <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
-                        '   </button>',
-                        `   <button type="button" class="btn btn-sm bg-danger delete-role" data-role-id="${row.id}" data-role-name="${row.name}">`,
-                        `       <i class="fas fa-trash"></i> ${l('Delete')}`,
-                        '   </button>',
-                    ].join('');
+                    var result = '';
+                    result += `<div class="btn-group">`
+                    result += `<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">`
+                    result += l("Actions")
+                    result += `<span class="caret"></span>`
+                    result += `</button>`
+                    result += `<div class="dropdown-menu">`
+                    result += `<a class="dropdown-item edit-role" data-role-id="${row.id}" data-toggle="modal" data-target="#RoleEditModal"> ${l('Edit')}</a>`
+                    result += `<a class="dropdown-item delete-role" data-role-id="${row.id}" data-role-name="${row.name}"> ${l('Delete')}</a>`
+                    result += `</div>`
+                    result += `</div>`
+                    return result;
                 }
-            }
+            },
+            {
+                targets: 1,
+                data: 'name'
+            },
+            {
+                targets: 2,
+                data: 'displayName'
+            },
+            //{
+            //    targets: 3,
+            //    data: null,
+            //    sortable: false,
+            //    autoWidth: false,
+            //    defaultContent: '',
+            //    render: (data, type, row, meta) => {
+            //        return [
+            //            `   <button type="button" class="btn btn-sm bg-secondary edit-role" data-role-id="${row.id}" data-toggle="modal" data-target="#RoleEditModal">`,
+            //            `       <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
+            //            '   </button>',
+            //            `   <button type="button" class="btn btn-sm bg-danger delete-role" data-role-id="${row.id}" data-role-name="${row.name}">`,
+            //            `       <i class="fas fa-trash"></i> ${l('Delete')}`,
+            //            '   </button>',
+            //        ].join('');
+            //    }
+            //}
         ]
     });
 
@@ -113,7 +133,7 @@
     $(document).on('click', '.edit-role', function (e) {
         var roleId = $(this).attr("data-role-id");
         debugger;
-         e.preventDefault();
+        e.preventDefault();
         abp.ajax({
             url: abp.appPath + 'Admin/Roles/EditModal?roleId=' + roleId,
             type: 'POST',

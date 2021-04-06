@@ -1,22 +1,40 @@
 ﻿function activeTab(tab) {
     $('.nav-tabs a[href="#' + tab + '"]').tab('show');
-}; 
-function loadComponentView(loadDiv, viewComponentName, module, businessEntityId) {
-    var componentData = {}; 
+};
+function loadViewComponentUserTracking(model, tableId, settings) {
+    $.ajax({
+        url: window.location.origin + "/Admin/Home/LoadViewComponentUserTracking",
+        type: "post",
+        dataType: "json",
+        data: model,
+        complete: function (result) {
+            $("#" + model.loadDiv).html(result.responseText);
+            debugger;
+            if (tableId != null) { 
+                $("#" +tableId).DataTable(settings);
+            } 
+        }
+    });
+};
+function loadComponentView(loadDiv, viewComponentName, module, businessEntityId, model, viewName) {
+    debugger;
+    var componentData = {};
     componentData.Module = module;
     componentData.BusinessEntityId = businessEntityId;
     componentData.ViewComponentName = viewComponentName; 
+    componentData.ViewName = viewName;
+    componentData.SearchModel = model;
     $.ajax({
         url: window.location.origin + "/Admin/Home/LoadViewComponent",
         type: "post",
-        dataType: "json", 
+        dataType: "json",
         data: componentData,
-        complete: function (result) { 
+        complete: function (result) {
             $("#" + loadDiv).html(result.responseText);
         }
     });
 };
-function loadChartComponentView(loadInDiv, filter) {  
+function loadChartComponentView(loadInDiv, filter) {
     var loadInDiv = '#' + loadInDiv;
     abp.ui.setBusy(loadInDiv);
 
@@ -25,7 +43,7 @@ function loadChartComponentView(loadInDiv, filter) {
         type: "post",
         dataType: "json",
         data: filter,
-        complete: function (result) { 
+        complete: function (result) {
             $(loadInDiv).html(result.responseText);
             abp.ui.clearBusy(loadInDiv);
         }
@@ -39,7 +57,23 @@ function errorHandler(jqXHR) {
     } else {
         abp.ajax.handleNonAbpErrorResponse(jqXHR, userOptions, $dfd);
     }
-}; 
+};
+
 
 (function ($) {
+    $(document).on('click', '[data-toggle="lightbox"]', function (event) {
+        event.preventDefault();
+        $(this).ekkoLightbox({
+            alwaysShowClose: true
+        });
+    });
+    $('.form-horizontal').attr('autocomplete', 'off');
+
+    //User Tracking Profile - Search FORM
+    $("#userTrackingProfileSearchFormUserList").select2({});
+    $('#userTrackingProfileSearchFromDate,#userTrackingProfileSearchToDate,#EditUserDOB').datepicker({
+        format: "mm/dd/yyyy",
+        clearBtn: true,
+        endDate: '+0d'
+    });
 })(jQuery);

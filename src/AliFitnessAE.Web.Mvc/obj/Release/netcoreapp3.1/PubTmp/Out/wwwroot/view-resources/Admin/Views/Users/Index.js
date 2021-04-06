@@ -6,8 +6,14 @@
         _$table = $('#UsersTable');
 
     var _$usersTable = _$table.DataTable({
+        scrollY: "300px",
+        scrollX: true,
+        scrollCollapse: true,
+        processing: true,
+        responsive: false,
         paging: true,
         serverSide: true,
+        ordering: false,
         ajax: function (data, callback, settings) {
             var filter = $('#UsersSearchForm').serializeFormToObject(true);
             filter.maxResultCount = data.length;
@@ -36,11 +42,30 @@
                 type: 'column'
             }
         },
-        columnDefs: [
+        columnDefs: [ 
             {
                 targets: 0,
-                className: 'control',
+                data: null,
+                sortable: false,
+                autoWidth: false,
                 defaultContent: '',
+                render: (data, type, row, meta) => {
+                    var result = '';
+                    result += `<div class="btn-group">`
+                    result += `<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">`
+                    result += l("Actions")
+                    result += `<span class="caret"></span>`
+                    result += `</button>`
+                    result += `<div class="dropdown-menu">`
+                    result += `<a class="dropdown-item edit-user" data-user-id="${row.id}" data-toggle="modal" data-target="#UserEditModal"> ${l('Edit')}</a>`
+                    result += `<a class="dropdown-item delete-user" data-user-id="${row.id}" data-user-name="${row.name}"> ${l('Delete')}</a>`
+                    if (isAdminLoggedIn) {
+                        result += ` <a class="dropdown-item goto-profile-user" data-user-id="${row.id}">${l('GoToProfile')}</a>`
+                    }
+                    result += `</div>`
+                    result += `</div>`
+                    return result; 
+                } 
             },
             {
                 targets: 1,
@@ -62,23 +87,6 @@
                 data: 'isActive',
                 sortable: false,
                 render: data => `<input type="checkbox" disabled ${data ? 'checked' : ''}>`
-            },
-            {
-                targets: 5,
-                data: null,
-                sortable: false,
-                autoWidth: false,
-                defaultContent: '',
-                render: (data, type, row, meta) => {
-                    return [
-                        `   <button type="button" class="btn btn-sm bg-secondary edit-user" data-user-id="${row.id}" data-toggle="modal" data-target="#UserEditModal">`,
-                        `       <i class="fas fa-pencil-alt"></i> ${l('Edit')}`,
-                        '   </button>',
-                        `   <button type="button" class="btn btn-sm bg-danger delete-user" data-user-id="${row.id}" data-user-name="${row.name}">`,
-                        `       <i class="fas fa-trash"></i> ${l('Delete')}`,
-                        '   </button>'
-                    ].join('');
-                }
             }
         ]
     });
@@ -97,7 +105,7 @@
 
         if (!_$form.valid()) {
             return;
-        } 
+        }
 
         var user = _$form.serializeFormToObject();
         user.roleNames = [];
@@ -160,7 +168,26 @@
             error: function (e) { }
         });
     });
+    $(document).on('click', '.goto-profile-user', function (e) {
+        var userId = $(this).attr("data-user-id");
 
+        e.preventDefault();
+        abp.ajax({
+            url: abp.appPath + 'Admin/Users/GotoUserProfile?userId=' + userId,
+            type: 'POST',
+            dataType: 'html',
+            success: function (data) { 
+                var response = jQuery.parseJSON(data); 
+                if (response.result != null && response.result.success) {
+                    window.location.href = response.result.targetUrl;
+                }
+                else {
+                    abp.message.error('URL is wrong,please contact with Admin', 'Error Occurred');
+                }
+            },
+            error: function (e) { }
+        });
+    });
     $(document).on('click', 'a[data-target="#UserCreateModal"]', (e) => {
         $('.nav-tabs a[href="#user-details"]').tab('show')
     });
@@ -184,24 +211,24 @@
             _$usersTable.ajax.reload();
             return false;
         }
-    }); 
+    });
     $("#AddUserType").select2({
         placeholder: "Select",
         theme: "bootstrap4",
         allowClear: true,
-        dropdownParent: $('#UserCreateModal .modal-content') 
-    });    
+        dropdownParent: $('#UserCreateModal .modal-content')
+    });
     $("#AddGender").select2({
         placeholder: "Select",
         theme: "bootstrap4",
         allowClear: true,
         dropdownParent: $('#UserCreateModal .modal-content')
-    });   
+    });
     $('#AddUserDOB').datepicker({
         format: "mm/dd/yyyy",
         startView: 2,
         clearBtn: true,
         endDate: '+0d',
         //container: '#UserEditModal .modal-content'
-    }); 
+    });
 })(jQuery);

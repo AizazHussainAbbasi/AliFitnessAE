@@ -71,7 +71,7 @@ function errorHandler(jqXHR) {
 
     //User Tracking Profile - Search FORM
     $("#userTrackingProfileSearchFormUserList").select2({});
-    $('#userTrackingProfileSearchFromDate,#userTrackingProfileSearchToDate').datepicker({
+    $('#userTrackingProfileSearchFromDate,#userTrackingProfileSearchToDate,#EditUserDOB').datepicker({
         format: "mm/dd/yyyy",
         clearBtn: true,
         endDate: '+0d'

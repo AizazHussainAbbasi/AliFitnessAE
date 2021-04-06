@@ -10,6 +10,7 @@ namespace AliFitnessAE.Common.Constants
         public const string Female = "Female";
         public const string UserTracking = "UserTracking"; 
         public const string PhotoTracking = "PhotoTracking"; 
+        public const string PersonalDetail = "PersonalDetail"; 
         public const string Cm = "Cm"; 
         public const string Inches = "Inches"; 
         public const string Feet = "Feet"; 

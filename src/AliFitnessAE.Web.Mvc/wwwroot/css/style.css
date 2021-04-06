@@ -97,32 +97,61 @@ textarea {
 
 #divDocumentControl {
     text-align: center;
-} 
+}
+
 .previewImgControl img {
     height: 200px;
     width: 200px;
     padding: 5px;
     border: 1px solid rgb(232, 222, 189);
-} 
+}
+
 .previewImgDeleteControl {
     color: red;
     font-weight: bold;
     position: absolute;
     top: 0;
     cursor: pointer
-} 
+}
+
 table.dataTable thead th {
     white-space: nowrap
 }
+
 #imagePreviewModal .modal-dialog {
     overflow-y: auto;
     overflow-x: auto;
     max-width: 900px;
 }
+
 .tooltip {
     z-index: 100000;
     pointer-events: none;
 }
+
+.upload-button {
+    padding: 4px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: block;
+    float: left;
+}
+
+.file-upload {
+    display: none;
+}
+
+table.nowrap-table {
+    white-space: nowrap;
+}  
+table.table-bordered tr.odd {
+    background-color: rgba(85, 182, 255, 0.28);
+} 
+table.table-bordered tr.even {
+    background-color: white;
+}
+
+
 /*.text-sm {
     font-size: .875rem !important;
 }
@@ -147,3 +176,4 @@ body {
     text-align: left;
     background-color: #fff;
 }*/
+

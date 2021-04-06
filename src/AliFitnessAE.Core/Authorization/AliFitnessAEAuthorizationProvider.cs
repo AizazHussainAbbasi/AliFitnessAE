@@ -8,7 +8,7 @@ namespace AliFitnessAE.Authorization
     {
         public override void SetPermissions(IPermissionDefinitionContext context)
         {
-            context.CreatePermission(PermissionNames.Pages_Users, L("Users"));
+            //context.CreatePermission(PermissionNames.Pages_Users, L("Users"));
             context.CreatePermission(PermissionNames.Pages_UserType, L("UserType"));
             context.CreatePermission(PermissionNames.Pages_Roles, L("Roles"));
             context.CreatePermission(PermissionNames.Pages_Tenants, L("Tenants"), multiTenancySides: MultiTenancySides.Host);
@@ -16,10 +16,15 @@ namespace AliFitnessAE.Authorization
             context.CreatePermission(PermissionNames.Pages_UserTracking, L("UserTracking"));
             context.CreatePermission(PermissionNames.Pages_PhotoTracking, L("PhotoTracking"));
 
-            var administration = context.CreatePermission(PermissionNames.Pages_Topic_GetTopic, L("GetTopic"));
-            var userManagement = administration.CreateChildPermission(PermissionNames.Pages_Topic_CreateTopic, L("CreateTopic"));
-            userManagement.CreateChildPermission(PermissionNames.Pages_Topic_UpdateTopic, L("UpdateTopic"));
-            userManagement.CreateChildPermission(PermissionNames.Pages_Topic_DeleteTopic, L("DeleteTopic"));
+            var user = context.CreatePermission(PermissionNames.Pages_Users, L("Users"));
+            var userManagement = user.CreateChildPermission(PermissionNames.Pages_User_CreateUsers, L("CreateUsers"));
+            userManagement.CreateChildPermission(PermissionNames.Pages_User_UpdateUsers, L("UpdateUsers"));
+            userManagement.CreateChildPermission(PermissionNames.Pages_User_DeleteUsers, L("DeleteUsers"));
+
+            var topic = context.CreatePermission(PermissionNames.Pages_Topic_GetTopic, L("GetTopic"));
+            var topicManagement = topic.CreateChildPermission(PermissionNames.Pages_Topic_CreateTopic, L("CreateTopic"));
+            topicManagement.CreateChildPermission(PermissionNames.Pages_Topic_UpdateTopic, L("UpdateTopic"));
+            topicManagement.CreateChildPermission(PermissionNames.Pages_Topic_DeleteTopic, L("DeleteTopic"));
             context.CreatePermission(PermissionNames.Pages_UserTracking_GetAll, L("GetAllUserTracking"));
         }
 

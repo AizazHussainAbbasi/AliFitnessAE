@@ -116,5 +116,70 @@
     <text name="Clear">Clear</text>
     <text name="ResetPasswordStepOneInfo">1. Enter your administrator password</text>
     <text name="ResetPasswordStepTwoInfo">2. Copy this random password so you can send it to the user</text>
+    
+    <!--User Tracking-->
+    <text name="User">User</text>
+    <text name="Date">Date</text>
+    <text name="Status">Status</text>
+    <text name="Height">Height</text>
+    <text name="Weight">Weight</text>
+    <text name="Hip">Hip</text>
+    <text name="BellyButtonWaist">Belly Button Waist</text>
+    <text name="HipBoneWaist">Hip Bone Waist</text>
+    <text name="Chest">Chest</text>
+    <text name="RightArm">Right Arm</text>
+    <text name="LeftArm">Left Arm</text>
+    <text name="RightThigh">Right Thigh</text>
+    <text name="LeftThigh">Left Thigh</text>
+    <text name="RightCalve">Right Calve</text>
+    <text name="LeftCalve">Left Calve</text>
+    <text name="RightForeArm">Right Fore Arm</text>
+    <text name="LeftForeArm">Left Fore Arm</text>
+    <text name="Front">Front</text>
+    <text name="Measurement">Measurement</text>
+    <text name="Scale">Scale</text>
+    <text name="PersonalDetail">Personal Detail</text>
+    <text name="UploadPhoto">Upload Photo</text>
+    <text name="DOB">DOB</text>
+    <text name="ZoomId">Zoom Id</text>
+    <text name="Gender">Gender</text>
+    <text name="MobileNumber">Mobile Number</text>
+    <text name="Update">Update</text>
+    
+    <!--Search Form-->
+    <text name="SelectFrom">Select From</text>
+    <text name="SelectTo">Select To</text>
+    <text name="ChartType">Chart Type</text>
+    
+    <!--Menu / Module-->
+    <text name="UserTracking">User Tracking</text>
+    <text name="Photo">Photo</text>
+    <text name="Topic">Topic</text>
+    <text name="UserType">User Type</text>
+
+    <!-- Actions -->
+    <text name="Approve">Approve</text>
+    <text name="UnApprove">Un Approve</text>
+    <text name="Detail">Detail</text>
+    <text name="GoToProfile">Go To Profile</text> 
+    
+    <!--User Type-->
+    <text name="CreateNewUserType">Create New User Type</text>
+    <text name="EditUserType">Edit User Type</text>
+    <text name="UserTypeName">User Type</text>
+    <text name="UserTypeConst">User Type Constant</text>
+
+    <!--Topic -->
+    <text name="CreateNewTopic">Create New Topic</text>
+    <text name="EditTopic">Edit Topic</text>
+    <text name="TopicConst">Topic Constant</text>
+    <text name="Title">Title</text>
+    <text name="TopicBody">Topic Body</text>
+    <text name="Published">Published</text>
+    <text name="IncluedInTopMenu">Inclued In Top Menu</text>
+    <text name="IncluedInFooterColumn1">Inclued In Footer Column 1</text> 
+    <text name="IncluedInFooterColumn2">Inclued In Footer Column 2</text> 
+    <text name="IncluedInFooterColumn3">Inclued In Footer Column 3</text> 
+
   </texts>
 </localizationDictionary>

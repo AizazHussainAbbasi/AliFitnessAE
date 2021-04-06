@@ -10,11 +10,11 @@
                     <select class="form-control" id="SearchFormUserList" name="searchFormUserList" asp-items="@Model.UserList"> </select>
                 </div>
             }
-            <label for="SearchFromDate" class="col-form-label mt-2">Select From</label>
+        <label for="SearchFromDate" class="col-form-label mt-2">@L("SelectFrom")</label>
             <div class="col-sm-2 mt-2">
                 <input type="text" class="form-control" id="SearchFromDate" name="fromDate" required>
             </div>
-            <label for="SearchToDate" class="col-form-label mt-2">Select To</label>
+            <label for="SearchToDate" class="col-form-label mt-2">@L("SelectTo")</label>
             <div class="col-sm-2 mt-2">
                 <input type="text" class="form-control" id="SearchToDate" name="toDate" required>
             </div>

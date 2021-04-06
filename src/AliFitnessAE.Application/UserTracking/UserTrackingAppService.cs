@@ -60,13 +60,13 @@ namespace AliFitnessAE.AppService
             IQueryable<UserTracking> queryable = null;
             if (PermissionChecker.IsGranted(PermissionNames.Pages_UserTracking_GetAll))
             {
-                queryable = _userTrackingRepository.GetAll().Where(x => x.IsDeleted == false).Include(x => x.User).Include(x => x.Status);
+                queryable = _userTrackingRepository.GetAll().Where(x => x.IsDeleted == false).Include(x => x.User).Include(x => x.Status).AsNoTracking();
                 if (input.UserId.HasValue)
                     queryable = queryable.Where(x => x.UserId == input.UserId);
             }
             else
             {
-                queryable = _userTrackingRepository.GetAll().Include(x => x.User).Where(x => x.UserId == AbpSession.UserId.Value).Include(x => x.Status);
+                queryable = _userTrackingRepository.GetAll().Include(x => x.User).Where(x => x.UserId == AbpSession.UserId.Value).Include(x => x.Status).AsNoTracking();
             }
             if (input.FromDate.HasValue)
                 queryable = queryable.Where(x => x.CreationTime.Date >= input.FromDate.Value.Date);

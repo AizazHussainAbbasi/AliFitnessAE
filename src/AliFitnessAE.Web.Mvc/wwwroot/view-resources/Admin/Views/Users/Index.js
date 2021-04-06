@@ -6,8 +6,14 @@
         _$table = $('#UsersTable');
 
     var _$usersTable = _$table.DataTable({
+        scrollY: "300px",
+        scrollX: true,
+        scrollCollapse: true,
+        processing: true,
+        responsive: false,
         paging: true,
         serverSide: true,
+        ordering: false,
         ajax: function (data, callback, settings) {
             var filter = $('#UsersSearchForm').serializeFormToObject(true);
             filter.maxResultCount = data.length;
@@ -36,14 +42,9 @@
                 type: 'column'
             }
         },
-        columnDefs: [
+        columnDefs: [ 
             {
                 targets: 0,
-                className: 'control',
-                defaultContent: '',
-            },
-            {
-                targets: 1,
                 data: null,
                 sortable: false,
                 autoWidth: false,
@@ -51,37 +52,38 @@
                 render: (data, type, row, meta) => {
                     var result = '';
                     result += `<div class="btn-group">`
-                    result += `<button class="btn btn-primary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">`
+                    result += `<button class="btn-primary dropdown-toggle" type="button" data-toggle="dropdown"  aria-haspopup="true" aria-expanded="false">`
+                    result += l("Actions")
                     result += `<span class="caret"></span>`
                     result += `</button>`
                     result += `<div class="dropdown-menu">`
-                    result += ` <a class="dropdown-item edit-user" data-user-id="${row.id}" data-toggle="modal" data-target="#UserEditModal">Edit</a>`
-                    result += ` <a class="dropdown-item delete-user" data-user-id="${row.id}" data-user-name="${row.name}">Delete</a>`
+                    result += `<a class="dropdown-item edit-user" data-user-id="${row.id}" data-toggle="modal" data-target="#UserEditModal"> ${l('Edit')}</a>`
+                    result += `<a class="dropdown-item delete-user" data-user-id="${row.id}" data-user-name="${row.name}"> ${l('Delete')}</a>`
                     if (isAdminLoggedIn) {
-                        result += ` <a class="dropdown-item goto-profile-user" data-user-id="${row.id}">GotProfile</a>`
+                        result += ` <a class="dropdown-item goto-profile-user" data-user-id="${row.id}">${l('GoToProfile')}</a>`
                     }
                     result += `</div>`
                     result += `</div>`
-                    return result;
-                }
+                    return result; 
+                } 
             },
             {
-                targets: 2,
+                targets: 1,
                 data: 'userName',
                 sortable: false
             },
             {
-                targets: 3,
+                targets: 2,
                 data: 'fullName',
                 sortable: false
             },
             {
-                targets: 4,
+                targets: 3,
                 data: 'emailAddress',
                 sortable: false
             },
             {
-                targets: 5,
+                targets: 4,
                 data: 'isActive',
                 sortable: false,
                 render: data => `<input type="checkbox" disabled ${data ? 'checked' : ''}>`

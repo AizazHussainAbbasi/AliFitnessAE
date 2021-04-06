@@ -1,5 +1,6 @@
 ﻿using Acme.SimpleTaskApp.Common;
 using AliFitnessAE.AppService;
+using AliFitnessAE.Authorization.Users;
 using AliFitnessAE.Common;
 using AliFitnessAE.Common.Constants;
 using AliFitnessAE.Common.Enum;
@@ -22,19 +23,24 @@ namespace AliFitnessAE.Web.Admin.Views.Shared.Components.UserTrackingChart
         private readonly ILookupAppService _lookupAppService;
         private readonly Helper _helper;
         private readonly ChartHelper _chartHelper;
+        private readonly UserManager _userManager;
+
         public UserTrackingDetailTabViewComponent(IUserTrackingAppService userTrackingAppService,
-             ILookupAppService lookupAppService)
+             ILookupAppService lookupAppService ,
+             UserManager userManager)
+
         {
             _userTrackingAppService = userTrackingAppService;
             _lookupAppService = lookupAppService;
             _helper = new Helper(lookupAppService);
             _chartHelper = new ChartHelper(userTrackingAppService, lookupAppService, _helper);
+            _userManager = userManager;
         }
         public async Task<IViewComponentResult> InvokeAsync(UserTrackingFilter model)
         {
             //Decrypt UserId
             model.UserId = Convert.ToInt32(CryptoEngine.DecryptString(model.UserIdEnyc));
-            var userTrackingDtoList = _userTrackingAppService.GetAllUserTrackingList(model).OrderBy(x=>x.CreationTime);
+            var userTrackingDtoList = _userTrackingAppService.GetAllUserTrackingList(model).OrderBy(x=>x.CreationTime); 
             var user = userTrackingDtoList.FirstOrDefault()?.User;
             //Scale  
             if (model.BodyPart == EnumUserTrackingBodyPart.Height)
