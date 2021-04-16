@@ -35,7 +35,7 @@ namespace AliFitnessAE.Document
             var documentTypeList = await _documentTypeRepository
                 .GetAll()
                 .WhereIf(id.HasValue, e => e.Id == id)
-                .WhereIf(string.IsNullOrEmpty(documentTypeConst), e => e.DocumentTypeConst == documentTypeConst)
+                .WhereIf(!string.IsNullOrEmpty(documentTypeConst), e => e.DocumentTypeConst == documentTypeConst)
                 .OrderByDescending(t => t.CreationTime)
                 .ToListAsync();
             return new ListResultDto<DocumentTypeDto>(

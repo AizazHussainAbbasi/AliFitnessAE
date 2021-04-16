@@ -55,6 +55,7 @@
       "wwwroot/libs/jquery/jquery.js",
       "wwwroot/libs/bootstrap/dist/js/bootstrap.bundle.js",
       "wwwroot/libs/admin-lte/dist/js/adminlte.js",
+      "wwwroot/libs/admin-lte/plugins/ekko-lightbox/ekko-lightbox.js",
       "wwwroot/libs/jquery-validate/jquery.validate.js",
       "wwwroot/libs/jquery-validate/jquery.validate.unobtrusive.js",
       "wwwroot/libs/block-ui/jquery.blockUI.js",
@@ -135,6 +136,43 @@
       "wwwroot/view-resources/Admin/Views/Shared/Components/TenantChange/_ChangeModal.js"
     ]
   },
+
+  {
+    "outputFileName": "wwwroot/view-resources/Admin/Views/Profile/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Admin/Views/Profile/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Admin/Views/Profile/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Admin/Views/Profile/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Admin/Views/Topic/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Admin/Views/Topic/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Admin/Views/UserTracking/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Admin/Views/UserTracking/Index.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Admin/Views/UserTracking/PhotoTracking.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Admin/Views/UserTracking/PhotoTracking.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/view-resources/Admin/Views/UserType/Index.min.js",
+    "inputFiles": [
+      "wwwroot/view-resources/Admin/Views/UserType/Index.js"
+    ]
+  },
   //Wbsite Theme
   {
     "outputFileName": "wwwroot/view-resources/Views/_Bundles/shared-layout.min.css",
@@ -152,7 +190,7 @@
   },
   {
     "outputFileName": "wwwroot/view-resources/Views/_Bundles/shared-layout.min.js",
-    "inputFiles": [ 
+    "inputFiles": [
       "wwwroot/view-resources/Views/Theme/js/jquery-1.11.0.min.js",
       "wwwroot/view-resources/Views/Theme/js/bootstrap.min.js",
       "wwwroot/view-resources/Views/Theme/js/jquery.appear.js",

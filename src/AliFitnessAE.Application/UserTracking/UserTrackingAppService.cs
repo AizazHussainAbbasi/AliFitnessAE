@@ -9,6 +9,7 @@ using AliFitnessAE.Authorization;
 using AliFitnessAE.Authorization.Users;
 using AliFitnessAE.Common.Enum;
 using AliFitnessAE.Dto;
+using AliFitnessAE.StatusCore;
 using AliFitnessAE.UserTrackingCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -24,20 +25,23 @@ namespace AliFitnessAE.AppService
     public class UserTrackingAppService : AsyncCrudAppService<UserTracking, UserTrackingDto, int, PagedResultRequestExtDto, CreateUserTrackingDto, UserTrackingDto>, IUserTrackingAppService
     {
         private readonly IRepository<UserTracking> _userTrackingRepository;
+        private readonly IRepository<Status> _statusRepository;
         private readonly ILookupAppService _lookupAppService;
         private readonly UserManager _userManager;
 
         public UserTrackingAppService(IRepository<UserTracking> repository,
+                         IRepository<Status> statusRepository,
                          ILookupAppService lookupAppService,
                          UserManager userManager)
             : base(repository)
         {
             _userTrackingRepository = repository;
+            _statusRepository = statusRepository;
             _lookupAppService = lookupAppService;
             _userManager = userManager;
         }
         public PagedResultDto<UserTrackingDto> GetAllUserTrackingPagedResult(PagedResultRequestExtDto input)
-        {
+        { 
             var queryable = GetAllUserTrackingIQueryable(input);
             ////Server Side Pagging
             ////var count = queryable.Count();
@@ -72,10 +76,31 @@ namespace AliFitnessAE.AppService
                 queryable = queryable.Where(x => x.CreationTime.Date >= input.FromDate.Value.Date);
             if (input.ToDate.HasValue)
                 queryable = queryable.Where(x => x.CreationTime.Date <= input.ToDate.Value.Date);
+            if (input.IsApproved.HasValue)
+            {
+                if (input.IsApproved.Value)
+                    queryable = queryable.Where(x => x.StatusId == _statusRepository.GetAll().Where(x => x.StatusConst == StatusConst.Approved).First().Id);
+                else
+                    queryable = queryable.Where(x => x.StatusId == _statusRepository.GetAll().Where(x => x.StatusConst == StatusConst.UnApproved).First().Id);
+            } 
             //var list = queryable.ToList()
             //               .OrderByDescending(x => x.CreationTime);
             //var items = ObjectMapper.Map<IList<UserTrackingDto>>(list);
             return queryable;
+        }
+        public int GetUserTrackingCount(bool? isApproved = null)
+        {
+            IQueryable<UserTracking> queryable = null;
+            queryable = _userTrackingRepository.GetAll().Where(x => x.IsDeleted == false);
+            if (isApproved.HasValue)
+            {
+                if (isApproved.Value)
+                    queryable = queryable.Where(x => x.StatusId == _statusRepository.GetAll().Where(x => x.StatusConst == StatusConst.Approved).First().Id);
+                else
+                    queryable = queryable.Where(x => x.StatusId == _statusRepository.GetAll().Where(x => x.StatusConst == StatusConst.UnApproved).First().Id);
+            }
+            var count = queryable.Count();
+            return count;
         }
         public async Task<UserTrackingDto> CreateUserTrackingAsync(CreateUserTrackingDto input, IFormFile file)
         {
@@ -131,7 +156,7 @@ namespace AliFitnessAE.AppService
             {
                 var userTracking = await _userTrackingRepository.GetAsync(model.Id);
                 var statusConst = model.IsApprove ? StatusConst.Approved : StatusConst.UnApproved;
-                userTracking.StatusId = _lookupAppService.GetAllStatus(null,null, statusConst, null).Result.Items.First().Id; 
+                userTracking.StatusId = _lookupAppService.GetAllStatus(null, null, statusConst, null).Result.Items.First().Id;
                 await _userTrackingRepository.UpdateAsync(userTracking);
                 return MapToEntityDto(userTracking);
             }
@@ -139,7 +164,7 @@ namespace AliFitnessAE.AppService
             {
                 throw ex;
             }
-        }  
+        }
         protected virtual void CheckErrors(IdentityResult identityResult)
         {
             identityResult.CheckErrors(LocalizationManager);

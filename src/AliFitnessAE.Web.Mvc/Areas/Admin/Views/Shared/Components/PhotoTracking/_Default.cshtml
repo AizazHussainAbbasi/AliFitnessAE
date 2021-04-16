@@ -37,8 +37,8 @@
                     @foreach (var attachment in document.BusinessDocumentAttachmentDto)
                     {
                         <div class="col-sm-2">
-                            <a href="~/images/@attachment.FilePath" data-toggle="lightbox" data-title="@document.DocumentType.DocumentTypeConst" data-gallery="gallery">
-                                <img src="~/images/@attachment.FilePath?text=@attachment.Id" class="img-fluid mb-2" alt="@document.DocumentType.DocumentTypeConst" rel="lightbox[gallery]"/>
+                            <a href="~/images/tracking/@attachment.FilePath" data-toggle="lightbox" data-title="@document.DocumentType.DocumentTypeConst" data-gallery="gallery">
+                                <img src="~/images/tracking/@attachment.FilePath?text=@attachment.Id" class="img-fluid mb-2" alt="@document.DocumentType.DocumentTypeConst" rel="lightbox[gallery]"/>
                             </a>
                         </div>
                     }

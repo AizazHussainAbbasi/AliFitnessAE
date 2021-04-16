@@ -14,6 +14,8 @@ using AliFitnessAE.Dto;
 using AliFitnessAE.Web.Areas.Admin.Models.Common;
 using AliFitnessAE.Common.Enum;
 using AliFitnessAE.Common.Constants;
+using AliFitnessAE.AppService;
+using AliFitnessAE.Users;
 
 namespace AliFitnessAE.Web.Admin.Controllers
 {
@@ -22,13 +24,22 @@ namespace AliFitnessAE.Web.Admin.Controllers
     public class HomeController : AliFitnessAEControllerBase
     {
         private readonly ILookupAppService _lookupAppService;
+        private readonly IUserAppService _userAppService;
+        private readonly IUserTrackingAppService _userTrackingAppService;
+        private readonly IPhotoTrackingAppService _photoTrackingAppService;
         private readonly UserManager _userManager;
 
         public HomeController(
              ILookupAppService lookupAppService,
+             IUserAppService userAppService,
+             IUserTrackingAppService userTrackingAppService,
+             IPhotoTrackingAppService photoTrackingAppService,
               UserManager userManager)
         {
             _lookupAppService = lookupAppService;
+            _userAppService = userAppService;
+            _userTrackingAppService = userTrackingAppService;
+            _photoTrackingAppService = photoTrackingAppService;
             _userManager = userManager;
         }
         public ActionResult Index()
@@ -36,19 +47,27 @@ namespace AliFitnessAE.Web.Admin.Controllers
             var scale = new Scale(_lookupAppService);
             var model = new HomeIndexCommonVModel
             {
-                UserTrackingFilter = new UserTrackingFilter() { MeasurementScale = scale }, 
+                UserTrackingFilter = new UserTrackingFilter() { MeasurementScale = scale },
             };
             if (_userManager.IsAdminUser(AbpSession.UserId.Value))
             {
                 model.UserTrackingFilter.UserList = _lookupAppService.GetUserComboboxItems().Result.Items.Select(p => p.ToSelectListItem()).ToList();
                 model.UserTrackingFilter.UserList.Insert(0, new SelectListItem { Value = string.Empty, Text = L("All"), Selected = true });
+
+                //User Counts
+                model.ActiveClientCount = _userAppService.GetUserCount(UserTypeConst.Client, true);
+                model.UnActiveClientCount = _userAppService.GetUserCount(UserTypeConst.Client, false);
+                model.ApprovedMeasurementCount = _userTrackingAppService.GetUserTrackingCount(true);
+                model.UnApprovedMeasurementCount = _userTrackingAppService.GetUserTrackingCount(false);
+                model.ApprovedPhotosTrackingCount= _photoTrackingAppService.GetPhotoTrackingCount(true);
+                model.UnApprovedPhotosTrackingCount = _photoTrackingAppService.GetPhotoTrackingCount(false);
             }
             return View(model);
         }
         [HttpPost]
         public PartialViewResult LoadUserTrackingChartPartialView(UserTrackingFilter searchModel)
         {
-            searchModel.MeasurementScale = new Scale(_lookupAppService); 
+            searchModel.MeasurementScale = new Scale(_lookupAppService);
             return PartialView("_UserTrackingDashboardSection", searchModel);
         }
         [HttpPost]
@@ -61,7 +80,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
         [HttpPost]
         public IActionResult LoadViewComponentUserTracking(UserTrackingFilter model)
         {
-            if(model.MeasurementScale==null)
+            if (model.MeasurementScale == null)
                 model.MeasurementScale = new Scale(_lookupAppService);
             string measurementScaleConst = string.Empty;
             if (model.MeasurementScaleLKDId == 0)

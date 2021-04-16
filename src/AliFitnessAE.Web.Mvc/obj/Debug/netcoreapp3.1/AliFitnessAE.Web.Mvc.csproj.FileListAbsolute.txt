@@ -575,6 +575,8 @@ C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnes
 C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\Components\PhotoTracking\_Default.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\Components\PhotoTracking\_ProfilePhotoTracking.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profile\_PhotoTracking.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.csprojAssemblyReference.cache
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\app.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\log4net.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\appsettings.json
@@ -1042,8 +1044,6 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\AliFitnessAE.Core.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll.config
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.csprojAssemblyReference.cache
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.RazorAssemblyInfo.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.RazorAssemblyInfo.cs
@@ -1065,6 +1065,7 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\_UserTrackingDashboardIndex.AdvancedSearch.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Home\_UserTrackingDashboardSection.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profile\Index.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profile\_EditPersonalDetail.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profile\_PhotoTracking.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profile\_UserTracking.AdvancedSearch.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profile\_UserTracking.cshtml.g.cs
@@ -1151,5 +1152,3 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\staticwebassets\AliFitnessAE.Web.Mvc.StaticWebAssets.xml
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.pdb
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Profile\_EditPersonalDetail.cshtml.g.cs
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.MvcApplicationPartsAssemblyInfo.cs

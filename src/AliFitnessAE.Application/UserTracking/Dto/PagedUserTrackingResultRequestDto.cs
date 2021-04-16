@@ -17,6 +17,7 @@ namespace AliFitnessAE.Dto
         public string UserIdEnyc { get; set; }
         public DateTime? FromDate { get; set; }
         public DateTime? ToDate { get; set; }
+        public bool? IsApproved { get; set; }
         public int MeasurementScaleLKDId { get; set; }
         public EnumUserTrackingBodyPart BodyPart { get; set; }
         public EnumDocumentType DocumentType { get; set; }

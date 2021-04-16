@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="AliFitnessAEWebMvc20210404125122" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\Projects\\AliFitness\\MultiPageApp\\GitHub\\AliFitnessAE\\5\.8\.1\\aspnet-core\\src\\AliFitnessAE\.Web\.Mvc\\obj\\Release\\netcoreapp3\.1\\PubTmp\\Out\\$" />
+  </parameter>
+</parameters>

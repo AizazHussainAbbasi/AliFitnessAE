@@ -20,11 +20,12 @@ using AliFitnessAE.Authorization.Roles;
 using AliFitnessAE.Authorization.Users;
 using AliFitnessAE.Roles.Dto;
 using AliFitnessAE.Users.Dto;
+using AliFitnessAE.UserTypeCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 namespace AliFitnessAE.Users
-{ 
+{
     public class UserAppService : AsyncCrudAppService<User, UserDto, long, PagedUserResultRequestDto, CreateUserDto, UserDto>, IUserAppService
     {
         private readonly UserManager _userManager;
@@ -33,23 +34,28 @@ namespace AliFitnessAE.Users
         private readonly IPasswordHasher<User> _passwordHasher;
         private readonly IAbpSession _abpSession;
         private readonly LogInManager _logInManager;
+        private IRepository<User, long> _userRepository;
+        private IRepository<UserType> _userTypeRepository;
 
         public UserAppService(
-            IRepository<User, long> repository,
+            IRepository<User, long> userRepository,
             UserManager userManager,
             RoleManager roleManager,
             IRepository<Role> roleRepository,
             IPasswordHasher<User> passwordHasher,
             IAbpSession abpSession,
-            LogInManager logInManager)
-            : base(repository)
+            LogInManager logInManager,
+            IRepository<UserType> userTypeRepository)
+            : base(userRepository)
         {
+            _userRepository = userRepository;
             _userManager = userManager;
             _roleManager = roleManager;
             _roleRepository = roleRepository;
             _passwordHasher = passwordHasher;
             _abpSession = abpSession;
             _logInManager = logInManager;
+            _userTypeRepository = userTypeRepository;
         }
         [AbpAuthorize(PermissionNames.Pages_User_CreateUsers)]
         public override async Task<UserDto> CreateAsync(CreateUserDto input)
@@ -109,7 +115,22 @@ namespace AliFitnessAE.Users
             var user = await _userManager.GetUserByIdAsync(input.Id);
             await _userManager.DeleteAsync(user);
         }
+        public int GetUserCount(string userTypeConst, bool? isActive = null)
+        {
+            IQueryable<User> queryable = null;
+            queryable = _userRepository.GetAll().Where(x => x.IsDeleted == false);
+            if (!string.IsNullOrEmpty(userTypeConst))
+            {
+                var userType = _userTypeRepository.GetAll().Where(x => x.UserTypeConst == userTypeConst).FirstOrDefault();
+                if (userType != null)
+                    queryable = queryable.Where(x => x.UserTypeId == userType.Id);
+            }
 
+            if (isActive.HasValue)
+                queryable = queryable.Where(x => x.IsActive == isActive);
+            var count = queryable.Count();
+            return count;
+        }
         public async Task<ListResultDto<RoleDto>> GetRoles()
         {
             var roles = await _roleRepository.GetAllListAsync();

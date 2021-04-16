@@ -180,6 +180,15 @@
     <text name="IncluedInFooterColumn1">Inclued In Footer Column 1</text> 
     <text name="IncluedInFooterColumn2">Inclued In Footer Column 2</text> 
     <text name="IncluedInFooterColumn3">Inclued In Footer Column 3</text> 
+    
+    <!--Dashbaord-->
+    <text name="ActiveClientCount">Active Clients</text>
+    <text name="UnActiveClientCount">Un Active Clients</text>
+    <text name="ApprovedMeasurementCount">Approved Measurements</text>
+    <text name="UnApprovedMeasurementCount">Un Approved Measurements</text>
+    <text name="ApprovedPhotosTrackingCount">Approved Photos</text>
+    <text name="UnApprovedPhotosTrackingCount">Un Approved Photos</text>
+
 
   </texts>
 </localizationDictionary>

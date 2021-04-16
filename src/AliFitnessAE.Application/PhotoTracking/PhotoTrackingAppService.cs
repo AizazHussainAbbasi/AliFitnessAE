@@ -12,6 +12,7 @@ using AliFitnessAE.Common.Constants;
 using AliFitnessAE.Common.Enum;
 using AliFitnessAE.Document.Dto;
 using AliFitnessAE.Dto;
+using AliFitnessAE.StatusCore;
 using AliFitnessAE.UserTrackingCore;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -26,6 +27,7 @@ namespace AliFitnessAE.AppService
     public class PhotoTrackingAppService : AsyncCrudAppService<PhotoTracking, PhotoTrackingDto, int, PagedResultRequestExtDto, CreatePhotoTrackingDto, PhotoTrackingDto>, IPhotoTrackingAppService
     {
         private readonly IRepository<PhotoTracking> _photoTrackingRepository;
+        private readonly IRepository<Status> _statusRepository;
         private readonly IDocumentAppService _documentAppService;
         private readonly ILookupAppService _lookupAppService;
         private readonly UserManager _userManager;
@@ -33,13 +35,15 @@ namespace AliFitnessAE.AppService
         public PhotoTrackingAppService(IRepository<PhotoTracking> repository,
                          ILookupAppService lookupAppService,
                          UserManager userManager,
-                           IDocumentAppService documentAppService)
+                         IDocumentAppService documentAppService,
+                         IRepository<Status> statusRepository)
             : base(repository)
         {
             _photoTrackingRepository = repository;
             _lookupAppService = lookupAppService;
             _userManager = userManager;
             _documentAppService = documentAppService;
+            _statusRepository = statusRepository;
         }
         public PagedResultDto<PhotoTrackingListDto> GetAllPhotoTrackingPagedResult(PagedResultRequestExtDto input, int? documentTypeId = null)
         {
@@ -100,10 +104,31 @@ namespace AliFitnessAE.AppService
                 queryable = queryable.Where(x => x.CreationTime.Date >= input.FromDate.Value.Date);
             if (input.ToDate.HasValue)
                 queryable = queryable.Where(x => x.CreationTime.Date <= input.ToDate.Value.Date);
+            if (input.IsApproved.HasValue)
+            {
+                if (input.IsApproved.Value)
+                    queryable = queryable.Where(x => x.StatusId == _statusRepository.GetAll().Where(x => x.StatusConst == StatusConst.Approved).First().Id);
+                else
+                    queryable = queryable.Where(x => x.StatusId == _statusRepository.GetAll().Where(x => x.StatusConst == StatusConst.UnApproved).First().Id);
+            }
             //var list = queryable.ToList()
             //               .OrderByDescending(x => x.CreationTime);
             //var items = ObjectMapper.Map<IList<PhotoTrackingDto>>(list);
             return queryable;
+        }
+        public int GetPhotoTrackingCount(bool? isApproved = null)
+        {
+            IQueryable<PhotoTracking> queryable = null;
+            queryable = _photoTrackingRepository.GetAll().Where(x => x.IsDeleted == false);
+            if (isApproved.HasValue)
+            {
+                if (isApproved.Value)
+                    queryable = queryable.Where(x => x.StatusId == _statusRepository.GetAll().Where(x => x.StatusConst == StatusConst.Approved).First().Id);
+                else
+                    queryable = queryable.Where(x => x.StatusId == _statusRepository.GetAll().Where(x => x.StatusConst == StatusConst.UnApproved).First().Id);
+            }
+            var count = queryable.Count();
+            return count;
         }
         public async Task<PhotoTrackingDto> CreatePhotoTrackingAsync(CreatePhotoTrackingDto input)
         {

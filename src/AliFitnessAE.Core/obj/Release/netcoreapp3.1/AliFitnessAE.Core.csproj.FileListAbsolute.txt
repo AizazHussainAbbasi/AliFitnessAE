@@ -9,8 +9,8 @@ C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnes
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\bin\Release\netcoreapp3.1\AliFitnessAE.Core.deps.json
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\bin\Release\netcoreapp3.1\AliFitnessAE.Core.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\bin\Release\netcoreapp3.1\AliFitnessAE.Core.pdb
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\obj\Release\netcoreapp3.1\AliFitnessAE.Core.csprojAssemblyReference.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\obj\Release\netcoreapp3.1\AliFitnessAE.Core.AssemblyInfoInputs.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\obj\Release\netcoreapp3.1\AliFitnessAE.Core.AssemblyInfo.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\obj\Release\netcoreapp3.1\AliFitnessAE.Core.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\obj\Release\netcoreapp3.1\AliFitnessAE.Core.pdb
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Core\obj\Release\netcoreapp3.1\AliFitnessAE.Core.csprojAssemblyReference.cache

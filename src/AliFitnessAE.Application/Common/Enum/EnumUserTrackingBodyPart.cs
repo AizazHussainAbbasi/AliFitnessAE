@@ -24,6 +24,7 @@ namespace AliFitnessAE.Common.Enum
     public enum EnumDocumentType
     {
         Front,
-        Back
+        Back,
+        Profile
     }
 }

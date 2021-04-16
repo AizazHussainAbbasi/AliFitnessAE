@@ -566,8 +566,9 @@ C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\test\AliFitne
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.csprojAssemblyReference.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.AssemblyInfoInputs.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.AssemblyInfo.cs
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.dll
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.pdb
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\testhost.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.Views.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.Views.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\app.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\log4net.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\appsettings.json
@@ -576,14 +577,11 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\A
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\compilerconfig.json
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\libman.json
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.exe
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\testhost.exe
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\testhost.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\xunit.runner.reporters.netcoreapp10.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\xunit.runner.utility.netcoreapp10.dll
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.Views.dll
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.Views.pdb
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.exe
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\Dockerfile
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.deps.json
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.runtimeconfig.json
@@ -1119,6 +1117,8 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\A
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Tests.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.pdb
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Tests.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Application.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Core.pdb
@@ -1126,5 +1126,5 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\A
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.csproj.CopyComplete
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.pdb
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll.config
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Tests.pdb

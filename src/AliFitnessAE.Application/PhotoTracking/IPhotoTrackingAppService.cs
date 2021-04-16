@@ -15,5 +15,6 @@ namespace AliFitnessAE.AppService
         Task<PhotoTrackingDto> CreatePhotoTrackingAsync(CreatePhotoTrackingDto input);
         void Delete(int id);
         Task<PhotoTrackingDto> UpdatePhotoTrackingStatus(UpdateTrackingStatusRequest model);
+        int GetPhotoTrackingCount(bool? isApproved = null);
     }
 }

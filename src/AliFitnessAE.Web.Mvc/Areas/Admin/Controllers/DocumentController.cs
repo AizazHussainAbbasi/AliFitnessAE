@@ -16,6 +16,9 @@ using System;
 using Microsoft.AspNetCore.Hosting;
 using AliFitnessAE.Document.Dto;
 using Abp.Web.Models;
+using System.Linq;
+using AliFitnessAE.Common.Constants;
+using AliFitnessAE.Authorization.Users;
 
 namespace AliFitnessAE.Web.Admin.Controllers
 {
@@ -25,14 +28,18 @@ namespace AliFitnessAE.Web.Admin.Controllers
         private readonly IDocumentAppService _documentAppService;
         private readonly ILookupAppService _lookupAppService;
         private readonly IWebHostEnvironment _webHostEnvironment;
+        private readonly UserManager _userManager;
 
         public DocumentController(IDocumentAppService documentAppService,
              ILookupAppService lookupAppService,
-             IWebHostEnvironment webHostEnvironment)
+             IWebHostEnvironment webHostEnvironment,
+             UserManager userManager
+             )
         {
             _documentAppService = documentAppService;
             _lookupAppService = lookupAppService;
             _webHostEnvironment = webHostEnvironment;
+            _userManager = userManager;
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -89,7 +96,22 @@ namespace AliFitnessAE.Web.Admin.Controllers
 
             if (model.Image != null)
             {
-                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "images");
+                string subFolder = string.Empty;
+                var businessDocument = _documentAppService.GetAllBusinessDocuments(model.BusinessDocumentId, null, null).Result.Items.FirstOrDefault();
+                var module = _lookupAppService.GetAllLookDetail(null, null, businessDocument.BusinessEntityLKDId).Result.Items.FirstOrDefault();
+                if (module != null)
+                {
+                    if (module.LookUpDetailConst.Equals(LookUpDetailConst.PersonalDetail))
+                        subFolder = "profile";
+                    else if (module.LookUpDetailConst.Equals(LookUpDetailConst.PhotoTracking))
+                    {
+                        var user = _userManager.GetUserById(AbpSession.UserId.Value);
+                        subFolder = "tracking";
+                        //subFolder = string.Format("{0}/{1}", "tracking", user.FullName);
+                    }  
+                }
+
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, string.Format("{0}/{1}", "images", subFolder));
                 uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Image.FileName;
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);
                 using (var fileStream = new FileStream(filePath, FileMode.Create))

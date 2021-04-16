@@ -14,5 +14,6 @@ namespace AliFitnessAE.AppService
         Task<UserTrackingEditDto> GetUserTrackingForEdit(EntityDto input);
         Task<UserTrackingDto> CreateUserTrackingAsync(CreateUserTrackingDto input, IFormFile file);
         Task<UserTrackingDto> UpdateUserTrackingStatus(UpdateTrackingStatusRequest model);
+        int GetUserTrackingCount(bool? isApproved = null);
     }
 }
