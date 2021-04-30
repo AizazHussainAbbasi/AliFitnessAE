@@ -50,5 +50,6 @@ namespace AliFitnessAE.Users.Dto
         public DateTime DOB { get; set; }
         [Required]
         public char Gender { get; set; }
+        public string ProfilePhotoPath { get; set; }
     }
 }

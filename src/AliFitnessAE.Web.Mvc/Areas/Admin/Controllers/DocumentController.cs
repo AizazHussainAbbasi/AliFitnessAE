@@ -19,6 +19,8 @@ using Abp.Web.Models;
 using System.Linq;
 using AliFitnessAE.Common.Constants;
 using AliFitnessAE.Authorization.Users;
+using AliFitnessAE.Users.Dto;
+using AliFitnessAE.Users;
 
 namespace AliFitnessAE.Web.Admin.Controllers
 {
@@ -29,16 +31,19 @@ namespace AliFitnessAE.Web.Admin.Controllers
         private readonly ILookupAppService _lookupAppService;
         private readonly IWebHostEnvironment _webHostEnvironment;
         private readonly UserManager _userManager;
+        private readonly IUserAppService _userAppService;
 
         public DocumentController(IDocumentAppService documentAppService,
              ILookupAppService lookupAppService,
              IWebHostEnvironment webHostEnvironment,
+             IUserAppService userAppService,
              UserManager userManager
              )
         {
             _documentAppService = documentAppService;
             _lookupAppService = lookupAppService;
             _webHostEnvironment = webHostEnvironment;
+            _userAppService = userAppService;
             _userManager = userManager;
         }
         [HttpPost]
@@ -47,7 +52,8 @@ namespace AliFitnessAE.Web.Admin.Controllers
         {
             if (ModelState.IsValid)
             {
-                string uniqueFileName = UploadedFile(model);
+                string profilePhotoPath = string.Empty;
+                string uniqueFileName = UploadedFile(model, out profilePhotoPath);
                 if (!string.IsNullOrEmpty(uniqueFileName))
                 {
                     //Delete Old
@@ -71,7 +77,14 @@ namespace AliFitnessAE.Web.Admin.Controllers
                     };
                     var attachment = await _documentAppService.CreateBusinessDocumentAttachment(businessDocumentAttachmentDto);
                     if (attachment.Id > 0)
+                    {
+                        if (!string.IsNullOrEmpty(profilePhotoPath))//Profile Photo
+                        {
+                            ChangeProfilePhotoDto changeProfilePhotoDto = new ChangeProfilePhotoDto() { Id = model.BusinessEntityId, ProfilePhotoPath = profilePhotoPath };
+                            _userAppService.UpdateProfilePhoto(changeProfilePhotoDto);
+                        }
                         return new AjaxResponse() { Success = true, Result = attachment };
+                    }
                     else
                         return new AjaxResponse(new ErrorInfo() { Message = "AttachmentNotAdded" });
                 }
@@ -90,9 +103,10 @@ namespace AliFitnessAE.Web.Admin.Controllers
             var result = await _documentAppService.DeleteBusinessDocumentAttachment(businessDocumentAttachmentDto);
             return new AjaxResponse() { Success = result };
         }
-        private string UploadedFile(UploadVModel model)
+        private string UploadedFile(UploadVModel model, out string profilePhotoPath)
         {
             string uniqueFileName = null;
+            profilePhotoPath = string.Empty;
 
             if (model.Image != null)
             {
@@ -102,18 +116,30 @@ namespace AliFitnessAE.Web.Admin.Controllers
                 if (module != null)
                 {
                     if (module.LookUpDetailConst.Equals(LookUpDetailConst.PersonalDetail))
+                    {
                         subFolder = "profile";
+                    }
                     else if (module.LookUpDetailConst.Equals(LookUpDetailConst.PhotoTracking))
                     {
                         var user = _userManager.GetUserById(AbpSession.UserId.Value);
                         subFolder = "tracking";
                         //subFolder = string.Format("{0}/{1}", "tracking", user.FullName);
-                    }  
+                    }
                 }
-
-                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, string.Format("{0}/{1}", "images", subFolder));
+                string wwwrootDir = Path.Combine("images", subFolder);
+                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, wwwrootDir);
                 uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Image.FileName;
                 string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                //Update user ProfilePath in User table
+                if (module != null)
+                {
+                    if (module.LookUpDetailConst.Equals(LookUpDetailConst.PersonalDetail))
+                    {
+                        profilePhotoPath = Path.Combine(wwwrootDir, uniqueFileName);
+                    }
+                }
+
                 using (var fileStream = new FileStream(filePath, FileMode.Create))
                 {
                     model.Image.CopyTo(fileStream);

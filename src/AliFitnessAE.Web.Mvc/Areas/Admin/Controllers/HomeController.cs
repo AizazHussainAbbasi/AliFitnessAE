@@ -79,7 +79,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
         }
         [HttpPost]
         public IActionResult LoadViewComponentUserTracking(UserTrackingFilter model)
-        {
+        { 
             if (model.MeasurementScale == null)
                 model.MeasurementScale = new Scale(_lookupAppService);
             string measurementScaleConst = string.Empty;

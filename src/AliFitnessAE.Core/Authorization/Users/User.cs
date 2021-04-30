@@ -14,7 +14,8 @@ namespace AliFitnessAE.Authorization.Users
         public string LandLineNumber { get; set; }
         public string ZoomId { get; set; }
         public DateTime? DOB { get; set; } 
-        public char? Gender { get; set; }  
+        public char? Gender { get; set; }
+        public string ProfilePhotoPath { get; set; }
 
         public const string DefaultPassword = "123qwe";
 

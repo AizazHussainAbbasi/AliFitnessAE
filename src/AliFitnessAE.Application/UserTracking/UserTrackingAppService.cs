@@ -91,7 +91,7 @@ namespace AliFitnessAE.AppService
         public int GetUserTrackingCount(bool? isApproved = null)
         {
             IQueryable<UserTracking> queryable = null;
-            queryable = _userTrackingRepository.GetAll().Where(x => x.IsDeleted == false);
+            queryable = _userTrackingRepository.GetAll().Where(x => x.IsDeleted == false && x.User.IsActive == true);
             if (isApproved.HasValue)
             {
                 if (isApproved.Value)

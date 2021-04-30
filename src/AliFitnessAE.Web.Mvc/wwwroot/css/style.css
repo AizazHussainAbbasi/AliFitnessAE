@@ -149,8 +149,7 @@ table.table-bordered tr.odd {
 } 
 table.table-bordered tr.even {
     background-color: white;
-}
-
+} 
 
 /*.text-sm {
     font-size: .875rem !important;

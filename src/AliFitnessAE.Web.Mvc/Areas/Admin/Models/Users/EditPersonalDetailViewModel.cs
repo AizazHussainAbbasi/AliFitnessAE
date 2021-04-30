@@ -14,5 +14,6 @@ namespace AliFitnessAE.Web.Models.Admin.Users
         public UserDto User { get; set; } 
         public List<SelectListItem> Gender { get; set; }  
         public DocumentUploaderViewModel ProfilePhoto { get; set; } 
+        public string ProfilePhotoPath { get; set; } 
     }
 }

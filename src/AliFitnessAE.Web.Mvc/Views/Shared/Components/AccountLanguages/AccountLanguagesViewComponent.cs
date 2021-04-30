@@ -23,7 +23,7 @@ namespace AliFitnessAE.Web.Views.Shared.Components.AccountLanguages
                 .Where(l => !l.IsDisabled)
                 .ToList(),
                 CurrentUrl = Request.Path
-            };
+            }; 
 
             return Task.FromResult(View(model) as IViewComponentResult);
         }

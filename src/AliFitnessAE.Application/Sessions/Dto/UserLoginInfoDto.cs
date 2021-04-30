@@ -14,5 +14,6 @@ namespace AliFitnessAE.Sessions.Dto
         public string UserName { get; set; }
 
         public string EmailAddress { get; set; }
+        public string ProfilePhotoPath { get; set; }
     }
 }

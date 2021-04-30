@@ -25,7 +25,8 @@
                 //Load Table Data
                 filter.maxResultCount = data.length;
                 filter.skipCount = data.start;
-                filter.userId = filter.searchFormUserList;
+                filter.userId = filter.searchFormUserList; 
+                filter.isApproved = getParameterByName('isApproved');  
 
                 abp.ui.setBusy(_$table);
                 _userTrackingService.getAllUserTrackingPagedResult(filter).done(function (result) {

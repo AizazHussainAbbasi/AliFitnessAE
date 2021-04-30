@@ -5,7 +5,7 @@
     <div class="text-center">
         @foreach (var languageInfo in Model.Languages)
         {
-            <a href="@Url.Action("ChangeCulture", "AbpLocalization", new {
+            <a href="@Url.Action("ChangeCulture", "AbpLocalization", new { area = "", 
                     cultureName = languageInfo.Name,
                     returnUrl = Context.Request.Path + Context.Request.QueryString
                 })">

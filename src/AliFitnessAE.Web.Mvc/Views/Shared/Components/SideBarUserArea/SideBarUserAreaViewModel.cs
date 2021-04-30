@@ -21,5 +21,10 @@ namespace AliFitnessAE.Web.Views.Shared.Components.SideBarUserArea
                 ? ".\\" + userName
                 : LoginInformations.Tenant.TenancyName + "\\" + userName;
         }
+        public string GetProfilePhotoPath()
+        {
+            var profilePhotoPath = LoginInformations.User.ProfilePhotoPath; 
+            return profilePhotoPath;
+        }
     }
 }

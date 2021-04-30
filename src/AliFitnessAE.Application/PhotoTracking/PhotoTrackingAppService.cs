@@ -119,7 +119,7 @@ namespace AliFitnessAE.AppService
         public int GetPhotoTrackingCount(bool? isApproved = null)
         {
             IQueryable<PhotoTracking> queryable = null;
-            queryable = _photoTrackingRepository.GetAll().Where(x => x.IsDeleted == false);
+            queryable = _photoTrackingRepository.GetAll().Where(x => x.IsDeleted == false && x.User.IsActive == true);
             if (isApproved.HasValue)
             {
                 if (isApproved.Value)

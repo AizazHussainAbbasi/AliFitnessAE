@@ -1152,3 +1152,4 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\staticwebassets\AliFitnessAE.Web.Mvc.StaticWebAssets.xml
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.pdb
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.MvcApplicationPartsAssemblyInfo.cs
