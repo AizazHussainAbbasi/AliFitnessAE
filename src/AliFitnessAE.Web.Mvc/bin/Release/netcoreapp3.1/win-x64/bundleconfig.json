@@ -191,39 +191,39 @@
     ]
   },
   //Wbsite Theme
-  {
-    "outputFileName": "wwwroot/view-resources/Views/_Bundles/shared-layout.min.css",
-    "inputFiles": [
-      "wwwroot/libs/font-awesome/css/all.min.css",
-      "wwwroot/libs/datatables/css/bootstrap.min.css",
-      "wwwroot/view-resources/Views/Theme/css/reset.css",
-      "wwwroot/view-resources/Views/Theme/css/font-awesome.css",
-      "wwwroot/view-resources/Views/Theme/css/animate.min.css",
-      "wwwroot/view-resources/Views/Theme/css/responsive.css",
-      "wwwroot/view-resources/Views/Theme/css/owl.carousel.css",
-      "wwwroot/view-resources/Views/Theme/css/player/YTPlayer.css",
-      "wwwroot/view-resources/Views/Theme/css/pro-bars.css"
-    ]
-  },
-  {
-    "outputFileName": "wwwroot/view-resources/Views/_Bundles/shared-layout.min.js",
-    "inputFiles": [
-      "wwwroot/view-resources/Views/Theme/js/jquery-1.11.0.min.js",
-      "wwwroot/view-resources/Views/Theme/js/bootstrap.min.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.appear.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.prettyPhoto.js",
-      "wwwroot/view-resources/Views/Theme/js/modernizr-latest.js",
-      "wwwroot/view-resources/Views/Theme/js/SmoothScroll.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.parallax-1.1.3.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.easing.1.3.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.superslides.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.flexslider.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.mb.YTPlayer.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.fitvids.js",
-      "wwwroot/view-resources/Views/Theme/js/jquery.slabtext.js",
-      "wwwroot/view-resources/Views/Theme/js/plugins.js"
-    ]
-  }
+  //{
+  //  "outputFileName": "wwwroot/view-resources/Views/_Bundles/shared-layout.min.css",
+  //  "inputFiles": [
+  //    "wwwroot/Allison/assets/css/bootstrap.min.css",
+  //    "wwwroot/Allison/assets/css/animate.min.css",
+  //    "wwwroot/Allison/assets/css/flaticon.css",
+  //    "wwwroot/Allison/assets/css/remixicon.css",
+  //    "wwwroot/Allison/assets/css/owl.carousel.min.css",
+  //    "wwwroot/Allison/assets/css/odometer.min.css",
+  //    "wwwroot/Allison/assets/css/magnific-popup.min.css",
+  //    "wwwroot/Allison/assets/css/style.css",
+  //    "wwwroot/Allison/assets/css/responsive.css"
+  //  ]
+  //},
+  //{
+  //  "outputFileName": "wwwroot/view-resources/Views/_Bundles/shared-layout.min.js",
+  //  "inputFiles": [
+  //    "wwwroot/Allison/assets/js/jquery.min.js",
+  //    "wwwroot/Allison/assets/js/popper.min.js",
+  //    "wwwroot/Allison/assets/js/bootstrap.min.js",
+  //    "wwwroot/Allison/assets/js/owl.carousel.min.js",
+  //    "wwwroot/Allison/assets/js/appear.min.js",
+  //    "wwwroot/Allison/assets/js/odometer.min.js",
+  //    "wwwroot/Allison/assets/js/parallax.min.js",
+  //    "wwwroot/Allison/assets/js/ripples.min.js",
+  //    "wwwroot/Allison/assets/js/headroom.js",
+  //    "wwwroot/Allison/assets/js/particles.min.js",
+  //    "wwwroot/Allison/assets/js/magnific-popup.min.js",
+  //    "wwwroot/Allison/assets/js/form-validator.min.js",
+  //    "wwwroot/Allison/assets/js/contact-form-script.js",
+  //    "wwwroot/Allison/assets/js/main.js"
+  //  ]
+  //}
 ]
  
   

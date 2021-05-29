@@ -76,6 +76,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                 case EnumUserTrackingBodyPart.Weight:
                     resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Weight, x.WeightLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("Weight"), targetScaleLkd.LookUpDetailConst);
+                    var a = L("Weight");
                     foreach (var item in resultList.list)
                     {
                         var userTracking = userTrackingList.Where(x => x.Id == item.id).First();

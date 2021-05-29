@@ -5,7 +5,7 @@
         <div class="input-group">
             @if (@Model.UserList != null)
             {
-                <label for="SearchFormUserList" class="col-form-label mt-2">Select User</label>
+            <label for="SearchFormUserList" class="col-form-label mt-2">@L("SelectUser")</label>
                 <div class="col-sm-2 mt-2">
                     <select class="form-control" id="SearchFormUserList" name="searchFormUserList" asp-items="@Model.UserList"> </select>
                 </div>

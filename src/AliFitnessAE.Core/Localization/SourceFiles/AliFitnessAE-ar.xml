@@ -14,6 +14,8 @@
     <text name="TenancyName" value="اسم المستأجر" />
     <text name="UserNameOrEmail" value="اسم المستخدم أو البريد الالكتروني" />
     <text name="Password" value="كلمه السر" />
+    <text name="ResetPassword" value="إعادة تعيين كلمة المرور" />
+    <text name="UpdatePassword" value="تطوير كلمة السر" />
     <text name="RememberMe" value="تذكر معلومات تسجيل الدخول" />
     <text name="LogIn" value="تسجيل الدخول" /> 
     <text name="LoginFailed" value="فشل عملية الدخول!" /> 
@@ -68,5 +70,72 @@
     <text name="EditTopic" value="تحرير الموضوع" />
     <text name="CreateNewTopic" value="إنشاء موضوع جديد" />
 
+    <!--User Tracking-->
+    <text name="User" value="المستعمل" /> 
+    <text name="Date" value="تاريخ" />  
+    <text name="Status" value="حالة" />   
+    <text name="Height" value="ارتفاع" />   
+    <text name="Weight" value="خاصرة" />    
+    <text name="Hip" value="وزن" />    
+    <text name="BellyButtonWaist" value="زر البطن الخصر" />    
+    <text name="HipBoneWaist" value="الورك عظم الخصر" />    
+    <text name="Chest" value="صدر" />    
+    <text name="RightArm" value="الذراع اليمنى" />
+    <text name="LeftArm" value="الذراع الأيسر" /> 
+    <text name="RightThigh" value="الفخذ الأيمن" /> 
+    <text name="LeftThigh" value="الفخذ الأيسر" /> 
+    <text name="RightCalve" value="كالف الحق" /> 
+    <text name="LeftCalve" value="اليسار كالفي" /> 
+    <text name="RightForeArm" value="الساعد الأيمن" /> 
+    <text name="LeftForeArm" value="الساعد الأيسر" /> 
+    <text name="Front" value="الجبهة" /> 
+    <text name="Back" value="ظهر" /> 
+    <text name="Measurement" value="القياس" /> 
+    <text name="Scale" value="مقياس" /> 
+    <text name="PersonalDetail" value="الشخصية التفاصيل" /> 
+    <text name="UploadPhoto" value="تحميل الصورة" />  
+    <text name="DOB" value="تاريخ الميلاد" />  
+    <text name="ZoomId" value="Zoom Id" />  
+    <text name="Gender" value="الجنس" />  
+    <text name="MobileNumber" value="رقم الجوال" />  
+    <text name="Update" value="تحديث" />   
+
+    <!--Search Form-->
+    <text name="SelectUser" value="تحديد مستخدم" />
+    <text name="SelectFrom" value="اختر من" />
+    <text name="SelectTo" value="اختر أيضا" /> 
+    <text name="ChartType" value="نوع المخطط" />
+    <text name="Line" value="سطر" />
+    <text name="Bar" value="بار" />
+
+    <!--Menu / Module-->
+    <text name="UserTracking" value="تتبع المستخدم" /> 
+    <text name="Photo" value="الصورة" />  
+    <text name="UserType" value="نوع المستخدم" />   
+
+    <!-- Actions -->
+    <text name="Approve" value="الموافقة" /> 
+    <text name="UnApprove" value="الأمم المتحدة توافق" /> 
+    <text name="Detail" value="التفاصيل" /> 
+    <text name="GoToProfile" value="انتقل إلى الملف الشخصي" />  
+
+    <!--User Type-->
+    <text name="CreateNewUserType" value="إنشاء نوع مستخدم جديد" />
+    <text name="EditUserType" value="تحرير نوع المستخدم" />
+    <text name="UserTypeName" value="اسم نوع المستخدم" /> 
+    <text name="UserTypeConst" value="ثابت نوع المستخدم" />  
+  
+    <!--Dashbaord-->
+    <text name="ActiveClientCount" value="عدد العملاء النشط" />
+    <text name="UnActiveClientCount" value="عدد العملاء غير النشطين" />
+    <text name="ApprovedMeasurementCount" value="عدد القياسات المعتمد" /> 
+    <text name="UnApprovedMeasurementCount" value="عدد القياسات المعتمد من الأمم المتحدة" /> 
+    <text name="ApprovedPhotosTrackingCount" value="عدد تتبع الصور المعتمد" /> 
+    <text name="UnApprovedPhotosTrackingCount" value="عدد تتبع الصور غير المعتمدة" />
+
+    <!--Profile-->
+    <text name="UserProfile" value="ملف تعريف المستخدم" />
+    <text name="PhotoTracking" value="تتبع الصور" /> 
+    
   </texts>
 </localizationDictionary>

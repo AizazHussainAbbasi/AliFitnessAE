@@ -7,6 +7,8 @@
     $('.btn-search').on('click', (e) => {
         var filter = _$searchForm.serializeFormToObject(true);
         filter.userId = filter.searchFormUserList;
+        debugger;
+        filter.isApproved = getParameterByName('isApproved');  
         loadComponentView("divPhotoTrackingList", "PhotoTracking", "PhotoTracking", null, filter, "_Default");
     });
 

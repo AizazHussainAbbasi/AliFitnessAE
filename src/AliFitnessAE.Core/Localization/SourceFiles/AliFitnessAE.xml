@@ -57,7 +57,6 @@
     <text name="Change">Change</text>
     <text name="ChangeTenant">Change tenant</text>
     <text name="MultiLevelMenu">Multi Level Menu</text>
-    <text name="Back">Back</text>
     <text name="SuccessfullyRegistered">Successfully registered</text>
     <text name="WaitingForEmailActivation">Your email address should be activated</text>
     <text name="Roles">Roles</text>
@@ -136,6 +135,7 @@
     <text name="RightForeArm">Right Fore Arm</text>
     <text name="LeftForeArm">Left Fore Arm</text>
     <text name="Front">Front</text>
+    <text name="Back">Back</text>
     <text name="Measurement">Measurement</text>
     <text name="Scale">Scale</text>
     <text name="PersonalDetail">Personal Detail</text>
@@ -147,9 +147,12 @@
     <text name="Update">Update</text>
     
     <!--Search Form-->
+    <text name="SelectUser">Select User</text>
     <text name="SelectFrom">Select From</text>
     <text name="SelectTo">Select To</text>
     <text name="ChartType">Chart Type</text>
+    <text name="Line">Line</text>
+    <text name="Bar">Bar</text>
     
     <!--Menu / Module-->
     <text name="UserTracking">User Tracking</text>
@@ -189,6 +192,9 @@
     <text name="ApprovedPhotosTrackingCount">Approved Photos</text>
     <text name="UnApprovedPhotosTrackingCount">Un Approved Photos</text>
 
-
+ <!--Profile-->
+    <text name="UserProfile">User Profile</text> 
+    <text name="PhotoTracking">Photo Tracking</text> 
+    
   </texts>
 </localizationDictionary>

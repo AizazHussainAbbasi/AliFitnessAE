@@ -32,7 +32,7 @@
             @foreach (var document in item.DocumentList)
             {
                 @if (document.BusinessDocumentAttachmentDto.Count > 0)
-                {<label>@document.DocumentType.DocumentTypeConst</label>}
+                {<label> @L(document.DocumentType.DocumentTypeConst) </label>}
                 <div class="row">
                     @foreach (var attachment in document.BusinessDocumentAttachmentDto)
                     {
