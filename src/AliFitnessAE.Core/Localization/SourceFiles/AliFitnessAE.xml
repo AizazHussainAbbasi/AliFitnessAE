@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="en">
   <texts>
-    <text name="HomePage" value="Home page" />
+    <text name="BodyTranscend" value="Body Transcend" />
+    <text name="Home" value="Home" />
     <text name="About" value="About" />
     <text name="WelcomeMessage" value="Welcome to AliFitnessAE!" />
     <text name="FormIsNotValidMessage" value="Form is not valid. Please check and fix errors." />
@@ -12,6 +13,7 @@
     <text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
     <text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login.</text>
     <text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
+    <text name="InValidMobileNumber">Invalid mobile number or remove space.</text>
     <text name="PleaseEnterLoginInformation" value="Please enter login information" />
     <text name="TenancyName" value="Tenancy name" />
     <text name="UserNameOrEmail" value="User name or email" />
@@ -37,6 +39,7 @@
     <text name="DefaultPasswordIs" value="Default password is {0}" />
     <text name="CanBeEmptyToLoginAsHost" value="Can be empty to login as host." />
     <text name="Register" value="Register" />
+    <text name="Login" value="Login" />
     <text name="OrLoginWith" value="Or login with" />
     <text name="WaitingForActivationMessage" value="Your account is waiting to be activated by system admin." />
     <text name="TenantSelection" value="Tenant Selection" />
@@ -145,6 +148,7 @@
     <text name="Gender">Gender</text>
     <text name="MobileNumber">Mobile Number</text>
     <text name="Update">Update</text>
+    <text name="SelectGender">Select Gender</text>
     
     <!--Search Form-->
     <text name="SelectUser">Select User</text>
@@ -156,6 +160,8 @@
     
     <!--Menu / Module-->
     <text name="UserTracking">User Tracking</text>
+    <text name="MeasurementTracking">Measurement Tracking</text>
+    <text name="PhotoTracking">Photo Tracking</text>
     <text name="Photo">Photo</text>
     <text name="Topic">Topic</text>
     <text name="UserType">User Type</text>
@@ -194,7 +200,6 @@
 
  <!--Profile-->
     <text name="UserProfile">User Profile</text> 
-    <text name="PhotoTracking">Photo Tracking</text> 
-    
+     
   </texts>
 </localizationDictionary>

@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Abp.Auditing;
@@ -36,8 +36,8 @@ namespace AliFitnessAE.Web.Models.Admin.Account
 
         public string ExternalLoginAuthSchema { get; set; }
         [Required]
-        [StringLength(ValidationConst.MaxPhoneNumberLength)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        //[StringLength(ValidationConst.MaxPhoneNumberLength)]
+        //[RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
         public string MobileNumber { get; set; }
         public string LandLineNumber { get; set; }
         public string ZoomId { get; set; }

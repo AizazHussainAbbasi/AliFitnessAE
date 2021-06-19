@@ -11,7 +11,7 @@
     AbpAntiForgeryManager.SetCookie(Context);
 
     var pageTitle = !string.IsNullOrWhiteSpace(ViewBag.Title) ? ViewBag.Title + " / " : "";
-    pageTitle += "AliFitnessAE";
+    pageTitle +=  L("BodyTranscend");
 }
 <!DOCTYPE html>
 <html lang="@LanguageManager.CurrentLanguage.Name">
@@ -28,16 +28,16 @@
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="/"><b>AliFitnessAE</b></a>
+            <a href="/"><b>@L("BodyTranscend")</b></a>
         </div>
-        <div class="card">
+        <div class="card mt-5">
             @if (MultiTenancyConfig.IsEnabled)
             {
                 <div class="card-header">
                     <vc:tenant-change></vc:tenant-change>
                 </div>
             }
-            <div class="card-body login-card-body">
+            <div class="card-body login-card-body mt-2">
                 @RenderBody()
             </div>
             <div class="card-footer">
@@ -46,7 +46,7 @@
         </div>
         <div class="row">
             <div class="col-md-12 text-center">
-                <small>&copy; @DateTime.Now.Year AliFitnessAE. <b>Version </b> @AppVersionHelper.Version [@AppVersionHelper.ReleaseDate.ToString("yyyyMMdd")]</small>
+                <small>&copy; @DateTime.Now.Year BodyTranscend. <b>Version </b> @AppVersionHelper.Version [@AppVersionHelper.ReleaseDate.ToString("yyyyMMdd")]</small>
             </div>
         </div>
     </div>

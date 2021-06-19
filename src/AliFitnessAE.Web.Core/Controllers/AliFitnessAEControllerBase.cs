@@ -1,6 +1,8 @@
 using Abp.AspNetCore.Mvc.Controllers;
 using Abp.IdentityFramework;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
 
 namespace AliFitnessAE.Controllers
 {
@@ -14,6 +16,6 @@ namespace AliFitnessAE.Controllers
         protected void CheckErrors(IdentityResult identityResult)
         {
             identityResult.CheckErrors(LocalizationManager);
-        }
+        } 
     }
 }

@@ -31,6 +31,7 @@
       "wwwroot/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js",
       "wwwroot/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js",
       "wwwroot/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js",
+      "wwwroot/js/common.js",
       "wwwroot/js/main.js"
     ]
   },

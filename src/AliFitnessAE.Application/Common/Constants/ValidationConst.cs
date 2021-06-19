@@ -4,7 +4,7 @@
     {
         public const int MaxPhoneNumberLength = 14;
 
-        public const int MaxTopicNameLength = 256;
+        public const int MaxTopicNameLength = 4;
 
     }
 }

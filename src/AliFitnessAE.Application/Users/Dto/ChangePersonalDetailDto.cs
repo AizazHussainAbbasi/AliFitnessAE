@@ -20,7 +20,7 @@ namespace AliFitnessAE.Users.Dto
         [Required]
         [DataType(DataType.PhoneNumber)]
         [StringLength(ValidationConst.MaxPhoneNumberLength)]
-        [RegularExpression(@"^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$", ErrorMessage = "Not a valid phone number")]
+        [RegularExpression(@"^(?:\+971|00971|0)?(?:50|51|52|55|56|2|3|4|6|7|9)\d{7}$", ErrorMessage = "Not a valid phone number")]
         public string MobileNumber { get; set; }
         public string LandLineNumber { get; set; }
         public string ZoomId { get; set; }

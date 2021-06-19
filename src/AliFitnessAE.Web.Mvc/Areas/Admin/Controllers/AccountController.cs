@@ -143,21 +143,30 @@ namespace AliFitnessAE.Web.Admin.Controllers
 
         public async Task<ActionResult> Register()
         {
-            var genderMasterId = (await _lookupAppService.GetAllLookUpMaster(null, "Gender")).Items.FirstOrDefault().Id;
-            var genderSelectListItems = (await _lookupAppService.GetLookDetailComboboxItems(genderMasterId)).Items
-                      .Select(p => p.ToSelectListItem())
-                      .ToList();
+            //var genderMasterId = (await _lookupAppService.GetAllLookUpMaster(null, "Gender")).Items.FirstOrDefault().Id;
+            //var genderSelectListItems = (await _lookupAppService.GetLookDetailComboboxItems(genderMasterId)).Items
+            //          .Select(p => p.ToSelectListItem())
+            //          .ToList();
 
-             genderSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L("SelectGender"), Selected = true });
+            // genderSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L("SelectGender"), Selected = true });
 
             var model = new RegisterViewModel
             {
-                GenderList = genderSelectListItems
+                GenderList = GetGenderSelectListItem()
             };
 
             return RegisterView(model);
         }
+        private List<SelectListItem> GetGenderSelectListItem()
+        {
+            var genderMasterId = _lookupAppService.GetAllLookUpMaster(null, "Gender").Result.Items.FirstOrDefault().Id;
+            var genderSelectListItems =  _lookupAppService.GetLookDetailComboboxItems(genderMasterId).Result.Items
+                      .Select(p => p.ToSelectListItem())
+                      .ToList();
 
+            genderSelectListItems.Insert(0, new SelectListItem { Value = string.Empty, Text = L("SelectGender"), Selected = true });
+            return genderSelectListItems;
+        }
         private ActionResult RegisterView(RegisterViewModel model)
         {
             ViewBag.IsMultiTenancyEnabled = _multiTenancyConfig.IsEnabled;
@@ -279,7 +288,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
             catch (UserFriendlyException ex)
             {
                 ViewBag.ErrorMessage = ex.Message;
-
+                model.GenderList = GetGenderSelectListItem();
                 return View("Register", model);
             }
         }

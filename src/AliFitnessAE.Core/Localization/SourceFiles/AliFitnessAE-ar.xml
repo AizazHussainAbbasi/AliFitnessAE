@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <localizationDictionary culture="ar">
   <texts> 
-   <text name="HomePage" value="الصفحة الرئيسية" />
+   <text name="BodyTranscend" value="تجاوز الجسم" />
+   <text name="Home" value="الرئيسية" />
    <text name="About" value="معلومات عنا" />
     <text name="WelcomeMessage" value="مرحبا بكم في AliFitnessAE!" /> 
     <text name="FormIsNotValidMessage" value="النموذج غير صالح. الرجاء تصحيح الخطأ." />
@@ -10,6 +11,7 @@
     <text name="ThereIsNoTenantDefinedWithName{0}" value="لا يوجد تعريف لاسم المستأجر {0}." />
     <text name="TenantIsNotActive" value="المستأجر {0} غير نشط." />
     <text name="UserIsNotActiveAndCanNotLogin" value="المستخدم {0} غير نشط ولا يمكنه تسجيل الدخول." />
+    <text name="InValidMobileNumber" value="رقم الجوال غير صحيح أو إزالة بعض المساحة." />
     <text name="PleaseEnterLoginInformation" value="يرجى إدخال معلومات تسجيل الدخول الخاصة بك" />
     <text name="TenancyName" value="اسم المستأجر" />
     <text name="UserNameOrEmail" value="اسم المستخدم أو البريد الالكتروني" />
@@ -34,6 +36,7 @@
     <text name="DefaultPasswordIs" value="كلمة المرور الافتراضية هي {0}" />
     <text name="CanBeEmptyToLoginAsHost" value="يمكن أن يكون تسجيل الدخول على المضيف فارغًا." />
     <text name="Register" value="التسجيل" />
+    <text name="Login" value="تسجيل الدخول" />
     <text name="OrLoginWith" value="أو تسجيل الدخول بعد ذلك" />
     <text name="WaitingForActivationMessage" value="في انتظار تفعيل حسابك من قبل مسؤول النظام." />
     <text name="TenantSelection" value="اختيار المستأجر" />
@@ -98,7 +101,8 @@
     <text name="ZoomId" value="Zoom Id" />  
     <text name="Gender" value="الجنس" />  
     <text name="MobileNumber" value="رقم الجوال" />  
-    <text name="Update" value="تحديث" />   
+    <text name="Update" value="تحديث" />
+    <text name="SelectGender" value="حدد نوع الجنس" /> 
 
     <!--Search Form-->
     <text name="SelectUser" value="تحديد مستخدم" />
@@ -110,6 +114,8 @@
 
     <!--Menu / Module-->
     <text name="UserTracking" value="تتبع المستخدم" /> 
+    <text name="MeasurementTracking" value="تتبع القياس" /> 
+    <text name="PhotoTracking" value="تتبع الصور" /> 
     <text name="Photo" value="الصورة" />  
     <text name="UserType" value="نوع المستخدم" />   
 
@@ -135,7 +141,6 @@
 
     <!--Profile-->
     <text name="UserProfile" value="ملف تعريف المستخدم" />
-    <text name="PhotoTracking" value="تتبع الصور" /> 
-    
+     
   </texts>
 </localizationDictionary>

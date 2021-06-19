@@ -6,9 +6,9 @@ namespace AliFitnessAE.Web.Controllers
 { 
     public class HomeController : AliFitnessAEControllerBase
     {
-        public ActionResult Index()
+        public ActionResult Index() 
         {
-            return View();
+            return RedirectToAction("Index", "Home", new { area = "Admin" }); 
         }
     }
 }

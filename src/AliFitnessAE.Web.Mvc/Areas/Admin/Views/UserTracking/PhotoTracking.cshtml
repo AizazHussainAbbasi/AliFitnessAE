@@ -1,7 +1,7 @@
 ﻿@using AliFitnessAE.Web.Startup
 @model PhotoTrackingIndexViewModel
 @{
-    ViewBag.Title = L("Photo");
+    ViewBag.Title = L("PhotoTracking");
     ViewBag.CurrentPageName = PageNames.PhotoTracking;
 }
 @section scripts
@@ -16,13 +16,13 @@
 }
 @{
     var isApprovedQueryString = this.Context.Request.Query.FirstOrDefault(x => x.Key.Equals("isApproved"));
-    bool? isApproved = Convert.ToBoolean(isApprovedQueryString.Value);
+    bool? isApproved =  !string.IsNullOrEmpty(isApprovedQueryString.Value) ? (bool?) Convert.ToBoolean(isApprovedQueryString.Value) : null;
 }
 <section class="content-header">
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm-6">
-                <h1>@L("Photo")</h1>
+                <h1>@L("PhotoTracking")</h1>
             </div>
             <div class="col-sm-6">
                 @*@if (IsGranted("Pages.UserTracking.CreateUserTracking"))

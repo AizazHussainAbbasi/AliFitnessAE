@@ -39,11 +39,11 @@
                 action: () => _$UserTypeTable.draw(false)
             }
         ],
-        responsive: {
-            details: {
-                type: 'column'
-            }
-        },
+        //responsive: {
+        //    details: {
+        //        type: 'column'
+        //    }
+        //},
         columnDefs: [
             {
                 targets: 0,

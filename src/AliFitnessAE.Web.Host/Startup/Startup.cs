@@ -18,6 +18,7 @@ using Abp.Dependency;
 using Abp.Json;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
+using AliFitnessAE.Localization;
 
 namespace AliFitnessAE.Web.Host.Startup
 {
@@ -151,6 +152,11 @@ namespace AliFitnessAE.Web.Host.Startup
                     .GetManifestResourceStream("AliFitnessAE.Web.Host.wwwroot.swagger.ui.index.html");
                 options.DisplayRequestDuration(); // Controls the display of the request duration (in milliseconds) for "Try it out" requests.  
             }); // URL: /swagger
+
+            //app.UseAbpRequestLocalization(opts =>
+            //{
+            //    opts.RequestCultureProviders.Insert(0, new MyRequestCultureProvider());
+            //});
         }
     }
 }

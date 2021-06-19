@@ -16,7 +16,7 @@ namespace AliFitnessAE.Web.Startup
                 .AddItem(
                     new MenuItemDefinition(
                         PageNames.Home,
-                        L("HomePage"),
+                        L("Home"),
                         url: "/Admin/Home",
                         icon: "fas fa-home",
                         requiresAuthentication: true

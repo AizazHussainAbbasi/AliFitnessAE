@@ -106,7 +106,7 @@ namespace AliFitnessAE.Users
             user.ZoomId = input.ZoomId;
             user.DOB = input.DOB;
             user.Gender = input.Gender;
-            CheckErrors(await _userManager.UpdateAsync(user));
+            await _userManager.UpdateAsync(user);
             return true;
         }
         public  bool UpdateProfilePhoto(ChangeProfilePhotoDto input)
