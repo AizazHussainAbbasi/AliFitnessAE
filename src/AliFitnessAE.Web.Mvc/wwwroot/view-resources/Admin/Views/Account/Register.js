@@ -30,12 +30,7 @@
             }
         }
     });
-    //$("#AddGender").select2({
-    //    placeholder: "Select",
-    //    theme: "bootstrap4",
-    //    allowClear: true,
-    //    //dropdownParent: $('#UserCreateModal .modal-content')
-    //});
+    $("#AddGender").select2();  
     //$('#AddUserDOB').datepicker({
     //    format: "mm/dd/yyyy",
     //    startView: 2,

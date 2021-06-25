@@ -85,8 +85,7 @@
                     result += `</div>`
                     result += `</div>`
                     return result;
-                },
-                sortable: false
+                }
             },
             {
                 targets: 1,

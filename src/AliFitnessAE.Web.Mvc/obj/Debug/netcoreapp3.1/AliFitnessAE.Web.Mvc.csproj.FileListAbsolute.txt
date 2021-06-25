@@ -1044,7 +1044,6 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\AliFitnessAE.Core.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll.config
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.RazorAssemblyInfo.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.RazorAssemblyInfo.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.AssemblyInfoInputs.cache
@@ -1152,4 +1151,7 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\staticwebassets\AliFitnessAE.Web.Mvc.StaticWebAssets.xml
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.pdb
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.MvcApplicationPartsAssemblyInfo.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\MailKit.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\MimeKit.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Mvc.MvcApplicationPartsAssemblyInfo.cache

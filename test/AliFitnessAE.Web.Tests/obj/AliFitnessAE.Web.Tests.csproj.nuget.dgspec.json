@@ -111,6 +111,10 @@
             "Castle.Windsor.MsDependencyInjection": {
               "target": "Package",
               "version": "[3.3.1, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.13.0, )"
             }
           },
           "imports": [
@@ -355,6 +359,10 @@
             "BuildBundlerMinifier": {
               "target": "Package",
               "version": "[3.2.447, )"
+            },
+            "MailKit": {
+              "target": "Package",
+              "version": "[2.13.0, )"
             },
             "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation": {
               "target": "Package",

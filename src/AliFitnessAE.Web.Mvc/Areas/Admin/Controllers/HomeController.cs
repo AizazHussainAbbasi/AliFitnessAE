@@ -16,6 +16,9 @@ using AliFitnessAE.Common.Enum;
 using AliFitnessAE.Common.Constants;
 using AliFitnessAE.AppService;
 using AliFitnessAE.Users;
+using AliFitnessAE.Email;
+using Abp.Net.Mail;
+using Abp.Configuration;
 
 namespace AliFitnessAE.Web.Admin.Controllers
 {
@@ -28,22 +31,31 @@ namespace AliFitnessAE.Web.Admin.Controllers
         private readonly IUserTrackingAppService _userTrackingAppService;
         private readonly IPhotoTrackingAppService _photoTrackingAppService;
         private readonly UserManager _userManager;
+        private readonly ISettingManager _settingManager;
+        //private readonly IEmailService _emailService;#
 
         public HomeController(
              ILookupAppService lookupAppService,
              IUserAppService userAppService,
              IUserTrackingAppService userTrackingAppService,
              IPhotoTrackingAppService photoTrackingAppService,
-              UserManager userManager)
+              UserManager userManager,
+              ISettingManager settingManager
+            //  IEmailService emailService
+            )
         {
             _lookupAppService = lookupAppService;
             _userAppService = userAppService;
             _userTrackingAppService = userTrackingAppService;
             _photoTrackingAppService = photoTrackingAppService;
             _userManager = userManager;
+            _settingManager = settingManager;
+            //_emailService = emailService;
         }
         public ActionResult Index()
         {
+            //EmailService _emailService = new EmailService(_settingManager);
+            //_emailService.Send("aizaz.abbasi1993@gmail.com", "dotnetexperts777@gmail.com", "ICES BCIT", "<h1>Test Email</h1>");
             var scale = new Scale(_lookupAppService);
             var model = new HomeIndexCommonVModel
             {

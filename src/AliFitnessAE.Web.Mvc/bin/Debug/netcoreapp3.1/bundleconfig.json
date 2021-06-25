@@ -3,12 +3,14 @@
     "outputFileName": "wwwroot/view-resources/Admin/Views/_Bundles/account-layout.min.css",
     "inputFiles": [
       "wwwroot/libs/font-awesome/css/all.css",
-      "wwwroot/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.css",
       "wwwroot/libs/icheck-bootstrap/icheck-bootstrap.css",
-      "wwwroot/libs/toastr/toastr.css",
       "wwwroot/libs/admin-lte/dist/css/adminlte.css",
-      "wwwroot/css/style.css",
-      "wwwroot/view-resources/Admin/Views/Account/_Layout.css"
+      "wwwroot/libs/toastr/toastr.css",
+      "wwwroot/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.css",
+      "wwwroot/libs/select2/css/select2.css",
+      "wwwroot/libs/bootstrap-datepicker/css/bootstrap-datepicker.css",
+      "wwwroot/view-resources/Admin/Views/Account/_Layout.css",
+      "wwwroot/css/style.css"
     ]
   },
   {
@@ -17,13 +19,11 @@
       "wwwroot/libs/jquery/jquery.js",
       "wwwroot/libs/bootstrap/dist/js/bootstrap.bundle.js",
       "wwwroot/libs/admin-lte/dist/js/adminlte.js",
-      "wwwroot/libs/jquery-validate/jquery.validate.js",
-      "wwwroot/libs/jquery-validate/jquery.validate.unobtrusive.js",
-      "wwwroot/libs/toastr/toastr.min.js",
       "wwwroot/libs/block-ui/jquery.blockUI.js",
       "wwwroot/libs/spin/spin.js",
       "wwwroot/libs-ext/spin/jquery.spin.js",
       "wwwroot/libs/sweetalert/sweetalert.min.js",
+      "wwwroot/libs/toastr/toastr.min.js",
       "wwwroot/libs/moment/moment-with-locales.js",
       "wwwroot/libs/abp-web-resources/Abp/Framework/scripts/abp.js",
       "wwwroot/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.jquery.js",
@@ -31,6 +31,11 @@
       "wwwroot/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.blockUI.js",
       "wwwroot/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.spin.js",
       "wwwroot/libs/abp-web-resources/Abp/Framework/scripts/libs/abp.sweet-alert.js",
+      "wwwroot/libs/jquery-validate/jquery.validate.js",
+      "wwwroot/libs/jquery-validate/jquery.validate.unobtrusive.js",
+      "wwwroot/libs/select2/js/select2.js",
+      "wwwroot/libs/select2/js/select2.full.js",
+      "wwwroot/libs/bootstrap-datepicker/js/bootstrap-datepicker.js",
       "wwwroot/js/common.js",
       "wwwroot/js/main.js"
     ]

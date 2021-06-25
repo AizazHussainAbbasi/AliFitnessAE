@@ -77,7 +77,7 @@ function getParameterByName(name, url = window.location.href) {
     $('.form-horizontal').attr('autocomplete', 'off');
 
     //User Tracking Profile - Search FORM
-    $("#userTrackingProfileSearchFormUserList").select2({}); //#AddGender
+    $("#userTrackingProfileSearchFormUserList").select2({}); //#AddGender 
     $('#userTrackingProfileSearchFromDate,#userTrackingProfileSearchToDate,#EditUserDOB,#AddUserDOB').datepicker({
         format: "mm/dd/yyyy",
         clearBtn: true,

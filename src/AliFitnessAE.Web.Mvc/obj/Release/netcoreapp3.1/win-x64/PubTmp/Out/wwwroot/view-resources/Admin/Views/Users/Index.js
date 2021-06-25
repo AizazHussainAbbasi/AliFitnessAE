@@ -9,10 +9,10 @@
         scrollY: "300px",
         scrollX: true,
         scrollCollapse: true,
-        processing: true,
-        responsive: false,
         paging: true,
         serverSide: true,
+        processing: true,
+        responsive: false,  
         ordering: false,
         ajax: function (data, callback, settings) {
             var filter = $('#UsersSearchForm').serializeFormToObject(true);
@@ -37,11 +37,11 @@
                 action: () => _$usersTable.draw(false)
             }
         ],
-        responsive: {
-            details: {
-                type: 'column'
-            }
-        },
+        //responsive: {
+        //    details: {
+        //        type: 'column'
+        //    }
+        //},
         columnDefs: [ 
             {
                 targets: 0,

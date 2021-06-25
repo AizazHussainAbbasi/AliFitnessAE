@@ -89,7 +89,8 @@
     //-----------------------    
     //Table 
     var settings = {
-        "buttons": []
+        "buttons": [],
+        responsive: false
     }
     var _$userTrackingProfileTable = _$table.DataTable(settings);
     //Right Nav Body Part click
