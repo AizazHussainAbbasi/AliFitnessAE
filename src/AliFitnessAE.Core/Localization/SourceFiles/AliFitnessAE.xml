@@ -11,7 +11,10 @@
     <text name="ThereIsNoTenantDefinedWithName{0}" value="There is no tenant defined with name {0}" />
     <text name="TenantIsNotActive" value="Tenant {0} is not active." />
     <text name="UserIsNotActiveAndCanNotLogin" value="User {0} is not active and can not log in." />
+    <text name="UserIsNotActiveAndCanNotResetPassword" value="User {0} is not active and can not reset password." />
     <text name="UserEmailIsNotConfirmedAndCanNotLogin">Your email address is not confirmed. You can not login.</text>
+    <text name="UserEmailIsNotConfirmedAndResetPassword">Your email address is not confirmed. You can not login.</text>
+    <text name="SuccessfullyEmailConfirmed">Email successfully confirmed.</text>
     <text name="UserLockedOutMessage">The user account has been locked out. Please try again later.</text>
     <text name="InValidMobileNumber">Invalid mobile number or remove space.</text>
     <text name="PleaseEnterLoginInformation" value="Please enter login information" />
@@ -61,7 +64,7 @@
     <text name="ChangeTenant">Change tenant</text>
     <text name="MultiLevelMenu">Multi Level Menu</text>
     <text name="SuccessfullyRegistered">Successfully registered</text>
-    <text name="WaitingForEmailActivation">Your email address should be activated</text>
+    <text name="WaitingForEmailActivation">Your email address should be activated, please check your email.</text>
     <text name="Roles">Roles</text>
     <text name="DisplayName">Display Name</text>
     <text name="Edit">Edit</text>
@@ -110,6 +113,7 @@
     <text name="PleaseEnterAtLeastNCharacter">Please enter at least {0} characters</text>
     <text name="PleaseEnterNoMoreThanNCharacter">Please enter no more than {0} characters</text>
     <text name="InvalidEmailAddress">Invalid email address</text>
+    <text name="EmailIsNotValidPleasContactWithAdminToResolveTheIssue">Email is not valid, please try again by clicking 'Confirm Email Now' button from your email.</text>
     <text name="InvalidPattern">Invalid</text>
     <text name="PairsDoNotMatch">Do not match</text>
     <text name="All">All</text>
@@ -197,9 +201,21 @@
     <text name="UnApprovedMeasurementCount">Un Approved Measurements</text>
     <text name="ApprovedPhotosTrackingCount">Approved Photos</text>
     <text name="UnApprovedPhotosTrackingCount">Un Approved Photos</text>
+<!--User Tracking-->
+    <text name="CreateNewMeasurement">Create New Measurement</text>
+    <text name="MeasurementDetail">Un Approved Photos</text>
+    <text name="EditMeasurement">Edit Measurement</text>
 
- <!--Profile-->
-    <text name="UserProfile">User Profile</text> 
-     
+    
+
+    <!--Profile-->
+    <text name="UserProfile">User Profile</text>
+
+    <text name="ForgotPassword">Forgot Password</text> 
+    <text name="ForgotPassword_TypeValidEmailForRecevingCode">Please enter valid email address for recover your account password, we will send link on your valid email address.</text>
+    <text name="Send">Send</text> 
+    <text name="ForgotPasswordConfirmation">Forgot Password Confirmation</text> 
+    <text name="ResetPasswordConfirmation">Reset Password Confirmation</text> 
+    
   </texts>
 </localizationDictionary>

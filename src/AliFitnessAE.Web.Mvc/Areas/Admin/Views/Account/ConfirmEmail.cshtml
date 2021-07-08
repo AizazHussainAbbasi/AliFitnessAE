@@ -1,0 +1,19 @@
+﻿@model AliFitnessAE.Web.Models.Admin.Account.ConfirmEmailResultViewModel
+@{
+    ViewBag.Title = L("EmailConfirmResult");
+}
+<div>
+    @if (Model.IsEmailConfirmed.HasValue && Model.IsEmailConfirmed.Value)
+    {
+        <div class="alert alert-success" role="alert">
+            @L("SuccessfullyEmailConfirmed")
+        </div>
+        <span class="text-muted">Dear @Model.FullName, Your email is successfully confirmed please <a href="~/Admin/Account/Login">Login</a> into your account and enjoy the services.</span>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+            @L("EmailIsNotValidPleasContactWithAdminToResolveTheIssue")
+        </div>
+    }
+</div>

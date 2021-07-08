@@ -14,24 +14,31 @@ using Abp.Threading;
 using Abp.Timing;
 using Abp.UI;
 using Abp.Web.Models;
+using Abp.Web.Mvc.Models;
 using Abp.Zero.Configuration;
 using Acme.SimpleTaskApp.Common;
 using AliFitnessAE.Authorization;
 using AliFitnessAE.Authorization.Users;
+using AliFitnessAE.Common.Constants;
 using AliFitnessAE.Controllers;
+using AliFitnessAE.Document.Dto;
+using AliFitnessAE.Email;
 using AliFitnessAE.Identity;
 using AliFitnessAE.MultiTenancy;
+using AliFitnessAE.NotificationTemplate;
 using AliFitnessAE.Sessions;
 using AliFitnessAE.Users.Dto;
 using AliFitnessAE.Web.Admin.Views.Shared.Components.TenantChange;
 using AliFitnessAE.Web.Models.Admin.Account;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Dynamic;
 using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -53,7 +60,10 @@ namespace AliFitnessAE.Web.Admin.Controllers
         private readonly ITenantCache _tenantCache;
         private readonly INotificationPublisher _notificationPublisher;
         private readonly ILookupAppService _lookupAppService;
-
+        private readonly ISettingManager _settingManager;
+        private readonly INotificationManager _notificationManager;
+        private readonly IEmailService _emailService;
+        private readonly ITemplateManager _templateManager;
         public AccountController(
             UserManager userManager,
             IMultiTenancyConfig multiTenancyConfig,
@@ -66,7 +76,12 @@ namespace AliFitnessAE.Web.Admin.Controllers
             ISessionAppService sessionAppService,
             ITenantCache tenantCache,
             INotificationPublisher notificationPublisher,
-            ILookupAppService lookupAppService)
+            ILookupAppService lookupAppService,
+            ISettingManager settingManager,
+            INotificationManager notificationManager,
+                IEmailService emailService,
+            ITemplateManager templateManager
+)
         {
             _userManager = userManager;
             _multiTenancyConfig = multiTenancyConfig;
@@ -80,6 +95,10 @@ namespace AliFitnessAE.Web.Admin.Controllers
             _tenantCache = tenantCache;
             _notificationPublisher = notificationPublisher;
             _lookupAppService = lookupAppService;
+            _settingManager = settingManager;
+            _notificationManager = notificationManager;
+            _emailService = emailService;
+            _templateManager = templateManager;
         }
 
         #region Login / Logout
@@ -100,6 +119,35 @@ namespace AliFitnessAE.Web.Admin.Controllers
             });
         }
 
+        //[HttpPost]
+        //[UnitOfWork]
+        //public virtual async Task<ActionResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
+        //{
+        //    returnUrl = NormalizeReturnUrl(returnUrl);
+        //    if (!string.IsNullOrWhiteSpace(returnUrlHash))
+        //    {
+        //        returnUrl = returnUrl + returnUrlHash;
+        //    }
+
+        //    var loginResult = await GetLoginResultAsync(loginModel.UsernameOrEmailAddress, loginModel.Password, GetTenancyNameOrNull());
+        //    if (!loginResult.User.IsEmailConfirmed)
+        //    {
+        //        return View("RegisterResult", new RegisterResultViewModel
+        //        {
+        //            NameAndSurname = loginResult.User.FullName,
+        //            UserName = loginResult.User.UserName,
+        //            EmailAddress = loginResult.User.EmailAddress,
+        //            IsEmailConfirmed = loginResult.User.IsEmailConfirmed,
+        //            IsActive = loginResult.User.IsActive,
+        //            IsEmailConfirmationRequiredForLogin = true
+        //        });
+        //    }
+
+        //    await _signInManager.SignInAsync(loginResult.Identity, loginModel.RememberMe);
+        //    await UnitOfWorkManager.Current.SaveChangesAsync();
+
+        //    return Json(new AjaxResponse { TargetUrl = returnUrl });
+        //}
         [HttpPost]
         [UnitOfWork]
         public virtual async Task<JsonResult> Login(LoginViewModel loginModel, string returnUrl = "", string returnUrlHash = "")
@@ -117,7 +165,6 @@ namespace AliFitnessAE.Web.Admin.Controllers
 
             return Json(new AjaxResponse { TargetUrl = returnUrl });
         }
-
         public async Task<ActionResult> Logout()
         {
             await _signInManager.SignOutAsync();
@@ -131,6 +178,10 @@ namespace AliFitnessAE.Web.Admin.Controllers
             switch (loginResult.Result)
             {
                 case AbpLoginResultType.Success:
+                    if (!loginResult.User.IsEmailConfirmed)
+                        throw _abpLoginResultTypeHelper.CreateExceptionForFailedLoginAttempt(AbpLoginResultType.UserEmailIsNotConfirmed, usernameOrEmailAddress, tenancyName);
+                    if (!loginResult.User.IsActive)
+                        throw _abpLoginResultTypeHelper.CreateExceptionForFailedLoginAttempt(AbpLoginResultType.UserIsNotActive, usernameOrEmailAddress, tenancyName);
                     return loginResult;
                 default:
                     throw _abpLoginResultTypeHelper.CreateExceptionForFailedLoginAttempt(loginResult.Result, usernameOrEmailAddress, tenancyName);
@@ -160,7 +211,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
         private List<SelectListItem> GetGenderSelectListItem()
         {
             var genderMasterId = _lookupAppService.GetAllLookUpMaster(null, "Gender").Result.Items.FirstOrDefault().Id;
-            var genderSelectListItems =  _lookupAppService.GetLookDetailComboboxItems(genderMasterId).Result.Items
+            var genderSelectListItems = _lookupAppService.GetLookDetailComboboxItems(genderMasterId).Result.Items
                       .Select(p => p.ToSelectListItem())
                       .ToList();
 
@@ -216,7 +267,8 @@ namespace AliFitnessAE.Web.Admin.Controllers
                     model.EmailAddress,
                     model.UserName,
                     model.Password,
-                    true, // Assumed email address is always confirmed. Change this if you want to implement email confirmation.
+                    false,
+                    false,
                     model.MobileNumber,
                     model.ZoomId,
                     model.DOB,
@@ -224,7 +276,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
                     );
 
                 // Getting tenant-specific settings
-                var isEmailConfirmationRequiredForLogin = await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin);
+                var isEmailConfirmationRequiredForLogin = true; // await SettingManager.GetSettingValueAsync<bool>(AbpZeroSettingNames.UserManagement.IsEmailConfirmationRequiredForLogin);
 
                 if (model.IsExternalLogin)
                 {
@@ -274,6 +326,25 @@ namespace AliFitnessAE.Web.Admin.Controllers
                     Logger.Warn("New registered user could not be login. This should not be normally. login result: " + loginResult.Result);
                 }
 
+                //Welcome Email
+                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                var callbackUrlMessage = Url.Action(nameof(ConfirmEmail), "Account", new { token = code, email = user.EmailAddress }, protocol: HttpContext.Request.Scheme);
+                try
+                {
+                    var welcomeModel = new WelcomeNotificationUserDto()
+                    {
+                        FullName = user.FullName,
+                        Email = user.EmailAddress,
+                        UserName = user.UserName,
+                        Message = callbackUrlMessage
+                    };
+                    await _notificationManager.SendWelcomeEmail(welcomeModel);
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+
                 return View("RegisterResult", new RegisterResultViewModel
                 {
                     TenancyName = tenant.TenancyName,
@@ -292,7 +363,101 @@ namespace AliFitnessAE.Web.Admin.Controllers
                 return View("Register", model);
             }
         }
+        public async Task<IActionResult> ConfirmEmail(string token, string email)
+        {
+            var user = await _userManager.FindByEmailAsync(email);
+            if (user == null)
+                return View("ErrorPage", new ErrorInfo() { Message = L("InvalidEmailAddress"), Details = L("EmailIsNotValidPleasContactWithAdminToResolveTheIssue") });
 
+            var result = await _userManager.ConfirmEmailAsync(user, token);
+            ConfirmEmailResultViewModel model = new ConfirmEmailResultViewModel()
+            {
+                Email = email,
+                FullName = user?.FullName
+            };
+            if (result.Succeeded)
+                model.IsEmailConfirmed = user.IsEmailConfirmed;
+            else
+                model.IsEmailConfirmed = false;
+
+            return View("ConfirmEmail", model);
+        }
+        [HttpGet]
+        public async Task<IActionResult> ForgotPassword()
+        {
+            return View("ForgotPassword", new ForgotPasswordRequest());
+        }
+        [HttpPost]
+        [UnitOfWork]
+        public async Task<IActionResult> ForgotPassword(ForgotPasswordRequest model)
+        {
+            var user = await _userManager.FindByEmailAsync(model.Email);
+
+            //always return ok response to prevent email enumeration
+            if (user == null)
+            {
+                ModelState.TryAddModelError("InValidEmail", L("InvalidEmailAddress"));
+                return View(model);
+            }
+            if (!user.IsEmailConfirmed)
+            {
+                ModelState.TryAddModelError("InValidEmail", L("UserEmailIsNotConfirmedAndResetPassword"));
+                return View(model);
+            }
+            if (!user.IsActive)
+            {
+                ModelState.TryAddModelError("InvalidUserNameOrPassword", string.Format(L("UserIsNotActiveAndCanNotResetPassword"), user.FullName));
+                return View(model);
+            }
+            var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var callbackUrl = Url.Action(nameof(ResetPassword), "Account", new { token = code, email = model.Email }, protocol: HttpContext.Request.Scheme);
+
+            var forgotPassworNotificationdDto = new ForgotPasswordNotificationUserDto()
+            {
+                FullName = user.FullName,
+                Email = user.EmailAddress,
+                Message = callbackUrl,
+                Subject = "Forgot Password"
+            };
+            await _notificationManager.SendForgotPasswordEmail(forgotPassworNotificationdDto);
+
+            return RedirectToAction(nameof(ForgotPasswordConfirmation));
+        }
+        public IActionResult ForgotPasswordConfirmation()
+        {
+            return View();
+        }
+        [HttpGet]
+        public IActionResult ResetPassword(string token, string email)
+        {
+            var model = new ResetPasswordRequest { Token = token, Email = email };
+            return View(model);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ResetPassword(ResetPasswordRequest resetPasswordModel)
+        {
+            if (!ModelState.IsValid)
+                return View(resetPasswordModel);
+            var user = await _userManager.FindByEmailAsync(resetPasswordModel.Email);
+            if (user == null)
+                RedirectToAction(nameof(ResetPasswordConfirmation));
+            var resetPassResult = await _userManager.ResetPasswordAsync(user, resetPasswordModel.Token, resetPasswordModel.Password);
+            if (!resetPassResult.Succeeded)
+            {
+                foreach (var error in resetPassResult.Errors)
+                {
+                    ModelState.TryAddModelError(error.Code, error.Description);
+                }
+                return View();
+            }
+            return RedirectToAction(nameof(ResetPasswordConfirmation));
+        }
+        [HttpGet]
+        public IActionResult ResetPasswordConfirmation()
+        {
+            return View();
+        }
         #endregion
 
         #region External Login
@@ -504,6 +669,6 @@ namespace AliFitnessAE.Web.Admin.Controllers
         public ActionResult ChangePassword()
         {
             return View();
-        } 
+        }
     }
 }

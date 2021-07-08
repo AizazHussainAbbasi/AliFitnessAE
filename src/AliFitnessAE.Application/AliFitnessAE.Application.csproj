@@ -11,6 +11,10 @@
     <RootNamespace>AliFitnessAE</RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Email\EmailConfig.cs" />
+    <Compile Remove="Email\TaskManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\AliFitnessAE.Core\AliFitnessAE.Core.csproj" />
   </ItemGroup>
   <ItemGroup>

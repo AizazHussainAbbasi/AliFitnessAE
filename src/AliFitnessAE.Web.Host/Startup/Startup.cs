@@ -3,8 +3,7 @@ using System.Linq;
 using System.Reflection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Castle.Facilities.Logging;
 using Abp.AspNetCore;
@@ -19,6 +18,9 @@ using Abp.Json;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json.Serialization;
 using AliFitnessAE.Localization;
+using AliFitnessAE.Email;
+using Microsoft.Extensions.Configuration;
+using AliFitnessAE.NotificationTemplate;
 
 namespace AliFitnessAE.Web.Host.Startup
 {
@@ -108,7 +110,11 @@ namespace AliFitnessAE.Web.Host.Startup
                     Type = SecuritySchemeType.ApiKey
                 });
             });
-
+            //Email Service
+           // services.Configure<EmailConfig>(_appConfiguration.GetSection("Email"));
+            //services.AddTransient<IEmailService, EmailService>();
+            //services.AddTransient<ITemplateManager, TemplateManager>();
+            
             // Configure Abp and Dependency Injection
             return services.AddAbp<AliFitnessAEWebHostModule>(
                 // Configure Log4Net logging

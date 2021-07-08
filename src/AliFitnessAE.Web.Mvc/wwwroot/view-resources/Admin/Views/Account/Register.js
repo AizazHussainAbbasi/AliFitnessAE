@@ -11,12 +11,12 @@
     }, abp.localization.localize("RegisterFormUserNameInvalidMessage", "AliFitnessAE"));
     $.validator.addMethod("customMobileNumber", function (value, element) {
         debugger;
-        var regEx = /^(?:\+971|00971|0)?(?:50|51|52|55|56|2|3|4|6|7|9)\d{7}$/; 
+        var regEx = /^(?:\+971|00971|0)?(?:50|51|52|55|56|2|3|4|6|7|9)\d{7}$/;
         var val = _$form.find('input[name="MobileNumber"]').val();
-        if (!val.match(regEx)) { 
+        if (!val.match(regEx)) {
             return false;
         }
-        return  true;
+        return true;
     }, abp.localization.localize("InValidMobileNumber", "AliFitnessAE"));
     _$form.validate({
         rules: {
@@ -26,16 +26,22 @@
             },
             MobileNumber: {
                 required: true,
-                customMobileNumber: true 
+                customMobileNumber: true
             }
         }
     });
-    $("#AddGender").select2();  
+    $("#AddGender").select2();
     //$('#AddUserDOB').datepicker({
     //    format: "mm/dd/yyyy",
     //    startView: 2,
     //    clearBtn: true,
     //    endDate: '+0d', 
     //    //container: '#UserEditModal .modal-content'
-    //}).val(""); 
+    //}).val("");  
+    _$form.submit(function (e) { 
+       if( _$form.valid()) 
+            abp.ui.setBusy(_$form); 
+       else
+           abp.ui.clearBusy(_$form); 
+    });
 })();

@@ -37,7 +37,7 @@ namespace AliFitnessAE.Authorization.Users
             AbpSession = NullAbpSession.Instance;
         }
 
-        public async Task<User> RegisterAsync(string name, string surname, string emailAddress, string userName, string plainPassword, bool isEmailConfirmed,
+        public async Task<User> RegisterAsync(string name, string surname, string emailAddress, string userName, string plainPassword, bool isEmailConfirmed, bool isActive,
             string mobileNumber, string zoomId, DateTime dob,char? gender = null)
         {
             CheckForTenant();
@@ -50,7 +50,7 @@ namespace AliFitnessAE.Authorization.Users
                 Name = name,
                 Surname = surname,
                 EmailAddress = emailAddress,
-                IsActive = true,
+                IsActive = isActive,
                 UserName = userName,
                 IsEmailConfirmed = isEmailConfirmed,
                 Roles = new List<UserRole>(),

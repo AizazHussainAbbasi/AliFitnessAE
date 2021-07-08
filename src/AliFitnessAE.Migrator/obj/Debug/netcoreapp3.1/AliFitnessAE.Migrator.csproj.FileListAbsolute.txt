@@ -102,6 +102,7 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Castle.Windsor.MsDependencyInjection.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\JetBrains.Annotations.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\log4net.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\MailKit.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Microsoft.Data.SqlClient.dll
@@ -123,12 +124,14 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Microsoft.Identity.Client.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\MimeKit.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Nito.AsyncEx.Context.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Nito.AsyncEx.Coordination.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Nito.AsyncEx.Tasks.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Nito.Collections.Deque.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\Nito.Disposables.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\System.Collections.Immutable.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\System.Configuration.ConfigurationManager.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Debug\netcoreapp3.1\System.Diagnostics.DiagnosticSource.dll

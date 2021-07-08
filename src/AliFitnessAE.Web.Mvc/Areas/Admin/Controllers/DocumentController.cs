@@ -81,7 +81,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
                         if (!string.IsNullOrEmpty(profilePhotoPath))//Profile Photo
                         {
                             ChangeProfilePhotoDto changeProfilePhotoDto = new ChangeProfilePhotoDto() { Id = model.BusinessEntityId, ProfilePhotoPath = profilePhotoPath };
-                            _userAppService.UpdateProfilePhoto(changeProfilePhotoDto);
+                            await _userAppService.UpdateProfilePhoto(changeProfilePhotoDto);
                         }
                         return new AjaxResponse() { Success = true, Result = attachment };
                     }

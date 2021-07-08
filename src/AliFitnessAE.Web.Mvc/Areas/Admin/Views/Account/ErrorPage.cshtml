@@ -1,0 +1,38 @@
+﻿@using Abp.Collections.Extensions
+@model Abp.Web.Models.ErrorInfo
+<section class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="alert alert-danger" role="alert">
+                            <h3 class="panel-title">@Model.Message</h3>
+                        </div>
+                        <div class="alert alert-default-light" role="alert">
+                            <p>
+                                @(!string.IsNullOrEmpty(Model.Details) ? Model.Details : Model.Message)
+                            </p>
+                            @* Show validation errors *@
+                            @if (!Model.ValidationErrors.IsNullOrEmpty())
+                            {
+                                <ul>
+                                    @foreach (var validationError in Model.ValidationErrors)
+                                    {
+                                        <li>
+                                            @validationError.Message
+                                            @if (validationError.Members != null && validationError.Members.Any())
+                                            {
+                                                <text>(@string.Join(", ", validationError.Members))</text>
+                                            }
+                                        </li>
+                                    }
+                                </ul>
+                            }
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</section>

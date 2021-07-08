@@ -142,6 +142,7 @@ namespace AliFitnessAE.Controllers
                 externalUser.EmailAddress,
                 Authorization.Users.User.CreateRandomPassword(),
                 true,
+                false,
                 externalUser.MobileNumber,
                 null,//zoomId
                 DateTime.Now//Dob 

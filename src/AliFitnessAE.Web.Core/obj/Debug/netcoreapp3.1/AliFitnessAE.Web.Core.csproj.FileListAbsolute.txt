@@ -282,6 +282,11 @@ C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnes
 C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.csproj.CopyComplete
 C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.dll
 C:\Projects\AliFitness\MultiPageApp\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.pdb
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.csprojAssemblyReference.cache
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.AssemblyInfoInputs.cache
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.AssemblyInfo.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.deps.json
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\bin\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.pdb
@@ -560,9 +565,4 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\bin\Debug\netcoreapp3.1\AliFitnessAE.Core.pdb
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.csprojAssemblyReference.cache
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.AssemblyInfoInputs.cache
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.AssemblyInfo.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.csproj.CopyComplete
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.dll
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Core\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Core.pdb

@@ -62,7 +62,8 @@ namespace AliFitnessAE.Authorization.Accounts
                 input.EmailAddress,
                 input.UserName,
                 input.Password,
-                true, // Assumed email address is always confirmed. Change this if you want to implement email confirmation.
+                true, // Assumed email address is always confirmed from admin side registration. Change this if you want to implement email confirmation.
+                true, // Assumed account is always  active from admin side registration. 
                 input.MobileNumber,
                 input.ZoomId,
                 input.DOB,

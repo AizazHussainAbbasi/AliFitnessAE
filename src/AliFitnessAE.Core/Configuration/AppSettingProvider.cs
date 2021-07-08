@@ -12,19 +12,27 @@ namespace AliFitnessAE.Configuration
                 new SettingDefinition(AppSettingNames.UiTheme, "red", scopes: SettingScopes.Application | SettingScopes.Tenant | SettingScopes.User, isVisibleToClients: true),
                  new SettingDefinition(
                         "SmtpHost",
-                        "smtp.ethereal.email"
+                        "mail.bodytranscend.com"
                         ),
                   new SettingDefinition(
                         "SmtpPort",
-                        "587"
+                        "25"
                         ),
                    new SettingDefinition(
                         "SmtpUser",
-                        "nyah.hilll57@ethereal.email"
+                        "info@bodytranscend.com"
                         ),
                      new SettingDefinition(
                         "SmtpPass",
-                        "mQ68k19u2H5X3VfeU3"
+                        "786Tran$b0dy@110"
+                        ),
+                        new SettingDefinition(
+                        "From_Info",
+                        "info@bodytranscend.com"
+                        ),
+                           new SettingDefinition(
+                        "From_Name",
+                        "Body Transcend"
                         ),
             };
         }

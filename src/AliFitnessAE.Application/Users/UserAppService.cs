@@ -109,11 +109,11 @@ namespace AliFitnessAE.Users
             await _userManager.UpdateAsync(user);
             return true;
         }
-        public  bool UpdateProfilePhoto(ChangeProfilePhotoDto input)
+        public async Task<bool> UpdateProfilePhoto(ChangeProfilePhotoDto input)
         {
             var user = _userManager.GetUserById(input.Id);
             user.ProfilePhotoPath = input.ProfilePhotoPath; 
-            _userManager.UpdateAsync(user);
+            await _userManager.UpdateAsync(user);
             return true;
         }
         [AbpAuthorize(PermissionNames.Pages_User_DeleteUsers)]

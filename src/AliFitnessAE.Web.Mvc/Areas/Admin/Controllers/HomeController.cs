@@ -54,8 +54,10 @@ namespace AliFitnessAE.Web.Admin.Controllers
         }
         public ActionResult Index()
         {
-            //EmailService _emailService = new EmailService(_settingManager);
-            //_emailService.Send("aizaz.abbasi1993@gmail.com", "dotnetexperts777@gmail.com", "ICES BCIT", "<h1>Test Email</h1>");
+        //    var From = _settingManager.GetSettingValue("From_Info");
+
+        //    EmailService _emailService = new EmailService(_settingManager);
+        //    _emailService.Send(From , "dotnetexperts777@gmail.com", "Test Email", "<h1>Test Email</h1>");
             var scale = new Scale(_lookupAppService);
             var model = new HomeIndexCommonVModel
             {

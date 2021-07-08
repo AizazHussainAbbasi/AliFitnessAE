@@ -14,7 +14,7 @@ namespace AliFitnessAE.Users
 
         Task<bool> ChangePassword(ChangePasswordDto input);
         Task<bool> UpdatePersonalDetailAsync(ChangePersonalDetailDto input);
-        bool UpdateProfilePhoto(ChangeProfilePhotoDto input); 
+        Task<bool> UpdateProfilePhoto(ChangeProfilePhotoDto input); 
         int GetUserCount(string userTypeConst, bool? isActive = null);
     }
 }

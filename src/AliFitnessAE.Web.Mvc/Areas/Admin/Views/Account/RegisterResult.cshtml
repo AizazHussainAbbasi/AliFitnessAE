@@ -4,10 +4,12 @@
 }
 <div class="card">
     <div class="card-body">
-        <h4>@L("SuccessfullyRegistered")</h4>
+        <div class="alert alert-success" role="alert">
+            <h4>@L("SuccessfullyRegistered")</h4>
+        </div>
         <ul>
-            <li><span class="text-muted">@L("NameSurname"):</span> @Model.NameAndSurname</li>
-            <li><span class="text-muted">@L("TenancyName"):</span> @Model.TenancyName</li>
+            @*<li><span class="text-muted">@L("NameSurname"):</span> @Model.NameAndSurname</li>
+            <li><span class="text-muted">@L("TenancyName"):</span> @Model.TenancyName</li>*@
             <li><span class="text-muted">@L("UserName"):</span> @Model.UserName</li>
             <li><span class="text-muted">@L("EmailAddress"):</span> @Model.EmailAddress</li>
         </ul>
@@ -25,6 +27,11 @@
                     @L("WaitingForEmailActivation")
                 </div>
             }
+        </div>
+        <div class="row">
+            <div class="col-8">
+                <a asp-action="Login" class="btn btn-default btn-flat"><i class="fa fa-arrow-circle-left"></i> @L("Back")</a>
+            </div> 
         </div>
     </div>
 </div>
