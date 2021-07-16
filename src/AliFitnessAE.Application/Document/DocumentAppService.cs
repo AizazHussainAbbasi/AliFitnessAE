@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using Abp.Application.Services;
 using AliFitnessAE.UserTrackingCore;
 using System;
+using AliFitnessAE.Crypto;
 
 namespace AliFitnessAE.Document
 {
@@ -58,7 +59,7 @@ namespace AliFitnessAE.Document
         }
         public async Task<ListResultDto<BusinessDocumentAttachmentDto>> GetAllBusinessDocumentAttachments(int? id = null, int? businessDocumentId = null, int? businessEntityId = null)
         {
-            var documentTypeList = await _businessDocumentAttachmentRepository
+            var documentAttachmentList = await _businessDocumentAttachmentRepository
                 .GetAll()
                 .WhereIf(id.HasValue, e => e.Id == id)
                 .WhereIf(businessDocumentId.HasValue, e => e.BusinessDocumentId == businessDocumentId)
@@ -66,9 +67,9 @@ namespace AliFitnessAE.Document
                 //.WhereIf(businessEntityDateTime.HasValue, e => e.CreationTime == businessEntityDateTime)
                 .OrderByDescending(t => t.CreationTime)
                 .ToListAsync();
-            return new ListResultDto<BusinessDocumentAttachmentDto>(
-                ObjectMapper.Map<List<BusinessDocumentAttachmentDto>>(documentTypeList)
-            );
+            var list = ObjectMapper.Map<List<BusinessDocumentAttachmentDto>>(documentAttachmentList);
+            list.ForEach(x => x.picEnyc = CryptoEngine.EncryptString(x.Id.ToString()));
+            return new ListResultDto<BusinessDocumentAttachmentDto>(list);
         }
         public async Task<BusinessDocumentAttachmentDto> CreateBusinessDocumentAttachment(BusinessDocumentAttachmentDto input)
         {

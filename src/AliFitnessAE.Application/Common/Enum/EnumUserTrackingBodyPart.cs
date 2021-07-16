@@ -23,8 +23,10 @@ namespace AliFitnessAE.Common.Enum
     }
     public enum EnumDocumentType
     {
-        Front,
-        Back,
-        Profile
+        FrontPose,
+        BackPose,
+        RightSidePose,
+        LeftSidePose,
+        ProfilePhoto
     }
 }

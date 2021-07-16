@@ -1150,3 +1150,10 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Release\netcoreapp3.1\MailKit.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Release\netcoreapp3.1\MimeKit.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ConfirmEmail.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ErrorPage.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ForgotPassword.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ForgotPasswordConfirmation.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ResetPassword.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ResetPasswordConfirmation.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Release\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\Partial\_PhotoDialog.cshtml.g.cs

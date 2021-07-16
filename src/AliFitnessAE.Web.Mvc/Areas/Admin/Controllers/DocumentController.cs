@@ -21,9 +21,11 @@ using AliFitnessAE.Common.Constants;
 using AliFitnessAE.Authorization.Users;
 using AliFitnessAE.Users.Dto;
 using AliFitnessAE.Users;
+using AliFitnessAE.Crypto;
 
 namespace AliFitnessAE.Web.Admin.Controllers
 {
+    [AbpMvcAuthorize]
     [Area("Admin")]
     public class DocumentController : AliFitnessAEControllerBase
     {
@@ -53,8 +55,8 @@ namespace AliFitnessAE.Web.Admin.Controllers
             if (ModelState.IsValid)
             {
                 string profilePhotoPath = string.Empty;
-                string uniqueFileName = UploadedFile(model, out profilePhotoPath);
-                if (!string.IsNullOrEmpty(uniqueFileName))
+                string fileUrl = UploadedFile(model, out profilePhotoPath);
+                if (!string.IsNullOrEmpty(fileUrl))
                 {
                     //Delete Old
                     if (model.IsDeleteOld)
@@ -70,7 +72,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
                     {
                         BusinessDocumentId = model.BusinessDocumentId,
                         BusinessEntityId = model.BusinessEntityId,
-                        FilePath = uniqueFileName,
+                        FilePath = fileUrl,
                         FileName = System.IO.Path.GetFileNameWithoutExtension(model.Image.FileName),
                         FileExt = System.IO.Path.GetExtension(model.Image.FileName),
                         Order = 0
@@ -80,7 +82,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
                     {
                         if (!string.IsNullOrEmpty(profilePhotoPath))//Profile Photo
                         {
-                            ChangeProfilePhotoDto changeProfilePhotoDto = new ChangeProfilePhotoDto() { Id = model.BusinessEntityId, ProfilePhotoPath = profilePhotoPath };
+                            ChangeProfilePhotoDto changeProfilePhotoDto = new ChangeProfilePhotoDto() { Id = model.BusinessEntityId, ProfilePhotoPath = businessDocumentAttachmentDto.Id.ToString() };
                             await _userAppService.UpdateProfilePhoto(changeProfilePhotoDto);
                         }
                         return new AjaxResponse() { Success = true, Result = attachment };
@@ -91,7 +93,29 @@ namespace AliFitnessAE.Web.Admin.Controllers
             }
             return new AjaxResponse(new ErrorInfo() { Message = "Errors" });
         }
-        [HttpPost]
+        [HttpGet]
+        public async Task<ActionResult> Get(string picEnyc)
+        {
+            var id = Convert.ToInt32(CryptoEngine.DecryptString(picEnyc)); 
+            var attachmentList = await _documentAppService.GetAllBusinessDocumentAttachments(id, null, null);
+            if (attachmentList.Items.Count > 0)
+            {
+                var attachment = attachmentList.Items.First();
+                var contentType = string.Empty;
+                var fileExt = attachment.FileExt.ToLower();
+                switch (fileExt)
+                {
+                    case ".jpg":
+                    case ".jpeg":
+                    case ".png":
+                        contentType = "image/png";
+                        break;
+
+                }
+                return PhysicalFile(attachment.FilePath, contentType);
+            }
+            return null;
+        }
         public async Task<AjaxResponse> Delete([FromBody]DeleteVModel model)
         {
             var businessDocumentAttachmentDto = new BusinessDocumentAttachmentDto()
@@ -103,10 +127,13 @@ namespace AliFitnessAE.Web.Admin.Controllers
             var result = await _documentAppService.DeleteBusinessDocumentAttachment(businessDocumentAttachmentDto);
             return new AjaxResponse() { Success = result };
         }
-        private string UploadedFile(UploadVModel model, out string profilePhotoPath)
+
+        private string UploadedFile(UploadVModel model, out string modulePhotoUrl)
         {
-            string uniqueFileName = null;
-            profilePhotoPath = string.Empty;
+            modulePhotoUrl = string.Empty;
+            string filePath = string.Empty;
+            var user = _userManager.GetUserById(AbpSession.UserId.Value);
+            var rootImagesFolder = Path.Combine(_webHostEnvironment.ContentRootPath, "Images");
 
             if (model.Image != null)
             {
@@ -121,22 +148,32 @@ namespace AliFitnessAE.Web.Admin.Controllers
                     }
                     else if (module.LookUpDetailConst.Equals(LookUpDetailConst.PhotoTracking))
                     {
-                        var user = _userManager.GetUserById(AbpSession.UserId.Value);
                         subFolder = "tracking";
                         //subFolder = string.Format("{0}/{1}", "tracking", user.FullName);
                     }
                 }
-                string wwwrootDir = Path.Combine("images", subFolder);
-                string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, wwwrootDir);
-                uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Image.FileName;
-                string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                var subModuleFolder = Path.Combine(rootImagesFolder, subFolder); 
+                //Module Folder
+                bool subModuleFolderExists = System.IO.Directory.Exists(subModuleFolder); 
+                if (!subModuleFolderExists)
+                    System.IO.Directory.CreateDirectory(subModuleFolder);
+                //User Folder
+                var userFolder = Path.Combine(subModuleFolder, user.UserName); 
+                bool userFolderExists = System.IO.Directory.Exists(userFolder);
+                if (!userFolderExists)
+                    System.IO.Directory.CreateDirectory(userFolder);
+
+               
+                var uniqueFileName = Guid.NewGuid().ToString() + "_" + model.Image.FileName;
+                filePath = Path.Combine(userFolder, uniqueFileName);
 
                 //Update user ProfilePath in User table
                 if (module != null)
                 {
                     if (module.LookUpDetailConst.Equals(LookUpDetailConst.PersonalDetail))
                     {
-                        profilePhotoPath = Path.Combine(wwwrootDir, uniqueFileName);
+                        modulePhotoUrl = Path.Combine(userFolder, uniqueFileName);
                     }
                 }
 
@@ -145,7 +182,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
                     model.Image.CopyTo(fileStream);
                 }
             }
-            return uniqueFileName;
+            return filePath;
         }
     }
 }

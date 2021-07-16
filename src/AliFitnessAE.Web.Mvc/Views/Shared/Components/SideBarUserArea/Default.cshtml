@@ -5,14 +5,14 @@
     <div class="image">
         @if (!string.IsNullOrEmpty(Model.GetProfilePhotoPath()))
         {
-            <img src="~/@Model.GetProfilePhotoPath()" class="img-circle  elevation-2" alt="User Image">
+            <img src="@Url.Action("Get", "Document", new { picEnyc = Model.GetProfilePhotoPath() })" class="img-circle  elevation-2" alt="User Image">
         }
         else
         {
-            <img src="~/libs/admin-lte/dist/img/avatar5.png" class="img-circle elevation-2" alt="User Image">
+            <img src="~/libs/admin-lte/dist/img/avatar4.png" class="img-circle elevation-2" alt="User Image">
         }
     </div>
-    <div class="info"> 
+    <div class="info">
         <a class="d-block" asp-area="Admin" asp-controller="Profile" asp-action="Index">@Html.Raw(Model.GetShownLoginName())</a>
     </div>
 </div>

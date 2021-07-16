@@ -122,7 +122,7 @@
     <text name="Clear">Clear</text>
     <text name="ResetPasswordStepOneInfo">1. Enter your administrator password</text>
     <text name="ResetPasswordStepTwoInfo">2. Copy this random password so you can send it to the user</text>
-    
+
     <!--User Tracking-->
     <text name="User">User</text>
     <text name="Date">Date</text>
@@ -153,7 +153,7 @@
     <text name="MobileNumber">Mobile Number</text>
     <text name="Update">Update</text>
     <text name="SelectGender">Select Gender</text>
-    
+
     <!--Search Form-->
     <text name="SelectUser">Select User</text>
     <text name="SelectFrom">Select From</text>
@@ -161,7 +161,7 @@
     <text name="ChartType">Chart Type</text>
     <text name="Line">Line</text>
     <text name="Bar">Bar</text>
-    
+
     <!--Menu / Module-->
     <text name="UserTracking">User Tracking</text>
     <text name="MeasurementTracking">Measurement Tracking</text>
@@ -174,8 +174,8 @@
     <text name="Approve">Approve</text>
     <text name="UnApprove">Un Approve</text>
     <text name="Detail">Detail</text>
-    <text name="GoToProfile">Go To Profile</text> 
-    
+    <text name="GoToProfile">Go To Profile</text>
+
     <!--User Type-->
     <text name="CreateNewUserType">Create New User Type</text>
     <text name="EditUserType">Edit User Type</text>
@@ -190,10 +190,10 @@
     <text name="TopicBody">Topic Body</text>
     <text name="Published">Published</text>
     <text name="IncluedInTopMenu">Inclued In Top Menu</text>
-    <text name="IncluedInFooterColumn1">Inclued In Footer Column 1</text> 
-    <text name="IncluedInFooterColumn2">Inclued In Footer Column 2</text> 
-    <text name="IncluedInFooterColumn3">Inclued In Footer Column 3</text> 
-    
+    <text name="IncluedInFooterColumn1">Inclued In Footer Column 1</text>
+    <text name="IncluedInFooterColumn2">Inclued In Footer Column 2</text>
+    <text name="IncluedInFooterColumn3">Inclued In Footer Column 3</text>
+
     <!--Dashbaord-->
     <text name="ActiveClientCount">Active Clients</text>
     <text name="UnActiveClientCount">Un Active Clients</text>
@@ -201,21 +201,33 @@
     <text name="UnApprovedMeasurementCount">Un Approved Measurements</text>
     <text name="ApprovedPhotosTrackingCount">Approved Photos</text>
     <text name="UnApprovedPhotosTrackingCount">Un Approved Photos</text>
-<!--User Tracking-->
+    <!--User Tracking-->
     <text name="CreateNewMeasurement">Create New Measurement</text>
     <text name="MeasurementDetail">Un Approved Photos</text>
     <text name="EditMeasurement">Edit Measurement</text>
 
-    
+
 
     <!--Profile-->
     <text name="UserProfile">User Profile</text>
 
-    <text name="ForgotPassword">Forgot Password</text> 
+    <text name="ForgotPassword">Forgot Password</text>
     <text name="ForgotPassword_TypeValidEmailForRecevingCode">Please enter valid email address for recover your account password, we will send link on your valid email address.</text>
-    <text name="Send">Send</text> 
-    <text name="ForgotPasswordConfirmation">Forgot Password Confirmation</text> 
-    <text name="ResetPasswordConfirmation">Reset Password Confirmation</text> 
+    <text name="Send">Send</text>
+    <text name="ForgotPasswordConfirmation">Forgot Password Confirmation</text>
+    <text name="ResetPasswordConfirmation">Reset Password Confirmation</text>
+
+    <!--Photo Tracking-->
+    <text name="FrontPose">Front Pose Photo</text>
+    <text name="BackPose">Back Pose Photo</text>
+    <text name="RightSidePose">Standing Right Side Pose</text>
+    <text name="LeftSidePose">Standing Left Side Pose</text>
+
+    <text name="FrontPoseDescription">Men only take a shirtless photo of yourself in a relaxed manner</text>
+    <text name="BackPoseDescription">Men only take a shirtless photo of your back in a relaxed position</text>
+    <text name="RightSidePoseDescription">Standing right way sides towards camera and belly relaxed </text>
+    <text name="LeftSidePoseDescription">Standing left side way towards camera and belly relaxed</text>
     
+    <text name="Close">Close</text>
   </texts>
 </localizationDictionary>

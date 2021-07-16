@@ -21,6 +21,7 @@ html {
 }
 
 .nav-user-menu .user-image {
+    height: 20px;
     width: 20px;
     margin-right: 4px;
     margin-top: -4px;
@@ -143,13 +144,15 @@ table.dataTable thead th {
 
 table.nowrap-table {
     white-space: nowrap;
-}  
+}
+
 table.table-bordered tr.odd {
     background-color: rgba(85, 182, 255, 0.28);
-} 
+}
+
 table.table-bordered tr.even {
     background-color: white;
-} 
+}
 
 /*.text-sm {
     font-size: .875rem !important;
@@ -179,3 +182,88 @@ body {
 .email-font {
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+ 
+#image-gallery .modal-dialog {
+    position: relative;
+    display: table; /* This is important */
+    overflow-y: auto;
+    overflow-x: auto;
+    width: auto;
+}
+
+.imageUploader input[type=file] {
+    display: none;
+    margin: 10px;
+}
+
+    .imageUploader input[type=file] + label {
+        display: inline-block;
+        margin: 20px;
+        padding: 4px 32px;
+        background-color: #FFFFFF;
+        border: solid 1px #666F77;
+        border-radius: 6px;
+        color: #666F77;
+    }
+
+    .imageUploader input[type=file]:active + label {
+        background-image: none;
+        background-color: #2D6C7A;
+        color: #FFFFFF;
+    }
+
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    #image-gallery #image-gallery-image {
+        max-width: 1281px;
+    }
+}
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    #image-gallery #image-gallery-image {
+        max-width: 1025px;
+    }
+} 
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+    #image-gallery #image-gallery-image {
+        max-width: 730px;
+    }
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (portrait)(Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+
+    #image-gallery #image-gallery-image {
+        max-width: 450px;
+    }
+} 
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    #image-gallery #image-gallery-image {
+        max-width: 300px;
+    }
+} 

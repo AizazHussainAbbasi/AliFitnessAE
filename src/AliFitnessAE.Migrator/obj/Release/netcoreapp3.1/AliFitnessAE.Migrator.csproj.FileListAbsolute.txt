@@ -77,3 +77,6 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\obj\Release\netcoreapp3.1\AliFitnessAE.Migrator.csproj.CopyComplete
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\obj\Release\netcoreapp3.1\AliFitnessAE.Migrator.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\obj\Release\netcoreapp3.1\AliFitnessAE.Migrator.pdb
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Release\netcoreapp3.1\MailKit.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Release\netcoreapp3.1\MimeKit.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Migrator\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll

@@ -1,7 +1,4 @@
-﻿<link rel="shortcut icon" href="~/img/favicon.ico">
-<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
-<environment names="Development">
+﻿<environment names="Development">
     @*admin-lte styles start*@
     <link href="~/libs/font-awesome/css/all.min.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/libs/icheck-bootstrap/icheck-bootstrap.css" rel="stylesheet" asp-append-version="true" />
@@ -12,9 +9,9 @@
     <link href="~/libs/toastr/toastr.css" rel="stylesheet" asp-append-version="true" />
     <link href="~/libs-ext/famfamfam-flags/dist/sprite/famfamfam-flags.min.css" rel="stylesheet" asp-append-version="true" />
     @*abp styles end*@
+    <link rel="shortcut icon" href="#">
 
     @*custom styles start*@
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="~/libs/rich-text/richtext.min.css" />
     <link rel="stylesheet" href="~/libs/select2/css/select2.css" />
     <link rel="stylesheet" href="~/libs/bootstrap-datepicker/css/bootstrap-datepicker.css" />
@@ -24,5 +21,6 @@
 </environment>
 
 <environment names="Staging,Production">
+    <link rel="shortcut icon" href="#">
     <link rel="stylesheet" href="~/view-resources/Admin/Views/_Bundles/account-layout.min.css" asp-append-version="true" />
 </environment>

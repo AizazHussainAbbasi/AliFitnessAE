@@ -1,4 +1,5 @@
-﻿using AliFitnessAE.Sessions.Dto;
+﻿using AliFitnessAE.Crypto;
+using AliFitnessAE.Sessions.Dto;
 
 namespace AliFitnessAE.Web.Views.Shared.Components.RightNavbarUserArea
 {
@@ -20,6 +21,11 @@ namespace AliFitnessAE.Web.Views.Shared.Components.RightNavbarUserArea
             return LoginInformations.Tenant == null
                 ? ".\\" + userName
                 : LoginInformations.Tenant.TenancyName + "\\" + userName;
+        }
+        public string GetProfilePhotoPath()
+        {
+            var profilePhotoPath = CryptoEngine.EncryptString(LoginInformations.User.ProfilePhotoPath);
+            return profilePhotoPath;
         }
     }
 }

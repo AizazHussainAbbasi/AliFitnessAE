@@ -550,7 +550,6 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\A
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\AliFitnessAE.Web.Core.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\AliFitnessAE.Web.Mvc.pdb
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\AliFitnessAE.Web.Mvc.dll.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\AliFitnessAE.Tests.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\AliFitnessAE.Application.pdb
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\AliFitnessAE.Core.pdb
@@ -563,3 +562,6 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\A
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Release\netcoreapp3.1\AliFitnessAE.Web.Tests.csproj.CopyComplete
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Release\netcoreapp3.1\AliFitnessAE.Web.Tests.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\obj\Release\netcoreapp3.1\AliFitnessAE.Web.Tests.pdb
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\MailKit.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\MimeKit.dll
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\test\AliFitnessAE.Web.Tests\bin\Release\netcoreapp3.1\BouncyCastle.Crypto.dll

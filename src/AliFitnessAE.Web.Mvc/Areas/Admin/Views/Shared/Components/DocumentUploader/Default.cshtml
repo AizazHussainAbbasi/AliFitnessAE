@@ -4,10 +4,17 @@
 @foreach (var businessDocument in Model.DocumentList)
 {
     <div class="row">
-        <form class="md-form" action="#">
+        <form class="md-form ml-3" action="#">
             <div class="file-field">
                 <div class="btn btn-primary btn-sm float-left">
-                    <span>@businessDocument.DocumentType.DocumentTypeName</span>
+                    <span type='button' data-toggle="tooltip" data-placement="right" title="@L(@businessDocument.DocumentType.DocumentTypeConst + "Description")">
+                        <h7>
+                            @L(@businessDocument.DocumentType.DocumentTypeConst)
+                        </h7>
+                        <i class="fas fa-info-circle"></i>
+                    </span>
+                </div>
+                <div class="btn btn-sm float-left">
                     @if (!Model.IsReadOnly)
                     {
                         <input type="file" id="businessDocumentInputControl-@businessDocument.Id-@Model.BusinessEntityId" data-outerDivId="outerDivDocumentInputControl-@Model.BusinessEntityId-@businessDocument.DocumentType.DocumentTypeConst" name="files[]" multiple="multiple" accept="image/*" title="Select Images To Be Uploaded" onChange="UploadFiles(this, @Model.BusinessEntityId,@businessDocument.Id, @businessDocument.DocumentTypeId )">
@@ -28,29 +35,17 @@
                         </span>
                     }
                     <a href="#" class="previewImageView">
-                        <img src="~/images/tracking/@attachment.FilePath" alt="@attachment.FileName">
+                        <img src="@Url.Action("Get", "Document", new { picEnyc = attachment.picEnyc })" alt="@attachment.FileName">
                     </a>
-                    @*<a href="~/images/@attachment.FilePath" download>
-                            <img src="~/images/@attachment.FilePath" alt="@attachment.FileName">
-                        </a>*@
                 </div>
             }
         </div>
     </div>
 }
 <div class="modal-footer justify-content-between">
-    <button type="button" class="btn btn-default close-button" data-dismiss="modal">@L("Ok")</button>
+    <button type="button" class="btn btn-default close-button" data-dismiss="modal">@L("Close")</button>
 </div>
 
-@*<a href="~/images/@attachment.FilePath" download>
-        <img src="~/images/@attachment.FilePath" alt="@attachment.FileName">
-    </a>*@
-@*<a href="~/images/@attachment.FilePath" download>
-        <i class="fa fa-download" aria-hidden="true"></i>
-    </a>*@
-@*<a href="#" class="imageView">
-        <img src="~/images/@attachment.FilePath" alt="@attachment.FileName">
-    </a>*@
 <div class="modal fade" id="imagePreviewModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -69,35 +64,10 @@
         </div>
     </div>
 </div>
-@*<span class='zoom' id='zoomImagePreview'>
-        <img src="" class="imagepreviewSrc" style="width: 100%;">
-    </span>*@
 
 <script>
     $(function () {
         var _$ImagePreviewModal = $('#imagePreviewModal');
-
-        //_$ImagePreviewModal.on('shown.bs.modal', () => {
-        //    $(this).find('.modal-body').css({
-        //        width: 'auto', //probably not needed
-        //        height: 'auto', //probably not needed
-        //        'max-height': '100%'
-        //    });
-        //    // $('#zoomImagePreview').zoom({ on: 'click' });
-        //}).on('hidden.bs.modal', () => {
-        //    //alert('previwemodal hide');
-        //    // $('#zoomImagePreview').trigger('zoom.destroy');
-        //});
-
-        //$(document).on("click", ".previewImageView", function () {
-        //    $('#imageModelPreviewSrc').attr('src', $(this).find('img').attr('src'));
-        //    $('#imageModelPreviewDonwload').attr('href', $(this).find('img').attr('src'));
-        //    _$ImagePreviewModal.modal('show');
-        //    $('.modal').css('overflow-y', 'auto');
-        //    //$('#zoomImagePreview').zoom();
-        //    //$('#ex3').zoom({ on:'click' });
-        //    //$('#ex4').zoom({ on:'toggle' });
-        //});
         $(document).on("click", "#closeImagrePreviewButton", function () {
             _$ImagePreviewModal.modal('hide');
         });
@@ -188,29 +158,4 @@
             });
         }
     }
-    //function uploadFiles() {
-    //    debugger;
-    //    var objects = $("[id^=businessDocumentInputControl]");
-    //    objects.files;
-    //    var input = document.getElementById(inputId);
-    //    var files = input.files;
-    //    var formData = new FormData();
-
-    //    for (var i = 0; i != files.length; i++) {
-    //        formData.append("files", files[i]);
-    //    }
-
-    //    $.ajax(
-    //        {
-    //            url: "/uploader",
-    //            data: formData,
-    //            processData: false,
-    //            contentType: false,
-    //            type: "POST",
-    //            success: function (data) {
-    //                alert("Files Uploaded!");
-    //            }
-    //        }
-    //    );
-    //}
 </script>

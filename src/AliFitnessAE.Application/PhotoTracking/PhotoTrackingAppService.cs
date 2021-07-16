@@ -51,15 +51,21 @@ namespace AliFitnessAE.AppService
             ////Server Side Pagging
             ////var count = queryable.Count();
             ////var result = queryable.Skip((input.SkipCount)).Take(input.MaxResultCount);
-            var list = queryable.ToList()
-                               .OrderByDescending(x => x.CreationTime);
-            var photoTrackingList = ObjectMapper.Map<IReadOnlyList<PhotoTrackingListDto>>(list);
+            var list = queryable.OrderByDescending(x => x.CreationTime);
+            var photoTrackingList = ObjectMapper.Map<IReadOnlyList<PhotoTrackingListDto>>(list).ToList();
             var photoTrackingLKDId = _lookupAppService.GetAllLookDetail(null, LookUpDetailConst.PhotoTracking).Result.Items.First().Id;
             var businessDocumentList = _documentAppService.GetAllBusinessDocuments(null, photoTrackingLKDId, documentTypeId).Result.Items;
 
             for (int i = 0; i < photoTrackingList.Count; i++)
             {
-                var listt = new List<BusinessDocumentDto>();
+                var attachmentCount = _documentAppService.GetAllBusinessDocumentAttachments(null, null, photoTrackingList[i].Id).Result.Items.Count;
+                if (attachmentCount == 0)//Soft Delete Photo Tracking
+                {
+                   _photoTrackingRepository.Delete(photoTrackingList[i].Id);
+                    photoTrackingList.Remove(photoTrackingList[i]);
+                    continue;
+                }
+                var bizDocList = new List<BusinessDocumentDto>();
                 foreach (var businessDoc in businessDocumentList)
                 {
                     var businessDocument = new BusinessDocumentDto()
@@ -72,12 +78,12 @@ namespace AliFitnessAE.AppService
                         IsRequired = businessDoc.IsRequired
                     };
                     businessDocument.BusinessDocumentAttachmentDto = _documentAppService.GetAllBusinessDocumentAttachments(null, businessDoc.Id, photoTrackingList[i].Id).Result.Items.ToList();
-                    listt.Add(businessDocument);
+                    bizDocList.Add(businessDocument);
                 }
-                photoTrackingList[i].DocumentList = listt;
+
+                photoTrackingList[i].DocumentList = bizDocList;
             }
             var data = new PagedResultDto<PhotoTrackingListDto>(photoTrackingList.Count(), photoTrackingList);
-
             return data;
         }
         public IList<PhotoTrackingDto> GetAllPhotoTrackingList(PagedResultRequestExtDto input)
@@ -159,28 +165,36 @@ namespace AliFitnessAE.AppService
         }
         public void Delete(int id)
         {
-            bool isDelete = true;
-
-            var photoTrackingLKDId = _lookupAppService.GetAllLookDetail(null, LookUpDetailConst.PhotoTracking).Result.Items.First().Id;
-            var businessDocumentList = _documentAppService.GetAllBusinessDocuments(null, photoTrackingLKDId, null).Result.Items;
-
-            var photoTracking = _photoTrackingRepository.GetAsync(id).Result;
-            foreach (var businessDoc in businessDocumentList)
-                businessDoc.BusinessDocumentAttachmentDto = _documentAppService.GetAllBusinessDocumentAttachments(null, businessDoc.Id, photoTracking.Id).Result.Items.ToList();
-            if (businessDocumentList.Count > 0)
+            try
             {
-                foreach (var doc in businessDocumentList)
+                bool isDelete = true;
+
+                var photoTrackingLKDId = _lookupAppService.GetAllLookDetail(null, LookUpDetailConst.PhotoTracking).Result.Items.First().Id;
+                var businessDocumentList = _documentAppService.GetAllBusinessDocuments(null, photoTrackingLKDId, null).Result.Items;
+
+                var photoTracking = _photoTrackingRepository.Get(id);
+                if (photoTracking == null)
+                    return;
+                foreach (var businessDoc in businessDocumentList)
+                    businessDoc.BusinessDocumentAttachmentDto = _documentAppService.GetAllBusinessDocumentAttachments(null, businessDoc.Id, photoTracking.Id).Result.Items.ToList();
+                if (businessDocumentList.Count > 0)
                 {
-                    if (doc.BusinessDocumentAttachmentDto.Count > 0)
+                    foreach (var doc in businessDocumentList)
                     {
-                        isDelete = false;
-                        break;
+                        if (doc.BusinessDocumentAttachmentDto.Count > 0)
+                        {
+                            isDelete = false;
+                            break;
+                        }
                     }
                 }
+                if (isDelete)
+                    _photoTrackingRepository.DeleteAsync(photoTracking.Id);
             }
-            if (isDelete)
-                _photoTrackingRepository.DeleteAsync(photoTracking.Id);
-            // return MapToEntityDto(photoTracking); 
+            catch(Exception ex)
+            {
+                Logger.Error(ex.Message);
+            }
         }
         public async Task<PhotoTrackingDto> UpdatePhotoTrackingStatus(UpdateTrackingStatusRequest model)
         {

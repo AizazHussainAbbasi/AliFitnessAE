@@ -1,4 +1,4 @@
-﻿@model ProfileVModel 
+﻿@model ProfileVModel
 
 <div class="row">
     <div class="col-md-12">
@@ -17,8 +17,8 @@
             <!-- /.card-header -->
             <div class="card-body">
                 @*<div class="row mb-5">
-                    @await Html.PartialAsync("_UserTracking.AdvancedSearch", @Model.UserTrackingFilter)
-                </div>*@
+                        @await Html.PartialAsync("_UserTracking.AdvancedSearch", @Model.UserTrackingFilter)
+                    </div>*@
                 <div class="row">
                     <div class="col-sm-3 col-md-3 col-lg-3">
                         <div class="nav flex-column nav-tabs h-100" id="profile-picture-tracking-tabs" role="tablist" aria-orientation="vertical">
@@ -31,7 +31,7 @@
                                 if (i == 0)
                                 {
                                     _businessDocumentDto = @item;
-                                    <a class="nav-link active" id="vert-tabs-@item.DocumentType.DocumentTypeConst-tabs" data-toggle="pill" href="#vert-tabs-@item.DocumentType.DocumentTypeConst" data-BusinessEntityId="@item.DocumentTypeId" data-doc-type="@item.DocumentType.DocumentTypeConst"  role="tab" aria-controls="vert-tabs-Height" aria-selected="true">@L(@item.DocumentType.DocumentTypeConst)</a>
+                                    <a class="nav-link active" id="vert-tabs-@item.DocumentType.DocumentTypeConst-tabs" data-toggle="pill" href="#vert-tabs-@item.DocumentType.DocumentTypeConst" data-BusinessEntityId="@item.DocumentTypeId" data-doc-type="@item.DocumentType.DocumentTypeConst" role="tab" aria-controls="vert-tabs-Height" aria-selected="true">@L(@item.DocumentType.DocumentTypeConst)</a>
                                 }
                                 else
                                 {
@@ -56,3 +56,5 @@
     </div>
     <!-- /.col -->
 </div>
+
+@await Html.PartialAsync("~/Areas/Admin/Views/Shared/Partial/_PhotoDialog.cshtml")

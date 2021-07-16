@@ -1,9 +1,9 @@
 ﻿@using AliFitnessAE.Web.Resources
 @model PhotoTrackingViewModel
-     <!-- TABLE: LATEST ORDERS -->
 
 @foreach (var item in Model.DocumentList.Items)
 {
+
     <div id="divPhotoTrackingList" class="card card-primary">
         <div class="card-header">
             <h3 class="card-title">@item.CreationTime.ToString("dddd, dd MMMM yyyy") - @item.User.FullName</h3>
@@ -20,8 +20,8 @@
                 @if (ViewBag.IsAdminLoggedIn)
                 {
                     var cssClass = item.Status.StatusConst == "Approved" ? "fas fa-thumbs-down" : "fas fa-thumbs-up";
-                    var approveStatusToolTip = item.Status.StatusConst == "Approved" ? L("UnApproveStatusToolTip"): L("ApproveStatusToolTip");
-                    <text> <button type="button" data-id="@item.Id" data-userTracking-status="@item.Status.StatusConst" class="btn btn-tool waves-effect waves-light updatePhotoTrackingStatus" data-toggle="tooltip" data-placement="right"  title="@approveStatusToolTip">
+                    var approveStatusToolTip = item.Status.StatusConst == "Approved" ? L("UnApproveStatusToolTip") : L("ApproveStatusToolTip");
+                    <text> <button type="button" data-id="@item.Id" data-userTracking-status="@item.Status.StatusConst" class="btn btn-tool waves-effect waves-light updatePhotoTrackingStatus" data-toggle="tooltip" data-placement="right" title="@approveStatusToolTip">
                             <i class="@cssClass"></i>
                         </button></text>
                 }
@@ -36,11 +36,12 @@
                 <div class="row">
                     @foreach (var attachment in document.BusinessDocumentAttachmentDto)
                     {
-                        <div class="col-sm-2">
-                            <a href="~/images/tracking/@attachment.FilePath" data-toggle="lightbox" data-title="@document.DocumentType.DocumentTypeConst" data-gallery="gallery">
-                                <img src="~/images/tracking/@attachment.FilePath?text=@attachment.Id" class="img-fluid mb-2" alt="@document.DocumentType.DocumentTypeConst" rel="lightbox[gallery]"/>
-                            </a>
-                        </div>
+                    <div class="col-lg-3 col-md-4 col-xs-6"> 
+                        @{ var title = string.Format("{0}, {1}",  L(document.DocumentType.DocumentTypeConst), item.CreationTime.ToString("dd MMM yyyy")); }
+                        <a class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="@title" data-caption="" data-image="@Url.Action("Get", "Document", new { picEnyc = attachment.picEnyc })" data-target="#image-gallery">
+                            <img class="img-fluid mb-2" src="@Url.Action("Get", "Document", new { picEnyc = attachment.picEnyc })" alt="@L(document.DocumentType.DocumentTypeConst)">
+                        </a>
+                    </div>
                     }
                 </div>
             }
@@ -49,3 +50,5 @@
     </div>
     <!-- /.card -->
 }
+
+

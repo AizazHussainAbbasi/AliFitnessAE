@@ -39,7 +39,7 @@ namespace AliFitnessAE.Web.Admin.Views.photoTracking.Components.PictureTracking
             var result = new PhotoTrackingViewModel()
             {
                 DocumentList = photoList,
-                DocumentType = (model.SearchModel != null) ? model.SearchModel.DocumentType : EnumDocumentType.Front
+                DocumentType = (model.SearchModel != null) ? model.SearchModel.DocumentType : EnumDocumentType.FrontPose
             };
             ViewBag.IsAdminLoggedIn = _userManager.IsAdminUser(AbpSession.UserId.Value);
             string view = string.IsNullOrEmpty(model.ViewName) ? "_Default" : model.ViewName;

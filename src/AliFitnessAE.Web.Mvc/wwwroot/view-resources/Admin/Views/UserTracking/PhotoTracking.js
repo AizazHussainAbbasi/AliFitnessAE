@@ -6,8 +6,7 @@
 
     $('.btn-search').on('click', (e) => {
         var filter = _$searchForm.serializeFormToObject(true);
-        filter.userId = filter.searchFormUserList;
-        debugger;
+        filter.userId = filter.searchFormUserList; 
         filter.isApproved = getParameterByName('isApproved');  
         loadComponentView("divPhotoTrackingList", "PhotoTracking", "PhotoTracking", null, filter, "_Default");
     });
@@ -24,8 +23,7 @@
     $(document).on('click', '#hrefPhotoTrackingCreate', function (e) {
         LoadPhotoTrackingModel(null);
     });
-    $(document).on('click', '.hrefPhotoTrackingEdit', function (e) {
-        debugger;
+    $(document).on('click', '.hrefPhotoTrackingEdit', function (e) { 
         var id = $(this).attr('data-id');
         LoadPhotoTrackingModel(id);
     });
@@ -35,8 +33,7 @@
             url: abp.appPath + 'Admin/userTracking/CreatePhotoTrackingModal',
             type: 'GET',
             dataType: 'html',
-        }).done(function (data) {
-            debugger;
+        }).done(function (data) { 
             $('#divCreatePhotoTrackingModal').html(data); 
             $('#PhotoTrackingCreateModal').modal('show');
             $('#photoTrackingId').val(id);
@@ -101,4 +98,8 @@
             $(".btn-search").trigger('click');
         });
     }
+
+    //Init Image Dailog
+    loadGallery(true, 'a.thumbnail');
+
 })(jQuery);

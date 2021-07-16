@@ -585,3 +585,4 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ResetPassword.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ResetPasswordConfirmation.cshtml.g.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Account\ErrorPage.cshtml.g.cs
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Mvc\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Shared\Partial\_PhotoDialog.cshtml.g.cs

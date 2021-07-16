@@ -1,4 +1,5 @@
-﻿using AliFitnessAE.Sessions.Dto;
+﻿using AliFitnessAE.Crypto;
+using AliFitnessAE.Sessions.Dto;
 
 namespace AliFitnessAE.Web.Views.Shared.Components.SideBarUserArea
 {
@@ -23,7 +24,7 @@ namespace AliFitnessAE.Web.Views.Shared.Components.SideBarUserArea
         }
         public string GetProfilePhotoPath()
         {
-            var profilePhotoPath = LoginInformations.User.ProfilePhotoPath; 
+            var profilePhotoPath = CryptoEngine.EncryptString(LoginInformations.User.ProfilePhotoPath); 
             return profilePhotoPath;
         }
     }
