@@ -43,12 +43,10 @@
     $(".upload-button").on('click', function () {
         $(".file-upload").click();
     });
-    function uploadProfilePhoto(photoFiles) {
-        debugger;
+    function uploadProfilePhoto(photoFiles) { 
         if (photoFiles.length >= 1) {
             $.each(photoFiles, function (i, img) {
-                try {
-                    debugger;
+                try { 
                     var formData = new FormData();
                     var profilePhotoControl = $('#profilePhotoControl');
                     formData.append("image", img);
@@ -64,8 +62,7 @@
                             processData: false,
                             contentType: false,
                             type: "POST",
-                            success: function (data) {
-                                debugger;
+                            success: function (data) { 
                                 if (data.success) {
                                     abp.notify.info(l('SavedSuccessfully'));
                                 }
@@ -96,6 +93,7 @@
     //Right Nav Body Part click
     $('#profile-tracking-tabs a').off().on('click', function (e) {
         e.preventDefault()
+        debugger;
         var tabID = "vert-tabs-profile-body";
         $("#" + tabID).html('');
         var filter = $('#userTrackingProfileSearchForm').serializeFormToObject(true);
@@ -157,7 +155,7 @@
     //-----------------------
     //- PHOTO TRACKING
     //----------------------- 
-    $('#profile-picture-tracking-tabs a').click(function (e) {
+    $('#profile-picture-tracking-tabs a').click(function (e) { 
         e.preventDefault();
         var tabID = "tab-profile-picture-trackingContent"; //$(this).attr("href").substr(1);
         $("profile-picture-trackingContent .tab-pane").each(function () {
@@ -172,6 +170,8 @@
         var businessEntityId = $(this).attr("data-BusinessEntityId");
         loadComponentView(tabID, "PhotoTracking", "PhotoTracking", businessEntityId, filter, "_ProfilePhotoTracking");
         $(this).tab('show')
-    });
+    }); 
+    //Init Image Dailog
+    loadGallery(true, 'a.thumbnail');
 });
 

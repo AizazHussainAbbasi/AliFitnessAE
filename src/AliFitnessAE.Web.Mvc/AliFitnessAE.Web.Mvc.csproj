@@ -16,22 +16,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="Views\Account\**" />
-    <Compile Remove="wwwroot\images\**" />
     <Compile Remove="wwwroot\img\**" />
     <Compile Remove="wwwroot\libs - Copy\**" />
     <Compile Remove="wwwroot\scss\**" />
     <Content Remove="Views\Account\**" />
-    <Content Remove="wwwroot\images\**" />
     <Content Remove="wwwroot\img\**" />
     <Content Remove="wwwroot\libs - Copy\**" />
     <Content Remove="wwwroot\scss\**" />
     <EmbeddedResource Remove="Views\Account\**" />
-    <EmbeddedResource Remove="wwwroot\images\**" />
     <EmbeddedResource Remove="wwwroot\img\**" />
     <EmbeddedResource Remove="wwwroot\libs - Copy\**" />
     <EmbeddedResource Remove="wwwroot\scss\**" />
     <None Remove="Views\Account\**" />
-    <None Remove="wwwroot\images\**" />
     <None Remove="wwwroot\img\**" />
     <None Remove="wwwroot\libs - Copy\**" />
     <None Remove="wwwroot\scss\**" />
@@ -40,10 +36,8 @@
     <Compile Remove="Controllers\AccountController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Remove="wwwroot\view-resources\Admin\Views\_Bundles\shared-layout.min.css" />
-    <Content Remove="wwwroot\view-resources\Admin\Views\_Bundles\shared-layout.min.js" />
-    <Content Remove="wwwroot\view-resources\Views\_Bundles\shared-layout.min.css" />
-    <Content Remove="wwwroot\view-resources\Views\_Bundles\shared-layout.min.js" />
+    <Content Remove="wwwroot\view-resources\ViewsNeedToDel\_Bundles\shared-layout.min.css" />
+    <Content Remove="wwwroot\view-resources\ViewsNeedToDel\_Bundles\shared-layout.min.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="obj\Release\netcoreapp3.1\PubTmp\Out\wwwroot\view-resources\Admin\Views\_Bundles\shared-layout.min.css" />
@@ -2405,7 +2399,6 @@
     <Folder Include="Images\PhotoTracking\" />
     <Folder Include="Models\" />
     <Folder Include="wwwroot\Allison\" />
-    <Folder Include="wwwroot\view-resources\Views\Theme\" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="wwwroot\libs\abp-web-resources\Abp\Framework\scripts\abp.d.ts" />

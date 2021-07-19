@@ -15,7 +15,8 @@ namespace AliFitnessAE.Document
         public LookUpDetail BusinessEntityLKD { get; set; }
         public int BusinessEntityLKDId { get; set; }
         public bool AllowMultiple { get; set; } 
-        public bool IsRequired { get; set; }
+        public bool IsRequired { get; set; } 
+        public int DocShowOrder { get; set; }
          
         public BusinessDocument()
         {

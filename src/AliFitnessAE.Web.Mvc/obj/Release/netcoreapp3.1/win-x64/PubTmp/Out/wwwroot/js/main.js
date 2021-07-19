@@ -129,9 +129,16 @@
             $(obj).removeClass('is-invalid');
         });
         $this[0].reset();
-    }; 
-     
-    //Enable ToolTip
-     $("body").tooltip({ selector: '[data-toggle=tooltip]' });  
+    };
 
+    //Enable ToolTip
+    $("body").tooltip({ selector: '[data-toggle=tooltip]' });
+
+    //Loader
+    abp.ui.clearBusy('body');  // Hide it initially
+    $(document).ajaxStart(function () {
+        abp.ui.setBusy('body');
+    }).ajaxStop(function () {
+        abp.ui.clearBusy('body');
+    });
 })(jQuery);

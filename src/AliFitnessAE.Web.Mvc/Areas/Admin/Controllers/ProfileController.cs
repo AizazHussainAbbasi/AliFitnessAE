@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Abp.Application.Services.Dto;
+using Abp.AspNetCore.Mvc.Authorization;
 using Acme.SimpleTaskApp.Common;
 using AliFitnessAE.AppService.Document;
 using AliFitnessAE.Authorization.Users;
@@ -22,6 +23,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AliFitnessAE.Web.Areas.Admin.Controllers
 {
+    [AbpMvcAuthorize]
     [Area("Admin")]
     public class ProfileController : AliFitnessAEControllerBase
     {

@@ -23,6 +23,12 @@
     <Compile Remove="Migrations\20201113143745_UserTracking_DocumentAttachment_DBSET.Designer.cs" />
     <Compile Remove="Migrations\20201113145317_UserTracking_DocumentAttachment_DBSET.cs" />
     <Compile Remove="Migrations\20201113145317_UserTracking_DocumentAttachment_DBSET.Designer.cs" />
+    <Compile Remove="Migrations\20210718161625_BusinessDocument.Order.cs" />
+    <Compile Remove="Migrations\20210718161625_BusinessDocument.Order.Designer.cs" />
+    <Compile Remove="Migrations\20210718162611_DocumnetOrder.cs" />
+    <Compile Remove="Migrations\20210718162611_DocumnetOrder.Designer.cs" />
+    <Compile Remove="Migrations\20210718164157_20210718162611_DocumnetDocShowOrder.cs" />
+    <Compile Remove="Migrations\20210718164157_20210718162611_DocumnetDocShowOrder.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />

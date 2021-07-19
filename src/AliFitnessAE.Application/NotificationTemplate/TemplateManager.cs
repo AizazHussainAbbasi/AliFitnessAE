@@ -52,17 +52,11 @@ namespace AliFitnessAE.NotificationTemplate
                     //{10} : Linked_Img  
                     //{11} : CopyRight_Year  
                     messageBody = string.Format(builder.HtmlBody,
-                        "{0}",
                         model.FullName,
                         model.Message,
                         model.Email,
                         model.UserName,
-                        "{1}",
-                        "{2}",
-                        "{3}",
-                        "{4}",
-                        "{5}",
-                        "{6}",
+                        "{0}",
                         DateTime.Now.Year
                         );
                     break;
@@ -80,10 +74,6 @@ namespace AliFitnessAE.NotificationTemplate
                         model.FullName,
                         model.Message, 
                         "{0}",
-                        "{1}",
-                        "{2}",
-                        "{3}",
-                        "{4}",
                         DateTime.Now.Year
                         );
                     break;

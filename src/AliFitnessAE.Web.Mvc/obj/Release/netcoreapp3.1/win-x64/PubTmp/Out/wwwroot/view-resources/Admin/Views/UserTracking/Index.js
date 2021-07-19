@@ -417,9 +417,7 @@
         format: "mm/dd/yyyy",
         clearBtn: true,
         endDate: '+0d'
-    });
-
-
+    }); 
 })(jQuery);
 
 

@@ -13,6 +13,7 @@ namespace AliFitnessAE.Document.Dto
         public int BusinessEntityLKDId { get; set; }
         public bool AllowMultiple { get; set; }
         public bool IsRequired { get; set; }
+        public int DocShowOrder { get; set; }
         public IList<BusinessDocumentAttachmentDto> BusinessDocumentAttachmentDto { get; set; }
     }
 }

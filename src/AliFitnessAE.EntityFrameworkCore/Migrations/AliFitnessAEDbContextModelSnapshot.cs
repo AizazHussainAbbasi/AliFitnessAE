@@ -1560,6 +1560,9 @@ namespace AliFitnessAE.Migrations
                     b.Property<DateTime?>("DeletionTime")
                         .HasColumnType("datetime2");
 
+                    b.Property<int>("DocShowOrder")
+                        .HasColumnType("int");
+
                     b.Property<int>("DocumentTypeId")
                         .HasColumnType("int");
 

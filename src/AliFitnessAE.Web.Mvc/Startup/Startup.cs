@@ -53,7 +53,12 @@ namespace AliFitnessAE.Web.Startup
 
             IdentityRegistrar.Register(services);
             AuthConfigurer.Configure(services, _appConfiguration);
-            services.ConfigureApplicationCookie(options => options.LoginPath = "/Admin/Account/Login");
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Admin/Account/Login";
+                options.ExpireTimeSpan = TimeSpan.FromDays(30);
+                options.SlidingExpiration = true;
+            });
 
             services.AddScoped<IWebResourceManager, WebResourceManager>();
 
@@ -96,7 +101,7 @@ namespace AliFitnessAE.Web.Startup
                 endpoints.MapHub<AbpCommonHub>("/signalr");
                 endpoints.MapControllerRoute("defaultWithArea", "{area:exists}/{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
-            }); 
+            });
         }
     }
 }

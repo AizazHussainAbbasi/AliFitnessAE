@@ -51,7 +51,7 @@ namespace AliFitnessAE.Document
                  .WhereIf(id.HasValue, e => e.Id == id)
                  .WhereIf(businessEntityLKDId.HasValue, e => e.BusinessEntityLKDId == businessEntityLKDId)
                  .WhereIf(documentTypeId.HasValue, e => e.DocumentTypeId == documentTypeId)
-                 .OrderByDescending(t => t.CreationTime)
+                 .OrderBy(t => t.DocShowOrder)
                  .ToListAsync();
             return new ListResultDto<BusinessDocumentDto>(
                 ObjectMapper.Map<List<BusinessDocumentDto>>(documentTypeList)

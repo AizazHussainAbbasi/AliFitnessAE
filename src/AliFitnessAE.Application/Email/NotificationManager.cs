@@ -34,7 +34,7 @@ namespace AliFitnessAE.Email
 
         public async Task SendWelcomeEmail(WelcomeNotificationUserDto model)
         {
-            var subject = "Confirm Account Registration";
+            var subject = "Verify your email one time to complete registration";
             dynamic expando = new ExpandoObject();
             expando.Subject = subject;
             expando.Date = String.Format("{0:dddd, d MMMM yyyy}", DateTime.Now);
@@ -47,12 +47,6 @@ namespace AliFitnessAE.Email
             string emailTemplateFolder = Path.Combine(_webHostEnvironment.WebRootPath, Path.Combine("images", "email")); 
             List<string> attachmentList = new List<string>();
             attachmentList.Add(Path.Combine(emailTemplateFolder, "logo.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "ceo.jpg"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "logo.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "facebook.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "twitter.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "insta.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "linkedin.png"));
   
             var emailDto = new EmailDto()
             {
@@ -76,11 +70,7 @@ namespace AliFitnessAE.Email
 
             string emailTemplateFolder = Path.Combine(_webHostEnvironment.WebRootPath, Path.Combine("images", "email"));
             List<string> attachmentList = new List<string>();
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "logo.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "facebook.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "twitter.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "insta.png"));
-            attachmentList.Add(Path.Combine(emailTemplateFolder, "linkedin.png"));
+            attachmentList.Add(Path.Combine(emailTemplateFolder, "logo.png")); 
 
             var emailDto = new EmailDto()
             {

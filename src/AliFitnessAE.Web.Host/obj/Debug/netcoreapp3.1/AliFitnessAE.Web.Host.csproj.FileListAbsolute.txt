@@ -821,7 +821,6 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\bin\Debug\netcoreapp3.1\AliFitnessAE.EntityFrameworkCore.dll.config
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.csprojAssemblyReference.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.dll.config
-C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.MvcApplicationPartsAssemblyInfo.cs
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.MvcApplicationPartsAssemblyInfo.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.AssemblyInfoInputs.cache
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.AssemblyInfo.cs

@@ -24,6 +24,8 @@ namespace AliFitnessAE.Web.Views.Shared.Components.RightNavbarUserArea
         }
         public string GetProfilePhotoPath()
         {
+            if (LoginInformations.User.ProfilePhotoPath == null)
+                return null;
             var profilePhotoPath = CryptoEngine.EncryptString(LoginInformations.User.ProfilePhotoPath);
             return profilePhotoPath;
         }

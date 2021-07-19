@@ -526,7 +526,7 @@ var Lightbox = (function ($) {
 			}
 		}, {
 			key: '_preloadImage',
-			value: function _preloadImage(src, $containerForImage) {
+				value: function _preloadImage(src, $containerForImage) { 
 				var _this4 = this;
 
 				$containerForImage = $containerForImage || false;
