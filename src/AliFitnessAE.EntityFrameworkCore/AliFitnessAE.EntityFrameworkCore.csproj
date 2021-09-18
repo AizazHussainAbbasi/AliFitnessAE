@@ -29,6 +29,22 @@
     <Compile Remove="Migrations\20210718162611_DocumnetOrder.Designer.cs" />
     <Compile Remove="Migrations\20210718164157_20210718162611_DocumnetDocShowOrder.cs" />
     <Compile Remove="Migrations\20210718164157_20210718162611_DocumnetDocShowOrder.Designer.cs" />
+    <Compile Remove="Migrations\20210910151702_userTrackingDate.cs" />
+    <Compile Remove="Migrations\20210910151702_userTrackingDate.Designer.cs" />
+    <Compile Remove="Migrations\20210910152318_user.cs" />
+    <Compile Remove="Migrations\20210910152318_user.Designer.cs" />
+    <Compile Remove="Migrations\20210910152659_date.cs" />
+    <Compile Remove="Migrations\20210910152659_date.Designer.cs" />
+    <Compile Remove="Migrations\20210910153347_userTrackingDate.cs" />
+    <Compile Remove="Migrations\20210910153347_userTrackingDate.Designer.cs" />
+    <Compile Remove="Migrations\20210910153947_Initial.cs" />
+    <Compile Remove="Migrations\20210910153947_Initial.Designer.cs" />
+    <Compile Remove="Migrations\20210910154820_UserTrackingDate.cs" />
+    <Compile Remove="Migrations\20210910154820_UserTrackingDate.Designer.cs" />
+    <Compile Remove="Migrations\20210910155543_TrackingDate.cs" />
+    <Compile Remove="Migrations\20210910155543_TrackingDate.Designer.cs" />
+    <Compile Remove="Migrations\20210910161717_AddBlogCreatedTimestamp.cs" />
+    <Compile Remove="Migrations\20210910161717_AddBlogCreatedTimestamp.Designer.cs" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />

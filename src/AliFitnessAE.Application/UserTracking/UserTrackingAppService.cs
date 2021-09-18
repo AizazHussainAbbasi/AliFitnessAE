@@ -47,7 +47,7 @@ namespace AliFitnessAE.AppService
             ////var count = queryable.Count();
             ////var result = queryable.Skip((input.SkipCount)).Take(input.MaxResultCount);
             var list = queryable.ToList()
-                               .OrderByDescending(x => x.CreationTime);
+                               .OrderByDescending(x => x.UserTrackingDate);
             var items = ObjectMapper.Map<IReadOnlyList<UserTrackingDto>>(list);
             return new PagedResultDto<UserTrackingDto>(items.Count(), items);
         }
@@ -55,7 +55,7 @@ namespace AliFitnessAE.AppService
         {
             var queryable = GetAllUserTrackingIQueryable(input);
             var list = queryable.ToList()
-                             .OrderByDescending(x => x.CreationTime);
+                             .OrderByDescending(x => x.UserTrackingDate);
             var userTrackingDtoList = ObjectMapper.Map<IList<UserTrackingDto>>(list);
             return userTrackingDtoList;
         }
@@ -73,9 +73,9 @@ namespace AliFitnessAE.AppService
                 queryable = _userTrackingRepository.GetAll().Include(x => x.User).Where(x => x.UserId == AbpSession.UserId.Value).Include(x => x.Status).AsNoTracking();
             }
             if (input.FromDate.HasValue)
-                queryable = queryable.Where(x => x.CreationTime.Date >= input.FromDate.Value.Date);
+                queryable = queryable.Where(x => x.UserTrackingDate.Date >= input.FromDate.Value.Date);
             if (input.ToDate.HasValue)
-                queryable = queryable.Where(x => x.CreationTime.Date <= input.ToDate.Value.Date);
+                queryable = queryable.Where(x => x.UserTrackingDate.Date <= input.ToDate.Value.Date);
             if (input.IsApproved.HasValue)
             {
                 if (input.IsApproved.Value)

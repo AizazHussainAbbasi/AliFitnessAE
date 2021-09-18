@@ -16,6 +16,8 @@ using Microsoft.AspNetCore.Authorization;
 using AliFitnessAE.Users.Dto;
 using AliFitnessAE.Authorization.Users;
 using AliFitnessAE.Crypto;
+using Microsoft.AspNetCore.Http.Extensions;
+using System.Web;
 
 namespace AliFitnessAE.Web.Admin.Controllers
 {
@@ -96,8 +98,7 @@ namespace AliFitnessAE.Web.Admin.Controllers
             else
                 id = AbpSession.UserId.Value.ToString();
             string url = string.Format("/Admin/Profile/Index?id={0}",
-                CryptoEngine.EncryptString(id));
-
+                 HttpUtility.UrlEncode(CryptoEngine.EncryptString(id))); 
             return Json(new { success = true, targetUrl = url });
         }
     }

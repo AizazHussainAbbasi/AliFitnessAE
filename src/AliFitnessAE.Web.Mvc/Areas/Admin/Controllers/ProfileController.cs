@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using Abp.Application.Services.Dto;
 using Abp.AspNetCore.Mvc.Authorization;
 using Acme.SimpleTaskApp.Common;
@@ -60,7 +61,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Controllers
                 PhotoTrackingBusinessDocumentList = businessDocumentList
             };
             //Set UserId
-            string userEnycId = HttpContext.Request.Query["id"].ToString();
+            string userEnycId = HttpContext.Request.Query["id"].ToString();  
             if (!string.IsNullOrEmpty(userEnycId))
                 model.UserTrackingFilter.UserIdEnyc = userEnycId;
             else

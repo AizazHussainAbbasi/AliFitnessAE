@@ -34,7 +34,7 @@
                     var item = @Model.UserTrackingDetail[i];
                 <tr>
                     <td>@Model.User.FullName</td>
-                    <td>@string.Format("{0:MMMM dd, yyyy}", item.CreationTime)</td>
+                    <td>@string.Format("{0:MMMM dd, yyyy}", item.UserTrackingDate)</td>
                     <td>@item.BodyPartValueAndScale.Item1</td>
                     <td>@item.BodyPartValueAndScale.Item2</td>
                     <td>@item.Status.StatusConst</td>

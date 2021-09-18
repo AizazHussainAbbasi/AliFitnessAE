@@ -4311,10 +4311,7 @@
         },
         "runtime": {
           "bin/placeholder/AliFitnessAE.Application.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "AliFitnessAE.Core/1.0.0": {
         "type": "project",
@@ -4330,10 +4327,7 @@
         },
         "runtime": {
           "bin/placeholder/AliFitnessAE.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "AliFitnessAE.EntityFrameworkCore/1.0.0": {
         "type": "project",
@@ -4347,10 +4341,7 @@
         },
         "runtime": {
           "bin/placeholder/AliFitnessAE.EntityFrameworkCore.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       },
       "AliFitnessAE.Web.Core/1.0.0": {
         "type": "project",
@@ -4369,10 +4360,7 @@
         },
         "runtime": {
           "bin/placeholder/AliFitnessAE.Web.Core.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
+        }
       }
     }
   },
@@ -12996,7 +12984,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.116\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.117\\RuntimeIdentifierGraph.json"
       }
     }
   }

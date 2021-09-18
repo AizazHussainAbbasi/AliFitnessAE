@@ -59,12 +59,13 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
         private UserTrackingChartOutPutVModel GetUserTrackingChartData(IEnumerable<UserTrackingDto> userTrackingList, EnumUserTrackingBodyPart bodyPart, int Id)
         {
             var resultList = new UserTrackingChartOutPutVModel();
+            userTrackingList = userTrackingList.OrderBy(x => x.UserTrackingDate);
             var targetScaleLkd = _lookupAppService.GetAllLookDetail(null, null, Id).Result.Items.FirstOrDefault();
 
             switch (bodyPart)
             {
                 case EnumUserTrackingBodyPart.Height:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Height, x.HeightLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Height, x.HeightLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("Height"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -74,7 +75,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.Weight:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Weight, x.WeightLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Weight, x.WeightLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("Weight"), targetScaleLkd.LookUpDetailConst);
                     var a = L("Weight");
                     foreach (var item in resultList.list)
@@ -85,7 +86,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.Hip:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Hip, x.HipLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Hip, x.HipLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("Hip"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -95,7 +96,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.BellyButtonWaist:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.BellyButtonWaist, x.BellyButtonWaistLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.BellyButtonWaist, x.BellyButtonWaistLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("BellyButtonWaist"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -105,7 +106,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.HipBoneWaist:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.HipBoneWaist, x.HipBoneWaistLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.HipBoneWaist, x.HipBoneWaistLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("HipBoneWaist"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -115,7 +116,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.Chest:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Chest, x.ChestLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.Chest, x.ChestLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("Chest"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -125,7 +126,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.RightArm:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.RightArm, x.RightArmLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.RightArm, x.RightArmLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("RightArm"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -135,7 +136,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.LeftArm:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.LeftArm, x.LeftArmLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.LeftArm, x.LeftArmLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("LeftArm"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -145,7 +146,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.RightThigh:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.RightThigh, x.RightThighLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.RightThigh, x.RightThighLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("RightThigh"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -155,7 +156,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                     }
                     break;
                 case EnumUserTrackingBodyPart.LeftThigh:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.LeftThigh, x.LeftThighLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.LeftThigh, x.LeftThighLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("LeftThigh"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -163,9 +164,9 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                         userTracking.LeftThigh = item.count;
                         userTracking.LeftThighLkdId = targetScaleLkd.Id;
                     }
-                    break; 
+                    break;
                 case EnumUserTrackingBodyPart.RightCalve:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.RightCalve, x.RightCalveLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.RightCalve, x.RightCalveLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("RightCalve"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -173,19 +174,19 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                         userTracking.RightCalve = item.count;
                         userTracking.RightCalveLkdId = targetScaleLkd.Id;
                     }
-                    break; 
+                    break;
                 case EnumUserTrackingBodyPart.LeftCalve:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.LeftCalve, x.LeftCalveLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.LeftCalve, x.LeftCalveLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("LeftCalve"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
                         var userTracking = userTrackingList.Where(x => x.Id == item.id).First();
                         userTracking.LeftCalve = item.count;
                         userTracking.LeftCalveLkdId = targetScaleLkd.Id;
-                    } 
+                    }
                     break;
                 case EnumUserTrackingBodyPart.RightForeArm:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.RightForeArm, x.RightForeArmLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.RightForeArm, x.RightForeArmLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("RightForeArm"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -193,9 +194,9 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                         userTracking.RightForeArm = item.count;
                         userTracking.RightForeArmLkdId = targetScaleLkd.Id;
                     }
-                    break; 
+                    break;
                 case EnumUserTrackingBodyPart.LeftForeArm:
-                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.LeftForeArm, x.LeftForeArmLkdId, targetScaleLkd.Id), date = x.CreationTime }).ToList();
+                    resultList.list = userTrackingList.Select(x => new UserTrackingMeasurementListVModel { id = x.Id, count = _helper.ConvertToTargetScale(x.LeftForeArm, x.LeftForeArmLkdId, targetScaleLkd.Id), date = x.UserTrackingDate }).ToList();
                     resultList.scaleText = String.Format("{0} in {1}", L("LeftForeArm"), targetScaleLkd.LookUpDetailConst);
                     foreach (var item in resultList.list)
                     {
@@ -203,7 +204,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                         userTracking.LeftForeArm = item.count;
                         userTracking.LeftForeArmLkdId = targetScaleLkd.Id;
                     }
-                    break; 
+                    break;
             }
             return resultList;
         }
@@ -235,6 +236,11 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
                             }
                         }]
                     }
+                },
+                config : {
+                  tooltip: {
+                    mode: 'label'
+                  }
                 }
             }";
         }

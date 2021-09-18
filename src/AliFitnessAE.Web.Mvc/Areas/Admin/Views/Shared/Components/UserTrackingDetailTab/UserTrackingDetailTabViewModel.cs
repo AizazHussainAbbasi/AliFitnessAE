@@ -23,7 +23,7 @@ namespace AliFitnessAE.Web.Admin.Views.Shared.Components.UserTrackingChart
     {
         public long StatusId { get; set; }
         public Status Status { get; set; }
-        public DateTime CreationTime { get; set; }
+        public DateTime UserTrackingDate { get; set; }
         public Tuple<decimal, string> BodyPartValueAndScale { get; set; } 
         public string BodyPartProgress { get; set; }
     }

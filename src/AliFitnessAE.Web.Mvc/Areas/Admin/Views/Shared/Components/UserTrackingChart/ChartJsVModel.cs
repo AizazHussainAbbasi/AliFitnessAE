@@ -55,6 +55,10 @@ namespace AliFitnessAE.Web.Areas.Admin.Views.Shared.Components.UserTrackingChart
         public string type { get; set; }
         public Data data { get; set; }
         public Options options { get; set; }
+        public Tooltip tooltip { get; set; }
     }
-
+    public class Tooltip
+    {
+        public string mode { get; set; }
+    }
 }

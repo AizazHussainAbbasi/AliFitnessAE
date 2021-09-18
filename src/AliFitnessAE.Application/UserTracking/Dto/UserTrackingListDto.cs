@@ -2,6 +2,7 @@
 using Abp.Domain.Entities.Auditing;
 using AliFitnessAE.LookUp;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 
 namespace AliFitnessAE.Dto
@@ -37,5 +38,6 @@ namespace AliFitnessAE.Dto
         public int RightForeArmLkdId { get; set; }
         public decimal LeftForeArm { get; set; }
         public int LeftForeArmLkdId { get; set; }
+        public DateTime UserTrackingDate { get; set; }
     }
 }

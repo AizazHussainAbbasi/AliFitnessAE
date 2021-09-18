@@ -10,7 +10,7 @@ namespace AliFitnessAE.Web.Areas.Admin.Models.Common
 {
     public class UserTrackingFilter : PagedResultRequestExtDto
     {
-        public string ChartType { get; set; }
+        public string ChartType { get; set; } = "bar";
         public Scale MeasurementScale { get; set; }
         public List<SelectListItem> UserList { get; set; }
     }

@@ -61,5 +61,6 @@ namespace AliFitnessAE.Dto
         [Required]
         public decimal LeftForeArm { get; set; }
         public int LeftForeArmLkdId { get; set; } 
+        public DateTime UserTrackingDate { get; set; } 
     }
 }

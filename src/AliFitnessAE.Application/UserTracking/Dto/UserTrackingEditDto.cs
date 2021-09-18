@@ -3,6 +3,7 @@ using Abp.Authorization.Roles;
 using Abp.AutoMapper;
 using AliFitnessAE.StatusCore;
 using AliFitnessAE.UserTrackingCore;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace AliFitnessAE.Dto
@@ -55,5 +56,7 @@ namespace AliFitnessAE.Dto
         [Required]
         public decimal LeftForeArm { get; set; }
         public int LeftForeArmLkdId { get; set; }
+        [Required]
+        public DateTime UserTrackingDate { get; set; }
     }
 }

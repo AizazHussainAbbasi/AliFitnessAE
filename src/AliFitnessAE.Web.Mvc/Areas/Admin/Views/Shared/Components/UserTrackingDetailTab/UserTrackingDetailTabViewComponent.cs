@@ -40,7 +40,7 @@ namespace AliFitnessAE.Web.Admin.Views.Shared.Components.UserTrackingChart
         {
             //Decrypt UserId
             model.UserId = Convert.ToInt32(CryptoEngine.DecryptString(model.UserIdEnyc));
-            var userTrackingDtoList = _userTrackingAppService.GetAllUserTrackingList(model).OrderBy(x=>x.CreationTime); 
+            var userTrackingDtoList = _userTrackingAppService.GetAllUserTrackingList(model);
             var user = userTrackingDtoList.FirstOrDefault()?.User;
             //Scale  
             if (model.BodyPart == EnumUserTrackingBodyPart.Height)
@@ -60,7 +60,7 @@ namespace AliFitnessAE.Web.Admin.Views.Shared.Components.UserTrackingChart
                 UserTrackingDetail = userTrackingDtoList.Select(p => new UserTrackingDetailVModel()
                 {
                     Status = p.Status,
-                    CreationTime = p.CreationTime,
+                    UserTrackingDate = p.UserTrackingDate,
                     BodyPartValueAndScale = GetBodyPartValueByEnum(p, model.BodyPart),
                     BodyPartProgress = ""
                 }).ToList(), 

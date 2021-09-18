@@ -830,3 +830,4 @@ C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\Al
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\staticwebassets\AliFitnessAE.Web.Host.StaticWebAssets.xml
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.dll
 C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.pdb
+C:\Projects\AliFitness\MultiPageApp\GitHub\AliFitnessAE\5.8.1\aspnet-core\src\AliFitnessAE.Web.Host\obj\Debug\netcoreapp3.1\AliFitnessAE.Web.Host.MvcApplicationPartsAssemblyInfo.cs

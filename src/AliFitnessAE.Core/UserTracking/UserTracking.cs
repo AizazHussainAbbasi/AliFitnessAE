@@ -2,6 +2,7 @@
 using Abp.Timing;
 using AliFitnessAE.Authorization.Users;
 using AliFitnessAE.StatusCore;
+using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace AliFitnessAE.UserTrackingCore
@@ -41,8 +42,9 @@ namespace AliFitnessAE.UserTrackingCore
         public int LeftCalveLkdId { get; set; }
         public decimal RightForeArm { get; set; }
         public int RightForeArmLkdId { get; set; }
-        public decimal LeftForeArm { get; set; } 
-        public int LeftForeArmLkdId { get; set; } 
+        public decimal LeftForeArm { get; set; }
+        public int LeftForeArmLkdId { get; set; }
+        public DateTime UserTrackingDate { get; set; }
 
         public UserTracking()
         {

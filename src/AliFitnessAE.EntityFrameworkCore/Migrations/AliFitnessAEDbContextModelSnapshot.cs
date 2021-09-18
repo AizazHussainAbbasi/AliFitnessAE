@@ -2092,6 +2092,9 @@ namespace AliFitnessAE.Migrations
                     b.Property<long>("UserId")
                         .HasColumnType("bigint");
 
+                    b.Property<DateTime>("UserTrackingDate")
+                        .HasColumnType("datetime2");
+
                     b.Property<decimal>("Weight")
                         .HasColumnType("decimal(18,2)");
 
